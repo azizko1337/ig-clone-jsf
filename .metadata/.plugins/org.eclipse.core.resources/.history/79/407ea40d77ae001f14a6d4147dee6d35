@@ -1,0 +1,5 @@
+package com.jsf.user;
+
+public class User {
+
+}

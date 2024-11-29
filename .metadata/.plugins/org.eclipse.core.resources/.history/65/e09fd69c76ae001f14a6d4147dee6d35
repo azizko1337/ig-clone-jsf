@@ -1,0 +1,82 @@
+package com.jsf.dao;
+
+import com.jsf.entities.Post;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
+import jakarta.persistence.TypedQuery;
+
+import java.util.List;
+
+public class PostDAO {
+    private EntityManagerFactory emf;
+
+    public PostDAO() {
+        // Konfiguracja EntityManagerFactory z pliku persistence.xml
+        emf = Persistence.createEntityManagerFactory("YourPersistenceUnitName");
+    }
+
+    private EntityManager getEntityManager() {
+        return emf.createEntityManager();
+    }
+
+    // Create (Insert)
+    public void createPost(Post post) {
+        EntityManager em = getEntityManager();
+        try {
+            em.getTransaction().begin();
+            em.persist(post);
+            em.getTransaction().commit();
+        } finally {
+            em.close();
+        }
+    }
+
+    // Read (Find by ID)
+    public Post findPostById(int id) {
+        EntityManager em = getEntityManager();
+        try {
+            return em.find(Post.class, id);
+        } finally {
+            em.close();
+        }
+    }
+
+    // Read (List all posts)
+    public List<Post> findAllPosts() {
+        EntityManager em = getEntityManager();
+        try {
+            TypedQuery<Post> query = em.createNamedQuery("Post.findAll", Post.class);
+            return query.getResultList();
+        } finally {
+            em.close();
+        }
+    }
+
+    // Update
+    public void updatePost(Post post) {
+        EntityManager em = getEntityManager();
+        try {
+            em.getTransaction().begin();
+            em.merge(post);
+            em.getTransaction().commit();
+        } finally {
+            em.close();
+        }
+    }
+
+    // Delete
+    public void deletePost(int id) {
+        EntityManager em = getEntityManager();
+        try {
+            em.getTransaction().begin();
+            Post post = em.find(Post.class, id);
+            if (post != null) {
+                em.remove(post);
+            }
+            em.getTransaction().commit();
+        } finally {
+            em.close();
+        }
+    }
+}
