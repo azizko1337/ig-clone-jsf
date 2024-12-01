@@ -3,8 +3,6 @@ INDEX VERSION 1.4+C:\Users\anton\eclipse-workspace2\.metadata\.plugins\org.eclip
 3104257845.index
 1090140169.index
 3259267093.index
-3037240387.index
-452417039.index
 3263774857.index
 3263774857.index
 4190800889.index

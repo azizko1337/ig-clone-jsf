@@ -9,6 +9,9 @@
 
 <ui:composition template="/templates/main.xhtml">
 	<ui:define name="content">
+		<h:form>
+			<h:commandButton value="Dodaj nowego posta" action="#{postController.editPost(0)}" />
+		</h:form>
 	    <p:panel id="loancalc_panel" header="#{txt.indexTitle}">
 		    <ui:repeat value="#{postController.allPosts}" var="post">
 	        <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;">
@@ -19,6 +22,10 @@
 	            <p><strong>Zaktualizowano:</strong> #{post.updatedAt}</p>
 	            <p><strong>Komentarze:</strong> #{post.comments.size()}</p>
 	            <p><strong>Polubienia:</strong> #{post.likes.size()}</p>
+	            <p:graphicImage value="/uploads/#{post.id}.jpg" alt="Zdjęcie" style="max-width: 300px;" />
+	            <h:form>
+				    <h:commandButton value="Edytuj" action="#{postController.editPost(post.id)}" />
+				</h:form>
 	        </div>
 	    	</ui:repeat>
 	    </p:panel>

@@ -1,0 +1,71 @@
+package com.jsf.controllers;
+
+import com.jsf.dao.PostDAO;
+import com.jsf.entities.Post;
+import jakarta.ejb.EJB;
+import jakarta.enterprise.context.SessionScoped;
+import jakarta.faces.view.ViewScoped;
+
+import jakarta.inject.Named;
+import jakarta.servlet.http.Part;
+
+import java.io.Serializable;
+import java.util.List;
+
+@Named
+@ViewScoped
+public class PostController implements Serializable {
+
+    @EJB
+    private PostDAO postDAO;
+    
+    private Post post; // Aktualnie edytowany post
+    private Part uploadedFile; // Przesłany plik
+    
+ // Metoda do tworzenia i edytowania posta
+    public void savePost() {
+        try {
+            if (uploadedFile != null) {
+                // Zapisz plik na serwerze
+                String fileName = uploadedFile.getSubmittedFileName();
+                String uploadPath = "/path/to/upload/folder"; // Dostosuj do swojej aplikacji
+                Path filePath = Paths.get(uploadPath, fileName);
+                Files.copy(uploadedFile.getInputStream(), filePath, StandardCopyOption.REPLACE_EXISTING);
+
+                // Zapisz ścieżkę pliku w encji
+                post.setImagePath(filePath.toString());
+            }
+
+            // Zapisz post w bazie danych
+            if (post.getId() == 0) {
+                postDAO.create(post);
+            } else {
+                postDAO.merge(post);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public List<Post> getAllPosts() {
+    	List<Post> posts = postDAO.getFullList();
+        return posts;
+    }
+    
+    public Post getPost() {
+        if (post == null) {
+            post = new Post();  // Tworzymy nowy post, jeśli nie istnieje
+        }
+        return post;
+    }
+    public void setPost(Post post) {
+        this.post = post;
+    }
+    
+    public Part getUploadedFile() {
+        return uploadedFile;
+    }
+    public void setUploadedFile(Part uploadedFile) {
+        this.uploadedFile = uploadedFile;
+    }
+}

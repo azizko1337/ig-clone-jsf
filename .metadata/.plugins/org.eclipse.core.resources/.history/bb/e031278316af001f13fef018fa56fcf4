@@ -1,0 +1,12 @@
+<h:form enctype="multipart/form-data">
+    <!-- Pole tekstowe do treści posta -->
+    <h:outputLabel for="body" value="Treść: " />
+    <h:inputTextarea id="body" value="#{postController.post.body}" required="true" rows="5" cols="50" />
+
+    <!-- Pole do przesyłania zdjęcia -->
+    <h:outputLabel for="file" value="Zdjęcie: " />
+    <p:fileUpload id="file" value="#{postController.uploadedFile}" mode="simple" />
+
+    <!-- Przycisk do zapisywania posta -->
+    <h:commandButton value="Zapisz" action="#{postController.savePost}" />
+</h:form>

@@ -1,0 +1,46 @@
+package com.jsf.controllers;
+
+import com.jsf.dao.PostDAO;
+import com.jsf.entities.Post;
+import jakarta.ejb.EJB;
+import jakarta.enterprise.context.SessionScoped;
+import jakarta.faces.view.ViewScoped;
+
+import jakarta.inject.Named;
+import jakarta.servlet.http.Part;
+
+import java.io.Serializable;
+import java.util.List;
+
+@Named
+@ViewScoped
+public class PostController implements Serializable {
+
+    @EJB
+    private PostDAO postDAO;
+    
+    private Post post; // Aktualnie edytowany post
+    private Part uploadedFile; // Przesłany plik
+
+    public List<Post> getAllPosts() {
+    	List<Post> posts = postDAO.getFullList();
+        return posts;
+    }
+    
+    public Post getPost() {
+        if (post == null) {
+            post = new Post();  // Tworzymy nowy post, jeśli nie istnieje
+        }
+        return post;
+    }
+    public void setPost(Post post) {
+        this.post = post;
+    }
+    
+    public Part getUploadedFile() {
+        return uploadedFile;
+    }
+    public void setUploadedFile(Part uploadedFile) {
+        this.uploadedFile = uploadedFile;
+    }
+}
