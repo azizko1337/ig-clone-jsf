@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="jakarta.servlet.ServletContext"/>
-    <fullyQualifiedTypeName name="com.jsf.dao.UserDAO"/>
     <fullyQualifiedTypeName name="org.primefaces.model.file.UploadedFile"/>
+    <fullyQualifiedTypeName name="com.jsf.dao.UserDAO"/>
 </qualifiedTypeNameHistroy>

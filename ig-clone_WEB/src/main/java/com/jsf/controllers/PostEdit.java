@@ -123,8 +123,6 @@ public class PostEdit implements Serializable {
             if (!Files.exists(postFolderPath)) {
                 Files.createDirectories(postFolderPath);
             }
-
-            convertImageToJPG(getUploadedFile().getInputStream());
             
             Path filePath = postFolderPath.resolve(getPost().getId() + ".jpg");
 
@@ -147,25 +145,5 @@ public class PostEdit implements Serializable {
 
 	public void setUploadedFile(UploadedFile uploadedFile) {
 		this.uploadedFile = uploadedFile;
-	}
-	
-	private void convertImageToJPG(InputStream inputStream) {
-		try {
-		    final BufferedImage image = ImageIO.read(inputStream);
-		    inputStream.close(); // ImageIO.read does not close the input stream
-
-		    final BufferedImage convertedImage = new BufferedImage(image.getWidth(), image.getHeight(), BufferedImage.TYPE_INT_RGB);
-		    convertedImage.createGraphics().drawImage(image, 0, 0, Color.WHITE, null);
-
-		    final FileOutputStream fileOutputStream = new FileOutputStream("dice-test.jpg");
-		    final boolean canWrite = ImageIO.write(convertedImage, "jpg", fileOutputStream);
-		    fileOutputStream.close(); // ImageIO.write does not close the output stream
-
-		    if (!canWrite) {
-		        throw new IllegalStateException("Failed to write image.");
-		    }
-		} catch (IOException e) {
-		    e.printStackTrace();
-		}
 	}
 }

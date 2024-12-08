@@ -215,68 +215,68 @@
    <linked-el length="19" name="%4" offset="1009" path="%1"/>
    <linked-el length="24" name="%4" offset="528" path="%1"/>
    <linked-el length="19" name="%4" offset="799" path="%1"/>
-   <linked-el length="21" name="%5" offset="1550" path="%1"/>
-   <linked-el length="47" name="%6" offset="395" path="%7"/>
-   <linked-el length="18" name="%8" offset="1408" path="%1"/>
-   <linked-el length="23" name="%9" offset="1154" path="%10"/>
-   <linked-el length="27" name="%11" offset="994" path="%10"/>
-   <linked-el length="19" name="%12" offset="1009" path="%1"/>
-   <linked-el length="19" name="%13" offset="581" path="%10"/>
-   <linked-el length="19" name="%13" offset="964" path="%1"/>
-   <linked-el length="18" name="%14" offset="1336" path="%1"/>
-   <linked-el length="24" name="%15" offset="789" path="%10"/>
-   <linked-el length="25" name="%15" offset="1301" path="%10"/>
-   <linked-el length="23" name="%15" offset="422" path="%10"/>
-   <linked-el length="27" name="%15" offset="994" path="%10"/>
-   <linked-el length="23" name="%15" offset="1154" path="%10"/>
-   <linked-el length="47" name="%16" offset="395" path="%7"/>
-   <linked-el length="19" name="%17" offset="1142" path="%1"/>
-   <linked-el length="24" name="%17" offset="1476" path="%1"/>
-   <linked-el length="13" name="%17" offset="1274" path="%1"/>
+   <linked-el length="24" name="%5" offset="789" path="%6"/>
+   <linked-el length="21" name="%7" offset="1550" path="%1"/>
+   <linked-el length="47" name="%8" offset="395" path="%9"/>
+   <linked-el length="22" name="%10" offset="1207" path="%1"/>
+   <linked-el length="18" name="%11" offset="1408" path="%1"/>
+   <linked-el length="23" name="%12" offset="1154" path="%6"/>
+   <linked-el length="27" name="%13" offset="994" path="%6"/>
+   <linked-el length="19" name="%14" offset="799" path="%1"/>
+   <linked-el length="19" name="%15" offset="1009" path="%1"/>
+   <linked-el length="19" name="%16" offset="581" path="%6"/>
+   <linked-el length="19" name="%16" offset="964" path="%1"/>
    <linked-el length="18" name="%17" offset="1336" path="%1"/>
-   <linked-el length="29" name="%17" offset="1752" path="%1"/>
-   <linked-el length="22" name="%17" offset="1207" path="%1"/>
-   <linked-el length="21" name="%17" offset="1550" path="%1"/>
-   <linked-el length="26" name="%17" offset="1612" path="%1"/>
-   <linked-el length="18" name="%17" offset="1408" path="%1"/>
-   <linked-el length="13" name="%18" offset="1274" path="%1"/>
-   <linked-el length="24" name="%19" offset="789" path="%10"/>
-   <linked-el length="22" name="%20" offset="1207" path="%1"/>
-   <linked-el length="19" name="%21" offset="799" path="%1"/>
-   <linked-el length="25" name="%22" offset="1301" path="%10"/>
-   <linked-el length="19" name="%23" offset="581" path="%10"/>
-   <linked-el length="19" name="%23" offset="964" path="%1"/>
-   <linked-el length="47" name="%24" offset="395" path="%7"/>
-   <linked-el length="24" name="%25" offset="789" path="%10"/>
+   <linked-el length="25" name="%18" offset="1301" path="%6"/>
+   <linked-el length="19" name="%19" offset="581" path="%6"/>
+   <linked-el length="19" name="%19" offset="964" path="%1"/>
+   <linked-el length="24" name="%20" offset="789" path="%6"/>
+   <linked-el length="25" name="%20" offset="1301" path="%6"/>
+   <linked-el length="23" name="%20" offset="422" path="%6"/>
+   <linked-el length="27" name="%20" offset="994" path="%6"/>
+   <linked-el length="23" name="%20" offset="1154" path="%6"/>
+   <linked-el length="47" name="%21" offset="395" path="%9"/>
+   <linked-el length="19" name="%22" offset="1142" path="%1"/>
+   <linked-el length="24" name="%22" offset="1476" path="%1"/>
+   <linked-el length="13" name="%22" offset="1274" path="%1"/>
+   <linked-el length="18" name="%22" offset="1336" path="%1"/>
+   <linked-el length="29" name="%22" offset="1752" path="%1"/>
+   <linked-el length="22" name="%22" offset="1207" path="%1"/>
+   <linked-el length="21" name="%22" offset="1550" path="%1"/>
+   <linked-el length="26" name="%22" offset="1612" path="%1"/>
+   <linked-el length="18" name="%22" offset="1408" path="%1"/>
+   <linked-el length="47" name="%23" offset="395" path="%9"/>
+   <linked-el length="24" name="%24" offset="789" path="%6"/>
+   <linked-el length="13" name="%25" offset="1274" path="%1"/>
   </el>
  </validation>
  <aliases>
-  <alias path="/ig-clone_WEB/src/main/webapp/post.xhtml" value="%10"/>
+  <alias path="/ig-clone_WEB/src/main/webapp/post.xhtml" value="%6"/>
   <alias path="post.comments" value="%0"/>
   <alias path="post.id" value="%2"/>
   <alias path="post.user.nickname" value="%3"/>
   <alias path="postList" value="%4"/>
-  <alias path="post.likes" value="%5"/>
-  <alias path="facesContext.externalContext.requestLocale" value="%6"/>
-  <alias path="post.updatedAt" value="%8"/>
-  <alias path="postEdit.savePost" value="%9"/>
-  <alias path="postEdit.uploadedFile" value="%11"/>
-  <alias path="postList.list" value="%12"/>
-  <alias path="txt.indexTitle" value="%13"/>
-  <alias path="post.createdAt" value="%14"/>
-  <alias path="postEdit" value="%15"/>
-  <alias path="facesContext.externalContext" value="%16"/>
-  <alias path="post" value="%17"/>
-  <alias path="post.body" value="%18"/>
-  <alias path="/ig-clone_WEB/src/main/webapp/templates/main.xhtml" value="%7"/>
-  <alias path="postEdit.post" value="%19"/>
-  <alias path="post.user" value="%20"/>
-  <alias path="postList.body" value="%21"/>
+  <alias path="post.likes" value="%7"/>
+  <alias path="facesContext.externalContext.requestLocale" value="%8"/>
+  <alias path="post.updatedAt" value="%11"/>
+  <alias path="postEdit.savePost" value="%12"/>
+  <alias path="postEdit.uploadedFile" value="%13"/>
+  <alias path="postList.list" value="%15"/>
+  <alias path="txt.indexTitle" value="%16"/>
+  <alias path="post.createdAt" value="%17"/>
+  <alias path="postEdit" value="%20"/>
+  <alias path="facesContext.externalContext" value="%21"/>
+  <alias path="post" value="%22"/>
+  <alias path="post.body" value="%25"/>
+  <alias path="/ig-clone_WEB/src/main/webapp/templates/main.xhtml" value="%9"/>
+  <alias path="postEdit.post" value="%5"/>
+  <alias path="post.user" value="%10"/>
+  <alias path="postList.body" value="%14"/>
   <alias path="/ig-clone_WEB/src/main/webapp/index.xhtml" value="%1"/>
-  <alias path="postEdit.removePost" value="%22"/>
-  <alias path="txt" value="%23"/>
-  <alias path="facesContext" value="%24"/>
-  <alias path="postEdit.post.body" value="%25"/>
+  <alias path="postEdit.removePost" value="%18"/>
+  <alias path="txt" value="%19"/>
+  <alias path="facesContext" value="%23"/>
+  <alias path="postEdit.post.body" value="%24"/>
  </aliases>
  <includes/>
  <uris/>
