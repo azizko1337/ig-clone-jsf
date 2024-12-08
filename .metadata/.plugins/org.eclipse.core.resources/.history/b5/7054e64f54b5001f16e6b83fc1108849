@@ -1,0 +1,7 @@
+package com.jsf.controllers;
+
+@Named
+@RequestScoped
+public class PostList {
+
+}

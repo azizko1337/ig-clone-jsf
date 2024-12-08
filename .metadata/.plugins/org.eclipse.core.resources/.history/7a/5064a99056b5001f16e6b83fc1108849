@@ -1,0 +1,7 @@
+package com.jsf.controllers;
+
+@Named
+@ViewScoped
+public class PostEdit {
+
+}

@@ -10,10 +10,20 @@
 <ui:composition template="/templates/main.xhtml">
 	<ui:define name="content">
 		<h:form>
-			<h:commandButton value="Dodaj nowego posta" action="#{postController.editPost(0)}" />
+			<h:commandButton value="Dodaj nowego posta" action="#{postList.addPost()}" />
 		</h:form>
-	    <p:panel id="loancalc_panel" header="#{txt.indexTitle}">
-		    <ui:repeat value="#{postController.allPosts}" var="post">
+		<p:panel header="Opcje wyszukiwania" toggleable="true" collapsed="true"
+		style="margin-bottom: 1em;">
+			<h:form>
+				<h:panelGrid columns="2" cellpadding="5">
+					<h:outputLabel value="Treść:" />
+					<p:inputText value="#{postList.body}" />
+					<p:commandButton value="Szukaj" update="postList" />
+				</h:panelGrid>
+			</h:form>
+		</p:panel>
+	    <p:panel id="postList" header="#{txt.indexTitle}">
+		    <ui:repeat value="#{postList.list}" var="post">
 	        <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;">
 	            <h3>Post ID: #{post.id}</h3>
 	            <p><strong>Autor:</strong> #{post.user.nickname}</p>
@@ -24,7 +34,7 @@
 	            <p><strong>Polubienia:</strong> #{post.likes.size()}</p>
 	            <p:graphicImage value="/uploads/#{post.id}.jpg" alt="Zdjęcie" style="max-width: 300px;" />
 	            <h:form>
-				    <h:commandButton value="Edytuj" action="#{postController.editPost(post.id)}" />
+				    <h:commandButton value="Edytuj" action="#{postList.editPost(post)}" />
 				</h:form>
 	        </div>
 	    	</ui:repeat>

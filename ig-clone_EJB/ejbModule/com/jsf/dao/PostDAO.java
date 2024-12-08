@@ -60,18 +60,18 @@ public class PostDAO {
         String where = "";
         String orderby = "ORDER BY p.createdAt DESC";
 
-        // Example: Filter by user ID
+        // Filter by user ID
         Integer userId = (Integer) searchParams.get("userId");
         if (userId != null) {
             where += (where.isEmpty() ? "WHERE " : "AND ");
             where += "p.user.id = :userId ";
         }
 
-        // Example: Filter by creation date
-        String createdAfter = (String) searchParams.get("createdAfter");
-        if (createdAfter != null) {
+        // Filter by content (body)
+        String body = (String) searchParams.get("body");
+        if (body != null) {
             where += (where.isEmpty() ? "WHERE " : "AND ");
-            where += "p.createdAt >= :createdAfter ";
+            where += "p.body like :body ";
         }
 
         // Build query
@@ -81,8 +81,8 @@ public class PostDAO {
         if (userId != null) {
             query.setParameter("userId", userId);
         }
-        if (createdAfter != null) {
-            query.setParameter("createdAfter", createdAfter);
+        if (body != null) {
+            query.setParameter("body", body + "%");
         }
 
         // Execute query
