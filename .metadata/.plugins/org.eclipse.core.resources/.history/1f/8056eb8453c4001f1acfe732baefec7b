@@ -1,0 +1,29 @@
+package com.jsf.templatebeans;
+
+import java.io.Serializable;
+
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.faces.view.ViewScoped;
+import jakarta.inject.Named;
+
+@Named
+@ViewScoped
+public class Main implements Serializable {
+	private static final String PAGE_INDEX = "/pages/index?faces-redirect=true";
+	private static final String PAGE_LOGIN = "/pages/auth/login?faces-redirect=true";
+	private static final String PAGE_PROFILE = "/pages/auth/profile?faces-redirect=true";
+	private static final String PAGE_STAY_AT_THE_SAME = null;
+
+	public String login() {
+		return null;
+	}
+	public String profile() {
+		return PAGE_PROFILE;
+	}
+	public String addPost() {
+		return null;
+	}
+	public String index() {
+		return PAGE_INDEX;
+	}
+}

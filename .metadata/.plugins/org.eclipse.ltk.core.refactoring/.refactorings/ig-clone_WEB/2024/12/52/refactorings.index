@@ -1,0 +1,30 @@
+1734979609289	Delete element
+1734979674256	Delete element
+1734979679398	Delete element
+1735241155623	Delete element
+1735241217765	Move 2 resources to 'pages'
+1735241219153	Move 'auth' to 'pages'
+1735241240299	Rename package 'com.jsf.controllers'
+1735242732396	Encapsulate field 'nickname, ...'
+1735242739012	Encapsulate field 'firstName, ...'
+1735242743863	Encapsulate field 'lastName, ...'
+1735242747606	Encapsulate field 'email, ...'
+1735242751352	Encapsulate field 'password, ...'
+1735242755423	Encapsulate field 'repeatedPassword, ...'
+1735243706623	Encapsulate field 'user, ...'
+1735243772650	Encapsulate field 'repeatedPassword, ...'
+1735245130703	Encapsulate field 'nickname, ...'
+1735245134888	Encapsulate field 'password, ...'
+1735302930515	Rename type 'User'
+1735302998764	Delete element
+1735303125899	Rename resource 'user.xhtml'
+1735303668742	Move compilation unit
+1735303688106	Copy package
+1735303693810	Delete element
+1735303699221	Rename package 'com.jsf.templatebeans.copy'
+1735308226313	Rename resource 'Untitled.png'
+1735472544913	Rename type 'PostEdit'
+1735472596302	Rename type 'Post'
+1735473209399	Rename type 'PostList'
+1735473342298	Move compilation unit
+1735479042922	Delete element

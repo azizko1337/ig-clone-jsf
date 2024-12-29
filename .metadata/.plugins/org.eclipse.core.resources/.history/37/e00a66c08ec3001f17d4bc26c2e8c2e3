@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	>
+	
+<f:metadata>
+    <f:viewAction action="#{postEdit.onLoad()}" />
+</f:metadata>
+
+<ui:composition template="/templates/main.xhtml">
+	<ui:define name="content">
+	    <p:panel id="editPost" header="#{txt.indexTitle}">
+		    <h:form enctype="multipart/form-data">
+			    <!-- Pole tekstowe do treści posta -->
+			    <h:outputLabel for="body" value="Treść: " />
+			    <h:inputTextarea id="body" value="#{postEdit.post.body}" required="true" rows="5" cols="50" />
+			
+			    <!-- Pole do przesyłania zdjęcia -->
+			    <h:outputLabel for="file" value="Zdjęcie: " />
+			    <p:fileUpload id="file" value="#{postEdit.uploadedFile}" mode="simple" multiple="false" />
+			
+			    <!-- Przycisk do zapisywania posta -->
+			    <h:commandButton value="Zapisz" action="#{postEdit.savePost}" />
+			    
+			    <h:button value="Anuluj" outcome="index" />
+			    
+			    <h:commandButton value="Usuń (!!!)" action="#{postEdit.removePost}" />
+			</h:form>
+	    </p:panel>
+	    <p:panel>
+		    <form class="post" method="POST" action="{url action="add_post"}">
+		        <div class="post__content">
+		            <div class="post__medias">
+		                <img
+		                        class="post__media"
+		                        src="{url action="assets" asset="insta-clone.png"}"
+		                        alt="Post Content"
+		                />
+		            </div>
+		        </div>
+		
+		        <div class="post__footer">
+		
+		            <div class="post__infos">
+		                <div class="post__description" style="flex-direction:column; gap:5px">
+		                    <label for="postBody" style="padding-left: 2px;">Opis posta: </label>
+		                    <textarea name="body" id="postBody" placeholder="Opis posta (2-200 znaków)">{$form->body}</textarea>
+		                    <div style="display:flex; justify-content:flex-end;"><input type="submit" value="Dodaj post"></div>
+		                </div>
+		
+		            </div>
+		        </div>
+	    	</form>
+	    </p:panel>
+	</ui:define>
+</ui:composition>
+
+</html>

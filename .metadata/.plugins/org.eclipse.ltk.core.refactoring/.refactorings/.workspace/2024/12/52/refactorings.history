@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;ig-clone_WEB/src/main/webapp/resources/template/images/logo.svg&apos;" deleteContents="false" description="Delete resource &apos;ig-clone_WEB/src/main/webapp/resources/template/images/logo.svg&apos;" element1="/ig-clone_WEB/src/main/webapp/resources/template/images/logo.svg" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1735308229546"/>
+</session>

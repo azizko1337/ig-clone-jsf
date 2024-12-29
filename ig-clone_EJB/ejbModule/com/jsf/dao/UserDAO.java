@@ -5,6 +5,7 @@ import java.util.Map;
 
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.NoResultException;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
 
@@ -17,6 +18,33 @@ public class UserDAO {
 	// Dependency injection (no setter method is needed)
 	@PersistenceContext(unitName = UNIT_NAME)
 	protected EntityManager em;
+	
+	public List<User> getSuggestions(User suggestionsFor){
+		String queryString = "SELECT DISTINCT u FROM User u WHERE u.id IN (SELECT f.user2.id FROM Follow f WHERE f.user1.id != :following_user_id)";
+		
+		Query query = em.createQuery(queryString);
+		
+		query.setParameter("following_user_id", suggestionsFor.getId());
+		
+		return (List<User>) query.setMaxResults(5).getResultList();
+	}
+	
+	public User login(String nickname, String password) {
+		String queryString = "select u from User u where nickname = :nickname and password = :password";
+		Query query = em.createQuery(queryString);
+		
+		query.setParameter("nickname", nickname);
+		query.setParameter("password", password);
+		
+		User user = null;
+		
+		try {
+			user = (User) query.getSingleResult();
+			return user;
+		}catch(NoResultException e) {
+			return null;
+		}
+	}
 
 	public void create(User user) {
 		em.persist(user);

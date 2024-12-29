@@ -1,0 +1,18 @@
+package com.jsf.dao;
+
+import com.jsf.entities.UserRole;
+import com.jsf.entities.Role;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
+import java.util.List;
+
+public class UserRoleDAO {
+
+    public List<Role> findRolesByUserId(EntityManager em, int userId) {
+        TypedQuery<Role> query = em.createQuery(
+            "SELECT ur.role FROM UserRole ur WHERE ur.user.id = :userId", Role.class
+        );
+        query.setParameter("userId", userId);
+        return query.getResultList();
+    }
+}

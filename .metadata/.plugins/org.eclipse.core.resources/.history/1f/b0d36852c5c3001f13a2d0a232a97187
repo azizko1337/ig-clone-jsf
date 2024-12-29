@@ -1,0 +1,24 @@
+package com.jsf.authbeans;
+
+import com.jsf.dao.UserDAO;
+import com.jsf.entities.User;
+
+import jakarta.ejb.EJB;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Named;
+
+@Named
+@RequestScoped
+public class Register {
+	private User user = new User();
+	
+	@EJB
+	UserDAO userDAO;
+
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
+}

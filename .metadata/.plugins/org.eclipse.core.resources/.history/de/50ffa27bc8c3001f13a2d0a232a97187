@@ -1,0 +1,16 @@
+package com.jsf.authbeans;
+
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Named;
+
+@Named
+@RequestScoped
+public class Login {
+	private static final String PAGE_MAIN = "/pages/index";
+	private static final String PAGE_REGISTER = "/pages/auth/register";
+	private static final String PAGE_STAY_AT_THE_SAME = null;
+	
+	private String nickname;
+	private String password;
+	
+}

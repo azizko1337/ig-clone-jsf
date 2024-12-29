@@ -110,91 +110,91 @@
    <libraries>
     <library class="tld">
      <id class="model-object"
-      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/c-1_0-rt.tld" project="ig-clone_EJB"/>
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/c-1_0-rt.tld" project="ig-clone_WEB"/>
     </library>
     <library class="tld">
      <id class="model-object"
-      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/c-1_0.tld" project="ig-clone_EJB"/>
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/c-1_0.tld" project="ig-clone_WEB"/>
     </library>
     <library class="tld">
      <id class="model-object"
-      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/c-1_2.tld" project="ig-clone_EJB"/>
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/c-1_2.tld" project="ig-clone_WEB"/>
     </library>
     <library class="tld">
      <id class="model-object"
-      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/c.tld" project="ig-clone_EJB"/>
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/c.tld" project="ig-clone_WEB"/>
     </library>
     <library class="tld">
      <id class="model-object"
-      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/fmt-1_0-rt.tld" project="ig-clone_EJB"/>
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/fmt-1_0-rt.tld" project="ig-clone_WEB"/>
     </library>
     <library class="tld">
      <id class="model-object"
-      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/fmt-1_0.tld" project="ig-clone_EJB"/>
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/fmt-1_0.tld" project="ig-clone_WEB"/>
     </library>
     <library class="tld">
      <id class="model-object"
-      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/fmt-1_1.tld" project="ig-clone_EJB"/>
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/fmt-1_1.tld" project="ig-clone_WEB"/>
     </library>
     <library class="tld">
      <id class="model-object"
-      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/fmt.tld" project="ig-clone_EJB"/>
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/fmt.tld" project="ig-clone_WEB"/>
     </library>
     <library class="tld">
      <id class="model-object"
-      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/fn-1_1.tld" project="ig-clone_EJB"/>
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/fn-1_1.tld" project="ig-clone_WEB"/>
     </library>
     <library class="tld">
      <id class="model-object"
-      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/fn.tld" project="ig-clone_EJB"/>
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/fn.tld" project="ig-clone_WEB"/>
     </library>
     <library class="tld">
      <id class="model-object"
-      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/permittedtaglibs-1_1.tld" project="ig-clone_EJB"/>
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/permittedtaglibs-1_1.tld" project="ig-clone_WEB"/>
     </library>
     <library class="tld">
      <id class="model-object"
-      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/permittedtaglibs.tld" project="ig-clone_EJB"/>
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/permittedtaglibs.tld" project="ig-clone_WEB"/>
     </library>
     <library class="tld">
      <id class="model-object"
-      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/scriptfree-1_1.tld" project="ig-clone_EJB"/>
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/scriptfree-1_1.tld" project="ig-clone_WEB"/>
     </library>
     <library class="tld">
      <id class="model-object"
-      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/scriptfree.tld" project="ig-clone_EJB"/>
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/scriptfree.tld" project="ig-clone_WEB"/>
     </library>
     <library class="tld">
      <id class="model-object"
-      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/sql-1_0-rt.tld" project="ig-clone_EJB"/>
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/sql-1_0-rt.tld" project="ig-clone_WEB"/>
     </library>
     <library class="tld">
      <id class="model-object"
-      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/sql-1_0.tld" project="ig-clone_EJB"/>
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/sql-1_0.tld" project="ig-clone_WEB"/>
     </library>
     <library class="tld">
      <id class="model-object"
-      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/sql-1_1.tld" project="ig-clone_EJB"/>
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/sql-1_1.tld" project="ig-clone_WEB"/>
     </library>
     <library class="tld">
      <id class="model-object"
-      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/sql.tld" project="ig-clone_EJB"/>
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/sql.tld" project="ig-clone_WEB"/>
     </library>
     <library class="tld">
      <id class="model-object"
-      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/x-1_0-rt.tld" project="ig-clone_EJB"/>
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/x-1_0-rt.tld" project="ig-clone_WEB"/>
     </library>
     <library class="tld">
      <id class="model-object"
-      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/x-1_0.tld" project="ig-clone_EJB"/>
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/x-1_0.tld" project="ig-clone_WEB"/>
     </library>
     <library class="tld">
      <id class="model-object"
-      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/x-1_1.tld" project="ig-clone_EJB"/>
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/x-1_1.tld" project="ig-clone_WEB"/>
     </library>
     <library class="tld">
      <id class="model-object"
-      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/x.tld" project="ig-clone_EJB"/>
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.1.jar/meta-inf/x.tld" project="ig-clone_WEB"/>
     </library>
    </libraries>
   </path>
@@ -207,77 +207,181 @@
  <validation>
   <core validator-id="jboss.cdi.core"/>
   <el>
-   <linked-el length="24" name="%0" offset="1476" path="%1"/>
-   <linked-el length="19" name="%2" offset="1142" path="%1"/>
-   <linked-el length="26" name="%2" offset="1612" path="%1"/>
-   <linked-el length="22" name="%3" offset="1207" path="%1"/>
-   <linked-el length="29" name="%4" offset="1752" path="%1"/>
-   <linked-el length="19" name="%4" offset="1009" path="%1"/>
-   <linked-el length="24" name="%4" offset="528" path="%1"/>
-   <linked-el length="19" name="%4" offset="799" path="%1"/>
-   <linked-el length="24" name="%5" offset="789" path="%6"/>
-   <linked-el length="21" name="%7" offset="1550" path="%1"/>
-   <linked-el length="47" name="%8" offset="395" path="%9"/>
-   <linked-el length="22" name="%10" offset="1207" path="%1"/>
-   <linked-el length="18" name="%11" offset="1408" path="%1"/>
-   <linked-el length="23" name="%12" offset="1154" path="%6"/>
-   <linked-el length="27" name="%13" offset="994" path="%6"/>
-   <linked-el length="19" name="%14" offset="799" path="%1"/>
-   <linked-el length="19" name="%15" offset="1009" path="%1"/>
-   <linked-el length="19" name="%16" offset="581" path="%6"/>
-   <linked-el length="19" name="%16" offset="964" path="%1"/>
-   <linked-el length="18" name="%17" offset="1336" path="%1"/>
-   <linked-el length="25" name="%18" offset="1301" path="%6"/>
-   <linked-el length="19" name="%19" offset="581" path="%6"/>
-   <linked-el length="19" name="%19" offset="964" path="%1"/>
-   <linked-el length="24" name="%20" offset="789" path="%6"/>
-   <linked-el length="25" name="%20" offset="1301" path="%6"/>
-   <linked-el length="23" name="%20" offset="422" path="%6"/>
-   <linked-el length="27" name="%20" offset="994" path="%6"/>
-   <linked-el length="23" name="%20" offset="1154" path="%6"/>
-   <linked-el length="47" name="%21" offset="395" path="%9"/>
-   <linked-el length="19" name="%22" offset="1142" path="%1"/>
-   <linked-el length="24" name="%22" offset="1476" path="%1"/>
-   <linked-el length="13" name="%22" offset="1274" path="%1"/>
-   <linked-el length="18" name="%22" offset="1336" path="%1"/>
-   <linked-el length="29" name="%22" offset="1752" path="%1"/>
-   <linked-el length="22" name="%22" offset="1207" path="%1"/>
-   <linked-el length="21" name="%22" offset="1550" path="%1"/>
-   <linked-el length="26" name="%22" offset="1612" path="%1"/>
-   <linked-el length="18" name="%22" offset="1408" path="%1"/>
-   <linked-el length="47" name="%23" offset="395" path="%9"/>
-   <linked-el length="24" name="%24" offset="789" path="%6"/>
-   <linked-el length="13" name="%25" offset="1274" path="%1"/>
+   <linked-el length="17" name="%0" offset="946" path="%1"/>
+   <linked-el length="82" name="%2" offset="1265" path="%3"/>
+   <linked-el length="33" name="%2" offset="1217" path="%4"/>
+   <linked-el length="66" name="%2" offset="3873" path="%4"/>
+   <linked-el length="31" name="%2" offset="1058" path="%1"/>
+   <linked-el length="31" name="%2" offset="2562" path="%4"/>
+   <linked-el length="32" name="%2" offset="3415" path="%4"/>
+   <linked-el length="32" name="%2" offset="3803" path="%4"/>
+   <linked-el length="33" name="%2" offset="510" path="%1"/>
+   <linked-el length="26" name="%5" offset="1845" path="%3"/>
+   <linked-el length="21" name="%6" offset="2385" path="%3"/>
+   <linked-el length="27" name="%7" offset="717" path="%8"/>
+   <linked-el length="44" name="%9" offset="1065" path="%3"/>
+   <linked-el length="20" name="%10" offset="2784" path="%3"/>
+   <linked-el length="47" name="%11" offset="395" path="%4"/>
+   <linked-el length="18" name="%12" offset="2703" path="%4"/>
+   <linked-el length="20" name="%12" offset="2097" path="%4"/>
+   <linked-el length="20" name="%12" offset="1718" path="%4"/>
+   <linked-el length="18" name="%12" offset="970" path="%4"/>
+   <linked-el length="19" name="%13" offset="945" path="%14"/>
+   <linked-el length="27" name="%15" offset="1153" path="%16"/>
+   <linked-el length="11" name="%17" offset="465" path="%3"/>
+   <linked-el length="16" name="%17" offset="3685" path="%3"/>
+   <linked-el length="32" name="%18" offset="3803" path="%4"/>
+   <linked-el length="16" name="%19" offset="1133" path="%20"/>
+   <linked-el length="82" name="%21" offset="1265" path="%3"/>
+   <linked-el length="21" name="%21" offset="2385" path="%3"/>
+   <linked-el length="20" name="%21" offset="2784" path="%3"/>
+   <linked-el length="25" name="%21" offset="1378" path="%3"/>
+   <linked-el length="26" name="%21" offset="1845" path="%3"/>
+   <linked-el length="23" name="%21" offset="2852" path="%3"/>
+   <linked-el length="44" name="%21" offset="1065" path="%3"/>
+   <linked-el length="43" name="%21" offset="2441" path="%3"/>
+   <linked-el length="24" name="%21" offset="2584" path="%3"/>
+   <linked-el length="27" name="%22" offset="1180" path="%8"/>
+   <linked-el length="24" name="%23" offset="1416" path="%8"/>
+   <linked-el length="43" name="%24" offset="2441" path="%3"/>
+   <linked-el length="27" name="%25" offset="1651" path="%8"/>
+   <linked-el length="44" name="%26" offset="721" path="%4"/>
+   <linked-el length="24" name="%27" offset="1496" path="%16"/>
+   <linked-el length="26" name="%27" offset="1905" path="%16"/>
+   <linked-el length="22" name="%28" offset="562" path="%29"/>
+   <linked-el length="17" name="%30" offset="946" path="%1"/>
+   <linked-el length="16" name="%30" offset="731" path="%1"/>
+   <linked-el length="18" name="%30" offset="1163" path="%1"/>
+   <linked-el length="82" name="%31" offset="1265" path="%3"/>
+   <linked-el length="33" name="%31" offset="1217" path="%4"/>
+   <linked-el length="66" name="%31" offset="3873" path="%4"/>
+   <linked-el length="31" name="%31" offset="1058" path="%1"/>
+   <linked-el length="31" name="%31" offset="2562" path="%4"/>
+   <linked-el length="32" name="%31" offset="3415" path="%4"/>
+   <linked-el length="32" name="%31" offset="3803" path="%4"/>
+   <linked-el length="33" name="%31" offset="510" path="%1"/>
+   <linked-el length="28" name="%32" offset="947" path="%8"/>
+   <linked-el length="25" name="%33" offset="1378" path="%3"/>
+   <linked-el length="82" name="%34" offset="1265" path="%3"/>
+   <linked-el length="24" name="%35" offset="1496" path="%16"/>
+   <linked-el length="34" name="%36" offset="1189" path="%20"/>
+   <linked-el length="82" name="%37" offset="1265" path="%3"/>
+   <linked-el length="23" name="%38" offset="2852" path="%3"/>
+   <linked-el length="24" name="%39" offset="1416" path="%8"/>
+   <linked-el length="27" name="%39" offset="717" path="%8"/>
+   <linked-el length="27" name="%39" offset="1180" path="%8"/>
+   <linked-el length="28" name="%39" offset="947" path="%8"/>
+   <linked-el length="27" name="%39" offset="1651" path="%8"/>
+   <linked-el length="66" name="%40" offset="3873" path="%4"/>
+   <linked-el length="28" name="%41" offset="492" path="%20"/>
+   <linked-el length="22" name="%41" offset="715" path="%20"/>
+   <linked-el length="19" name="%42" offset="715" path="%14"/>
+   <linked-el length="19" name="%42" offset="1082" path="%14"/>
+   <linked-el length="21" name="%42" offset="1219" path="%14"/>
+   <linked-el length="19" name="%42" offset="945" path="%14"/>
+   <linked-el length="24" name="%43" offset="2584" path="%3"/>
+   <linked-el length="24" name="%44" offset="1708" path="%16"/>
+   <linked-el length="24" name="%44" offset="1496" path="%16"/>
+   <linked-el length="21" name="%44" offset="1831" path="%16"/>
+   <linked-el length="23" name="%44" offset="422" path="%16"/>
+   <linked-el length="27" name="%44" offset="1153" path="%16"/>
+   <linked-el length="26" name="%44" offset="1905" path="%16"/>
+   <linked-el length="47" name="%45" offset="395" path="%4"/>
+   <linked-el length="30" name="%46" offset="1920" path="%8"/>
+   <linked-el length="44" name="%47" offset="1065" path="%3"/>
+   <linked-el length="82" name="%48" offset="1265" path="%3"/>
+   <linked-el length="21" name="%48" offset="2385" path="%3"/>
+   <linked-el length="44" name="%48" offset="1065" path="%3"/>
+   <linked-el length="19" name="%49" offset="715" path="%14"/>
+   <linked-el length="34" name="%50" offset="1189" path="%20"/>
+   <linked-el length="16" name="%51" offset="731" path="%1"/>
+   <linked-el length="47" name="%52" offset="395" path="%4"/>
+   <linked-el length="26" name="%53" offset="1905" path="%16"/>
+   <linked-el length="66" name="%54" offset="3873" path="%4"/>
+   <linked-el length="28" name="%55" offset="492" path="%20"/>
+   <linked-el length="22" name="%55" offset="715" path="%20"/>
+   <linked-el length="16" name="%56" offset="1133" path="%20"/>
+   <linked-el length="34" name="%56" offset="1189" path="%20"/>
+   <linked-el length="24" name="%57" offset="1416" path="%8"/>
+   <linked-el length="25" name="%57" offset="2072" path="%8"/>
+   <linked-el length="27" name="%57" offset="717" path="%8"/>
+   <linked-el length="27" name="%57" offset="1180" path="%8"/>
+   <linked-el length="30" name="%57" offset="1920" path="%8"/>
+   <linked-el length="28" name="%57" offset="947" path="%8"/>
+   <linked-el length="27" name="%57" offset="1651" path="%8"/>
   </el>
  </validation>
  <aliases>
-  <alias path="/ig-clone_WEB/src/main/webapp/post.xhtml" value="%6"/>
-  <alias path="post.comments" value="%0"/>
-  <alias path="post.id" value="%2"/>
-  <alias path="post.user.nickname" value="%3"/>
-  <alias path="postList" value="%4"/>
-  <alias path="post.likes" value="%7"/>
-  <alias path="facesContext.externalContext.requestLocale" value="%8"/>
-  <alias path="post.updatedAt" value="%11"/>
-  <alias path="postEdit.savePost" value="%12"/>
-  <alias path="postEdit.uploadedFile" value="%13"/>
-  <alias path="postList.list" value="%15"/>
-  <alias path="txt.indexTitle" value="%16"/>
-  <alias path="post.createdAt" value="%17"/>
-  <alias path="postEdit" value="%20"/>
-  <alias path="facesContext.externalContext" value="%21"/>
-  <alias path="post" value="%22"/>
-  <alias path="post.body" value="%25"/>
-  <alias path="/ig-clone_WEB/src/main/webapp/templates/main.xhtml" value="%9"/>
-  <alias path="postEdit.post" value="%5"/>
-  <alias path="post.user" value="%10"/>
-  <alias path="postList.body" value="%14"/>
-  <alias path="/ig-clone_WEB/src/main/webapp/index.xhtml" value="%1"/>
-  <alias path="postEdit.removePost" value="%18"/>
-  <alias path="txt" value="%19"/>
-  <alias path="facesContext" value="%23"/>
-  <alias path="postEdit.post.body" value="%24"/>
+  <alias path="index.posts" value="%0"/>
+  <alias path="/ig-clone_WEB/src/main/webapp/pages/auth/login.xhtml" value="%14"/>
+  <alias path="/ig-clone_WEB/src/main/webapp/pages/auth/register.xhtml" value="%8"/>
+  <alias path="remoteClient.details" value="%2"/>
+  <alias path="post.id" value="%5"/>
+  <alias path="post.user.nickname" value="%6"/>
+  <alias path="register.user.nickname" value="%7"/>
+  <alias
+   path="/ig-clone_WEB/src/main/webapp/templates/snippets/suggestions.xhtml" value="%20"/>
+  <alias path="post.user.lastName" value="%9"/>
+  <alias path="post.likes" value="%10"/>
+  <alias path="facesContext.externalContext.requestLocale" value="%11"/>
+  <alias path="main" value="%12"/>
+  <alias path="login.password" value="%13"/>
+  <alias path="postEdit.uploadedFile" value="%15"/>
+  <alias path="/ig-clone_WEB/src/main/webapp/pages/post.xhtml" value="%16"/>
+  <alias path="posts" value="%17"/>
+  <alias path="remoteClient.details.nickname" value="%18"/>
+  <alias path="user.nickname" value="%19"/>
+  <alias path="post" value="%21"/>
+  <alias path="register.user.lastName" value="%22"/>
+  <alias path="register.user.email" value="%23"/>
+  <alias path="post.body" value="%24"/>
+  <alias path="register.user.password" value="%25"/>
+  <alias path="resource" value="%26"/>
+  <alias path="postEdit.post" value="%27"/>
+  <alias path="profile" value="%28"/>
+  <alias
+   path="/ig-clone_WEB/src/main/webapp/templates/snippets/feed.xhtml" value="%3"/>
+  <alias path="index" value="%30"/>
+  <alias path="remoteClient" value="%31"/>
+  <alias path="/ig-clone_WEB/src/main/webapp/pages/auth/profile.xhtml" value="%29"/>
+  <alias path="register.user.firstName" value="%32"/>
+  <alias path="feed" value="%33"/>
+  <alias path="remoteClient.details.id" value="%34"/>
+  <alias path="postEdit.post.body" value="%35"/>
+  <alias path="user.firstName" value="%36"/>
+  <alias path="post.user.id" value="%37"/>
+  <alias path="post.comments" value="%38"/>
+  <alias path="register.user" value="%39"/>
+  <alias path="remoteClient.details.firstName" value="%40"/>
+  <alias path="suggestions.list" value="%41"/>
+  <alias path="login" value="%42"/>
+  <alias path="post.createdAt" value="%43"/>
+  <alias path="postEdit" value="%44"/>
+  <alias path="/ig-clone_WEB/src/main/webapp/pages/index.xhtml" value="%1"/>
+  <alias path="facesContext.externalContext" value="%45"/>
+  <alias path="register.repeatedPassword" value="%46"/>
+  <alias path="/ig-clone_WEB/src/main/webapp/templates/main.xhtml" value="%4"/>
+  <alias path="post.user.firstName" value="%47"/>
+  <alias path="post.user" value="%48"/>
+  <alias path="login.nickname" value="%49"/>
+  <alias path="user.lastName" value="%50"/>
+  <alias path="index.body" value="%51"/>
+  <alias path="facesContext" value="%52"/>
+  <alias path="postEdit.post.id" value="%53"/>
+  <alias path="remoteClient.details.lastName" value="%54"/>
+  <alias path="suggestions" value="%55"/>
+  <alias path="user" value="%56"/>
+  <alias path="register" value="%57"/>
  </aliases>
- <includes/>
+ <includes>
+  <page path="%1">
+   <include path="%4">
+    <var len="5" name="posts" off="933" value="#{index.posts}"/>
+   </include>
+   <include path="%3">
+    <var len="5" name="posts" off="933" value="#{index.posts}"/>
+   </include>
+  </page>
+ </includes>
  <uris/>
 </kb-project>
