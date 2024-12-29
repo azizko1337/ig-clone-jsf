@@ -15,11 +15,13 @@ import jakarta.servlet.http.HttpSession;
 
 import com.jsf.dao.PostDAO;
 import com.jsf.entities.Post;
+import com.jsf.entities.User;
 
 @Named
 @RequestScoped
 public class Feed {
 	private static final String PAGE_POST_EDIT = "/pages/post?faces-redirect=true";
+	private static final String PAGE_PROFILE_PUBLIC = "/pages/profile_public?faces-redirect=true";
 	
 	@Inject
 	ExternalContext extcontext;
@@ -33,15 +35,14 @@ public class Feed {
 	
 	
 	public String editPost(Post post){
-		//1. Pass object through session
-		//HttpSession session = (HttpSession) extcontext.getSession(true);
-		//session.setAttribute("person", person);
-		
-		//2. Pass object through flash 
 		flash.put("post", post);
 		
 		return PAGE_POST_EDIT;
 	}
 
-
+	public String profile(User user) {
+		flash.put("profile", user);
+		
+		return PAGE_PROFILE_PUBLIC;
+	}
 }

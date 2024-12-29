@@ -13,17 +13,16 @@
 		    	<div class="post">
 	                <h:form class="post__header">
 	                    <div class="post__profile">
-	                        <a
-	                                href=""
-	                                class="post__avatar"
+	                        <p:commandLink
+	                                action="#{feed.profile(post.user)}"
+	                                styleClass="post__avatar"
 	                        >
 	                            <h:graphicImage library="template" name="icons/default-user.png" alt="User picture"/>
-	                        </a>
-	                        <a
-	                                href=""
-	                                class="post__user"
-	                        >#{post.user.firstName} #{post.user.lastName}</a
-	                        >
+	                        </p:commandLink>
+	                        <p:commandLink
+	                                action="#{feed.profile(post.user)}"
+	                                styleClass="post__user"
+	                        >#{post.user.firstName} #{post.user.lastName}</p:commandLink>
 	                    </div>
 	
 					<!-- edit post, render if i am creator or moderator -->
@@ -48,15 +47,14 @@
 	                    <div class="post__infos">
 	                        
 	
-	                        <div class="post__description">
+	                        <h:form styleClass="post__description">
 		                        <span>
-			                          <a
-			                                  class="post__name--underline"
-			                                  href=""
-			                          >#{post.user.nickname}</a
-			                          > #{post.body}
+			                          <p:commandLink
+			                                  styleClass="post__name--underline"
+			                                  action="#{feed.profile(post.user)}"
+			                          >#{post.user.nickname}</p:commandLink> #{post.body}
 		                          </span>
-	                        </div>
+	                        </h:form>
 	
 	                        <span class="post__date-time">Dodano #{post.createdAt}</span>
 	                        

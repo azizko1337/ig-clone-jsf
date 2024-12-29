@@ -40,7 +40,7 @@
 		                    <div style="display:flex; justify-content:flex-end; gap: 10px">
 		                    	<p:commandButton value="Zapisz" action="#{postEdit.savePost()}"/>
 		                    	<p:commandButton value="Anuluj" styleClass="ui-button-secondary" action="#{postEdit.index()}"/>
-		                    	<p:commandButton rendered="#{postEdit.post.id > 0}" value="Usuń" styleClass="ui-button-danger"/>
+		                    	<p:commandButton action="#{postEdit.removePost()}" rendered="#{postEdit.post.id > 0}" value="Usuń" styleClass="ui-button-danger"/>
 		                    </div>
 		                </div>
 		            </div>

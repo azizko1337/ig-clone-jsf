@@ -28,3 +28,5 @@
 1735473209399	Rename type 'PostList'
 1735473342298	Move compilation unit
 1735479042922	Delete element
+1735486521925	Rename resource 'profile.xhtml'
+1735487063509	Encapsulate field 'user, ...'

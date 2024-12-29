@@ -3,6 +3,7 @@ package com.jsf.templatebeans;
 import java.io.Serializable;
 
 import com.jsf.entities.Post;
+import com.jsf.entities.User;
 
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.enterprise.context.SessionScoped;
@@ -19,6 +20,7 @@ public class Main implements Serializable {
 	private static final String PAGE_INDEX = "/pages/index?faces-redirect=true";
 	private static final String PAGE_LOGIN = "/pages/auth/login?faces-redirect=true";
 	private static final String PAGE_PROFILE = "/pages/auth/profile?faces-redirect=true";
+	private static final String PAGE_PROFILE_PUBLIC = "/pages/profile_public?faces-redirect=true";
 	private static final String PAGE_POST = "/pages/post?faces-redirect=true";
 	private static final String PAGE_STAY_AT_THE_SAME = null;
 	
@@ -31,6 +33,12 @@ public class Main implements Serializable {
 	public String profile() {
 		return PAGE_PROFILE;
 	}
+	public String profile(User user) {
+		flash.put("profile", user);
+		
+		return PAGE_PROFILE_PUBLIC;
+	}
+	
 	public String addPost() {
 		Post post = new Post();
 		flash.put("post", post);

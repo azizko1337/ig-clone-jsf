@@ -419,7 +419,7 @@ img {
 .post__user {
   font-size: 14px;
   font-weight: 500;
-  color: var(--text-dark);
+  color: var(--text-dark) !important;
   text-decoration: none;
   text-transform: lowercase;
 }
@@ -536,7 +536,7 @@ img {
 }
 .post__likes span,
 .post__description span {
-  font-size: 14px;
+  font-size: 14px !important;
   font-weight: 400;
   color: var(--text-dark);
 }
@@ -546,6 +546,9 @@ img {
   font-weight: 500;
   color: var(--text-dark);
   text-decoration: none;
+}
+.post__name--underline{
+	font-size: 14px !important;
 }
 .post__name--underline:hover {
   text-decoration: underline;
@@ -732,9 +735,9 @@ img {
   border: none;
   cursor: pointer;
 
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--link);
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: var(--link) !important;
 
   flex-shrink: 0;
 }

@@ -3,6 +3,9 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="false"/>
 	<list key="searchhistory">
+		<item value="feed"/>
+		<item value="#{feed"/>
+		<item value="PostList"/>
 		<item value="RemoteClient"/>
 		<item value="nav"/>
 		<item value="font-weight:"/>

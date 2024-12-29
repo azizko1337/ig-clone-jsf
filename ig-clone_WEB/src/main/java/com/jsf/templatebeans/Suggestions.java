@@ -10,17 +10,22 @@ import com.jsf.entities.User;
 import jakarta.ejb.EJB;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.faces.context.FacesContext;
+import jakarta.faces.context.Flash;
 import jakarta.faces.simplesecurity.RemoteClient;
+import jakarta.inject.Inject;
 import jakarta.inject.Named;
 import jakarta.servlet.http.HttpServletRequest;
 
 @Named
 @RequestScoped
 public class Suggestions {
-	private static final String PAGE_PROFILE = "/pages/profile?faces-redirect=true";
+	private static final String PAGE_PROFILE_PUBLIC = "/pages/profile_public?faces-redirect=true";
 	
 	@EJB
 	UserDAO userDAO;
+	
+	@Inject
+	Flash flash;
 	
 	public List<User> getList(){
 //		get User from session
@@ -41,6 +46,12 @@ public class Suggestions {
 	    }
 	    
 	    return null;
+	}
+	
+	public String profile(User user) {
+		flash.put("profile", user);
+		
+		return PAGE_PROFILE_PUBLIC;
 	}
 
 }

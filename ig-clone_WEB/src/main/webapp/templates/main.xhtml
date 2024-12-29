@@ -71,20 +71,19 @@
 		        <div class="side-menu">
 		        	
 		        	<p:outputPanel rendered="#{!empty remoteClient.details}">
-			        	<div class="side-menu__user-profile">
-					    	<a
-						            href=""
-						            class="side-menu__user-avatar"
+			        	<h:form styleClass="side-menu__user-profile">
+					    	<p:commandLink
+						            action="#{main.profile(remoteClient.details)}"
+						            styleClass="side-menu__user-avatar"
 						    >
 						      <h:graphicImage library="template" name="icons/default-user.png" alt="User picture"/>
-						    </a>
+						    </p:commandLink>
 						    <div class="side-menu__user-info">
-						      <a href=""
-						      >#{remoteClient.details.nickname}</a
-						      >
+						      <p:commandLink action="#{main.profile(remoteClient.details)}"
+						      >#{remoteClient.details.nickname}</p:commandLink>
 						      <span>#{remoteClient.details.firstName} #{remoteClient.details.lastName}</span>
 						    </div>
-					    </div>
+					    </h:form>
 				    </p:outputPanel>
 				    
 	                <p:messages id="messages" showDetail="false" closable="true" redisplay="false">
