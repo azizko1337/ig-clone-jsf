@@ -1,1 +1,6 @@
 1735556836452	Encapsulate field 'nickname, ...'
+1735561087895	Encapsulate field 'user, ...'
+1735561091274	Encapsulate field 'newPassword, ...'
+1735561094714	Encapsulate field 'repeatedNewPassword, ...'
+1735561099152	Encapsulate field 'currentPasswordEdit, ...'
+1735561102600	Encapsulate field 'currentPasswordDelete, ...'

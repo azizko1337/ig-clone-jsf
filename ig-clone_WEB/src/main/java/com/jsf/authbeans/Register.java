@@ -7,8 +7,11 @@ import jakarta.ejb.EJB;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.faces.application.FacesMessage;
 import jakarta.faces.context.FacesContext;
+import jakarta.faces.simplesecurity.Password;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
+
+
 
 @Named
 @RequestScoped
@@ -34,6 +37,7 @@ public class Register {
 				return PAGE_STAY_AT_THE_SAME;
 			}
 			
+			user.setPassword(Password.hash(user.getPassword()));
 			userDAO.create(user);
 			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Pomyślnie zarejestrowano.", null));
 			return PAGE_LOGIN;

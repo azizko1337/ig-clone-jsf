@@ -9,6 +9,7 @@ import com.jsf.entities.User;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.faces.application.FacesMessage;
 import jakarta.faces.context.FacesContext;
+import jakarta.faces.simplesecurity.Password;
 import jakarta.faces.simplesecurity.RemoteClient;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
@@ -33,11 +34,13 @@ public class Login {
 	public String login() {
 		FacesContext ctx = FacesContext.getCurrentInstance();
 		
+		setPassword(Password.hash(getPassword()));
 		User user = userDAO.login(nickname, password);
 		
 		if (user == null) {
 			ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,
 					"Niepoprawny login lub hasło.", null));
+			setPassword("");
 			return PAGE_STAY_AT_THE_SAME;
 		}
 		

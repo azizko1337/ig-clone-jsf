@@ -36,6 +36,11 @@
         	</h:form>
 	    </ui:repeat>
 	    
+	    <!-- if results -->
+    	<h:panelGroup rendered="#{empty search.list}">
+    		<p>Nie znaleziono takiego uzytkownika.</p>
+    	</h:panelGroup>
+	    
 	    </p:panel>
 	</ui:define>
 	
