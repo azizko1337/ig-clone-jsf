@@ -20,7 +20,8 @@ public class UserDAO {
 	protected EntityManager em;
 	
 	public List<User> getSuggestions(User suggestionsFor){
-		String queryString = "SELECT DISTINCT u FROM User u WHERE u.id IN (SELECT f.user2.id FROM Follow f WHERE f.user1.id != :following_user_id)";
+//		String queryString = "SELECT DISTINCT u FROM User u WHERE u.id IN (SELECT f.user2.id FROM Follow f WHERE f.user1.id != :following_user_id)";
+		String queryString = "SELECT DISTINCT u FROM User u WHERE u.id NOT IN (SELECT f.user2.id FROM Follow f WHERE f.user1.id = :following_user_id)";
 		
 		Query query = em.createQuery(queryString);
 		
@@ -91,9 +92,29 @@ public class UserDAO {
 			if (where.isEmpty()) {
 				where = "where ";
 			} else {
-				where += "and ";
+				where += "or ";
 			}
-			where += "u.nickname like :nickname";
+			where += "u.nickname like :nickname ";
+		}
+		
+		String firstName = (String) searchParams.get("firstName");
+		if (firstName != null) {
+			if (where.isEmpty()) {
+				where = "where ";
+			} else {
+				where += "or ";
+			}
+			where += "u.firstName like :firstName ";
+		}
+		
+		String lastName = (String) searchParams.get("lastName");
+		if (lastName != null) {
+			if (where.isEmpty()) {
+				where = "where ";
+			} else {
+				where += "or ";
+			}
+			where += "u.lastName like :lastName ";
 		}
 		
 		// ... other parameters ... 
@@ -104,6 +125,12 @@ public class UserDAO {
 		// 3. Set configured parameters
 		if (nickname != null) {
 			query.setParameter("nickname", nickname+"%");
+		}
+		if (firstName != null) {
+			query.setParameter("firstName", firstName+"%");
+		}
+		if (lastName != null) {
+			query.setParameter("lastName", lastName+"%");
 		}
 
 		// ... other parameters ... 

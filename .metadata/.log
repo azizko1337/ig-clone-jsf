@@ -6183,3 +6183,1446 @@ java.lang.NullPointerException: Cannot invoke "org.eclipse.swt.widgets.Shell.set
 
 !ENTRY org.jboss.ide.eclipse.as.core 1 16842785 2024-12-29 17:52:17.465
 !MESSAGE Server Shutdown Succeeded
+!SESSION 2024-12-30 11:19:50.143 -----------------------------------------------
+eclipse.buildId=4.33.0.20240905-0613
+java.version=21.0.4
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY ch.qos.logback.classic 1 0 2024-12-30 11:19:54.316
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2024-12-30 11:19:55.754
+!MESSAGE Logback config file: C:\Users\anton\eclipse-workspace2\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.6.1.20240411-1122.xml
+
+!ENTRY org.eclipse.egit.ui 2 0 2024-12-30 11:20:00.896
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\anton'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.ui.workbench 4 2 2024-12-30 11:20:01.080
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.workbench".
+!STACK 0
+java.lang.ClassCastException: class org.eclipse.jdt.internal.core.JavaNature cannot be cast to class org.eclipse.jdt.core.IJavaProject (org.eclipse.jdt.internal.core.JavaNature and org.eclipse.jdt.core.IJavaProject are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @532450b7)
+	at org.jboss.tools.quarkus.lsp4e.internal.qute.QuteProjectListener.configureProject(QuteProjectListener.java:101)
+	at org.jboss.tools.quarkus.lsp4e.internal.qute.QuteProjectListener.<init>(QuteProjectListener.java:49)
+	at org.jboss.tools.quarkus.lsp4e.internal.startup.qute.QuteStartup.earlyStartup(QuteStartup.java:24)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:79)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:55)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.ui.internal.Workbench$39.run(Workbench.java:2733)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui 4 0 2024-12-30 11:20:01.082
+!MESSAGE Unable to execute early startup code for the org.eclipse.ui.IStartup extension contributed by the 'org.jboss.tools.quarkus.lsp4e' plug-in.
+!STACK 0
+java.lang.ClassCastException: class org.eclipse.jdt.internal.core.JavaNature cannot be cast to class org.eclipse.jdt.core.IJavaProject (org.eclipse.jdt.internal.core.JavaNature and org.eclipse.jdt.core.IJavaProject are in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @532450b7)
+	at org.jboss.tools.quarkus.lsp4e.internal.qute.QuteProjectListener.configureProject(QuteProjectListener.java:101)
+	at org.jboss.tools.quarkus.lsp4e.internal.qute.QuteProjectListener.<init>(QuteProjectListener.java:49)
+	at org.jboss.tools.quarkus.lsp4e.internal.startup.qute.QuteStartup.earlyStartup(QuteStartup.java:24)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:79)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:55)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.ui.internal.Workbench$39.run(Workbench.java:2733)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2024-12-30 11:21:19.829
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2024-12-30 11:21:46.258
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2024-12-30 11:21:46.272
+!MESSAGE Must call scan() first
+!STACK 0
+java.lang.IllegalStateException: Must call scan() first
+	at org.apache.tools.ant.DirectoryScanner.getIncludedFiles(DirectoryScanner.java:1537)
+	at org.jboss.ide.eclipse.as.core.extensions.descriptors.AntFileFilter.getIncludedFiles(AntFileFilter.java:42)
+	at org.jboss.ide.eclipse.as.core.extensions.descriptors.XPathQuery.refresh(XPathQuery.java:141)
+	at org.jboss.tools.as.core.server.controllable.subsystems.internal.XPathsPortsController.findPort(XPathsPortsController.java:93)
+	at org.jboss.tools.as.core.server.controllable.subsystems.internal.XPathsPortsController.getManagementPort(XPathsPortsController.java:128)
+	at org.jboss.tools.as.core.server.controllable.subsystems.internal.XPathsPortsController.findPort(XPathsPortsController.java:69)
+	at org.jboss.ide.eclipse.as.core.server.internal.JBossServer.findPort(JBossServer.java:212)
+	at org.jboss.ide.eclipse.as.core.server.internal.v7.Wildfly8Server.getManagementPort(Wildfly8Server.java:26)
+	at org.jboss.ide.eclipse.as.core.server.v7.management.AS7ManagementDetails.getUnderlyingPort(AS7ManagementDetails.java:58)
+	at org.jboss.ide.eclipse.as.core.server.v7.management.AS7ManagementDetails.getHost(AS7ManagementDetails.java:44)
+	at org.jboss.ide.eclipse.as.internal.management.wf11.WildFly11Manager.<init>(WildFly11Manager.java:95)
+	at org.jboss.ide.eclipse.as.internal.management.wf11.WildFly11ManagerService.execute(WildFly11ManagerService.java:180)
+	at org.jboss.ide.eclipse.as.management.core.JBoss7ManagerServiceProxy.execute(JBoss7ManagerServiceProxy.java:87)
+	at org.jboss.ide.eclipse.as.core.server.internal.v7.AS7DeploymentScannerUtility$1.execute(AS7DeploymentScannerUtility.java:295)
+	at org.jboss.ide.eclipse.as.core.server.internal.v7.AS7DeploymentScannerUtility$1.execute(AS7DeploymentScannerUtility.java:1)
+	at org.jboss.ide.eclipse.as.management.core.JBoss7ManagerUtil.executeWithService(JBoss7ManagerUtil.java:136)
+	at org.jboss.ide.eclipse.as.core.server.internal.v7.AS7DeploymentScannerUtility.executeWithResult(AS7DeploymentScannerUtility.java:293)
+	at org.jboss.ide.eclipse.as.core.server.internal.v7.AS7DeploymentScannerUtility.getDeploymentScanners(AS7DeploymentScannerUtility.java:164)
+	at org.jboss.ide.eclipse.as.core.server.internal.v7.AS7DeploymentScannerUtility.getDeploymentScannersBlocking(AS7DeploymentScannerUtility.java:124)
+	at org.jboss.ide.eclipse.as.core.server.internal.v7.AS7DeploymentScannerUtility.getDeploymentScannersBlocking(AS7DeploymentScannerUtility.java:114)
+	at org.jboss.ide.eclipse.as.core.server.internal.v7.LocalJBoss7DeploymentScannerAdditions.ensureScannersAdded(LocalJBoss7DeploymentScannerAdditions.java:63)
+	at org.jboss.ide.eclipse.as.core.server.internal.AbstractDeploymentScannerAdditions.updateDeploymentScanners(AbstractDeploymentScannerAdditions.java:60)
+	at org.jboss.ide.eclipse.as.core.server.internal.AbstractDeploymentScannerAdditions$1.run(AbstractDeploymentScannerAdditions.java:73)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.jboss.tools.jst.web.ui 4 0 2024-12-30 11:24:47.551
+!MESSAGE Visual Editor Implementation not available.
+
+!ENTRY org.eclipse.core.expressions 4 201 2024-12-30 11:25:13.543
+!MESSAGE No property tester contributes a property org.eclipse.core.resources.projectNature to type class org.eclipse.jdt.internal.core.PackageFragment
+!STACK 1
+org.eclipse.core.runtime.CoreException: No property tester contributes a property org.eclipse.core.resources.projectNature to type class org.eclipse.jdt.internal.core.PackageFragment
+	at org.eclipse.core.internal.expressions.TypeExtensionManager.getProperty(TypeExtensionManager.java:132)
+	at org.eclipse.core.expressions.TestExpression.evaluate(TestExpression.java:104)
+	at org.eclipse.core.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:54)
+	at org.eclipse.core.expressions.AndExpression.evaluate(AndExpression.java:36)
+	at org.eclipse.ui.internal.dialogs.RegistryPageContributor.failsEnablement(RegistryPageContributor.java:283)
+	at org.eclipse.ui.internal.dialogs.RegistryPageContributor.isApplicableTo(RegistryPageContributor.java:226)
+	at org.eclipse.ui.internal.dialogs.PropertyPageContributorManager.getApplicableContributors(PropertyPageContributorManager.java:224)
+	at org.eclipse.ui.internal.dialogs.PropertyPageContributorManager.getApplicableContributors(PropertyPageContributorManager.java:241)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.hasPropertyPagesFor(PropertyDialogAction.java:105)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.isApplicableForSelection(PropertyDialogAction.java:146)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.isApplicableForSelection(PropertyDialogAction.java:127)
+	at org.eclipse.ui.internal.navigator.resources.actions.PropertiesActionProvider.fillContextMenu(PropertiesActionProvider.java:55)
+	at org.eclipse.ui.navigator.NavigatorActionService$2.run(NavigatorActionService.java:224)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.ui.navigator.NavigatorActionService.addCommonActionProviderMenu(NavigatorActionService.java:218)
+	at org.eclipse.ui.navigator.NavigatorActionService.fillContextMenu(NavigatorActionService.java:176)
+	at org.eclipse.ui.navigator.CommonNavigatorManager.fillContextMenu(CommonNavigatorManager.java:257)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:338)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:467)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:494)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:272)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4326)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1174)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1198)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1179)
+	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:5138)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4756)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:342)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1482)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2311)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5091)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:241)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4165)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3706)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:639)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:546)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:143)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:109)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:439)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:271)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
+!SUBENTRY 1 org.eclipse.core.expressions 4 201 2024-12-30 11:25:13.543
+!MESSAGE No property tester contributes a property org.eclipse.core.resources.projectNature to type class org.eclipse.jdt.internal.core.PackageFragment
+
+!ENTRY org.eclipse.core.expressions 4 201 2024-12-30 11:25:27.203
+!MESSAGE No property tester contributes a property org.eclipse.core.resources.projectNature to type class org.eclipse.jdt.internal.core.PackageFragment
+!STACK 1
+org.eclipse.core.runtime.CoreException: No property tester contributes a property org.eclipse.core.resources.projectNature to type class org.eclipse.jdt.internal.core.PackageFragment
+	at org.eclipse.core.internal.expressions.TypeExtensionManager.getProperty(TypeExtensionManager.java:132)
+	at org.eclipse.core.expressions.TestExpression.evaluate(TestExpression.java:104)
+	at org.eclipse.core.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:54)
+	at org.eclipse.core.expressions.AndExpression.evaluate(AndExpression.java:36)
+	at org.eclipse.ui.internal.dialogs.RegistryPageContributor.failsEnablement(RegistryPageContributor.java:283)
+	at org.eclipse.ui.internal.dialogs.RegistryPageContributor.isApplicableTo(RegistryPageContributor.java:226)
+	at org.eclipse.ui.internal.dialogs.PropertyPageContributorManager.getApplicableContributors(PropertyPageContributorManager.java:224)
+	at org.eclipse.ui.internal.dialogs.PropertyPageContributorManager.getApplicableContributors(PropertyPageContributorManager.java:241)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.hasPropertyPagesFor(PropertyDialogAction.java:105)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.isApplicableForSelection(PropertyDialogAction.java:146)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.isApplicableForSelection(PropertyDialogAction.java:127)
+	at org.eclipse.ui.internal.navigator.resources.actions.PropertiesActionProvider.fillContextMenu(PropertiesActionProvider.java:55)
+	at org.eclipse.ui.navigator.NavigatorActionService$2.run(NavigatorActionService.java:224)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.ui.navigator.NavigatorActionService.addCommonActionProviderMenu(NavigatorActionService.java:218)
+	at org.eclipse.ui.navigator.NavigatorActionService.fillContextMenu(NavigatorActionService.java:176)
+	at org.eclipse.ui.navigator.CommonNavigatorManager.fillContextMenu(CommonNavigatorManager.java:257)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:338)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:467)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:494)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:272)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4326)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1174)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1198)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1179)
+	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:5138)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4756)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:342)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1482)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2311)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5091)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:241)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4165)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3706)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:639)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:546)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:143)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:109)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:439)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:271)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
+!SUBENTRY 1 org.eclipse.core.expressions 4 201 2024-12-30 11:25:27.204
+!MESSAGE No property tester contributes a property org.eclipse.core.resources.projectNature to type class org.eclipse.jdt.internal.core.PackageFragment
+
+!ENTRY org.eclipse.lsp4e 2 0 2024-12-30 11:26:26.289
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:65)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2024-12-30 11:26:26.293
+!MESSAGE Internal Error
+!STACK 0
+org.eclipse.jface.text.BadLocationException
+	at org.eclipse.jface.text.AbstractDocument.getChar(AbstractDocument.java:774)
+	at org.eclipse.core.internal.filebuffers.SynchronizableDocument.getChar(SynchronizableDocument.java:141)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaSourceHover.getBracketHoverInfo(JavaSourceHover.java:491)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaSourceHover.getHoverInfo(JavaSourceHover.java:436)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaSourceHover.getHoverInfo2(JavaSourceHover.java:398)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.core.expressions 4 201 2024-12-30 11:42:12.917
+!MESSAGE No property tester contributes a property org.eclipse.core.resources.projectNature to type class org.eclipse.jdt.internal.core.PackageFragment
+!STACK 1
+org.eclipse.core.runtime.CoreException: No property tester contributes a property org.eclipse.core.resources.projectNature to type class org.eclipse.jdt.internal.core.PackageFragment
+	at org.eclipse.core.internal.expressions.TypeExtensionManager.getProperty(TypeExtensionManager.java:132)
+	at org.eclipse.core.expressions.TestExpression.evaluate(TestExpression.java:104)
+	at org.eclipse.core.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:54)
+	at org.eclipse.core.expressions.AndExpression.evaluate(AndExpression.java:36)
+	at org.eclipse.ui.internal.dialogs.RegistryPageContributor.failsEnablement(RegistryPageContributor.java:283)
+	at org.eclipse.ui.internal.dialogs.RegistryPageContributor.isApplicableTo(RegistryPageContributor.java:226)
+	at org.eclipse.ui.internal.dialogs.PropertyPageContributorManager.getApplicableContributors(PropertyPageContributorManager.java:224)
+	at org.eclipse.ui.internal.dialogs.PropertyPageContributorManager.getApplicableContributors(PropertyPageContributorManager.java:241)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.hasPropertyPagesFor(PropertyDialogAction.java:105)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.isApplicableForSelection(PropertyDialogAction.java:146)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.isApplicableForSelection(PropertyDialogAction.java:127)
+	at org.eclipse.ui.internal.navigator.resources.actions.PropertiesActionProvider.fillContextMenu(PropertiesActionProvider.java:55)
+	at org.eclipse.ui.navigator.NavigatorActionService$2.run(NavigatorActionService.java:224)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.ui.navigator.NavigatorActionService.addCommonActionProviderMenu(NavigatorActionService.java:218)
+	at org.eclipse.ui.navigator.NavigatorActionService.fillContextMenu(NavigatorActionService.java:176)
+	at org.eclipse.ui.navigator.CommonNavigatorManager.fillContextMenu(CommonNavigatorManager.java:257)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:338)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:467)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:494)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:272)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4326)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1174)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1198)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1179)
+	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:5138)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4756)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:342)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1482)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2311)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5091)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:241)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4165)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3706)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:639)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:546)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:143)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:109)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:439)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:271)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
+!SUBENTRY 1 org.eclipse.core.expressions 4 201 2024-12-30 11:42:12.917
+!MESSAGE No property tester contributes a property org.eclipse.core.resources.projectNature to type class org.eclipse.jdt.internal.core.PackageFragment
+
+!ENTRY org.eclipse.jem.proxy 4 2 2024-12-30 11:45:46.827
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jem.proxy".
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "org.osgi.framework.Bundle.adapt(java.lang.Class)" because "bundle" is null
+	at org.eclipse.core.internal.runtime.InternalPlatform.getFragments(InternalPlatform.java:330)
+	at org.eclipse.core.runtime.Platform.getFragments(Platform.java:1357)
+	at org.eclipse.jem.internal.proxy.core.ProxyPlugin.urlLocalizeBundleAndFragments(ProxyPlugin.java:392)
+	at org.eclipse.jem.internal.proxy.remote.LocalFileConfigurationContributorController.contributeClasspath(LocalFileConfigurationContributorController.java:261)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.ServletBeanProxyContributor.contributeClasspaths(ServletBeanProxyContributor.java:59)
+	at org.eclipse.jem.internal.proxy.ide.IDERegistration$2.run(IDERegistration.java:107)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.jem.internal.proxy.ide.IDERegistration.startImplementation(IDERegistration.java:101)
+	at org.eclipse.jem.internal.proxy.ide.IDERegistration.startAnImplementation(IDERegistration.java:42)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.TagRecordFactory.createProxyRegistry(TagRecordFactory.java:134)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.TagRecordFactory.<init>(TagRecordFactory.java:54)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.FaceletTagIndex.createNewInstance(FaceletTagIndex.java:87)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.FaceletTagIndex.createNewInstance(FaceletTagIndex.java:1)
+	at org.eclipse.jst.jsf.common.internal.resource.ResourceSingletonObjectManager.getInstance(ResourceSingletonObjectManager.java:92)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.FaceletTagRegistry.initialize(FaceletTagRegistry.java:182)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.FaceletTagRegistry.getAllTagLibraries(FaceletTagRegistry.java:141)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.FaceletTagRegistry.getTagLibrary(FaceletTagRegistry.java:242)
+	at org.eclipse.jst.jsf.facelet.core.internal.cm.FaceletDocumentFactory.getOrCreateCMDocument(FaceletDocumentFactory.java:172)
+	at org.eclipse.jst.jsf.facelet.core.internal.cm.FaceletDocumentFactory.createCMDocumentForContext(FaceletDocumentFactory.java:68)
+	at org.eclipse.jst.jsf.facelet.core.internal.cm.FaceletDocumentFactory.createCMElementDeclaration(FaceletDocumentFactory.java:90)
+	at org.eclipse.jst.jsf.facelet.ui.internal.hover.FaceletHover$MyHTMLTagInfoHoverProcessor.getCMElementDeclaration(FaceletHover.java:144)
+	at org.eclipse.wst.xml.ui.internal.taginfo.XMLTagInfoHoverProcessor.computeTagAttValueHelp(XMLTagInfoHoverProcessor.java:133)
+	at org.eclipse.wst.xml.ui.internal.taginfo.XMLTagInfoHoverProcessor.computeRegionHelp(XMLTagInfoHoverProcessor.java:113)
+	at org.eclipse.wst.xml.ui.internal.taginfo.XMLTagInfoHoverProcessor.computeHoverHelp(XMLTagInfoHoverProcessor.java:88)
+	at org.eclipse.wst.xml.ui.internal.taginfo.XMLTagInfoHoverProcessor.getHoverInfo(XMLTagInfoHoverProcessor.java:259)
+	at org.eclipse.jst.jsf.facelet.ui.internal.hover.FaceletHover.getHoverInfo(FaceletHover.java:70)
+	at org.jboss.tools.common.text.xml.info.ChainTextHover.getHoverInfo2(ChainTextHover.java:145)
+	at org.jboss.tools.common.text.xml.info.ChainTextHover.getHoverInfo2(ChainTextHover.java:132)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.jst.jsf.facelet.core 4 0 2024-12-30 11:45:47.110
+!MESSAGE Error initializing facelet registry entry
+!STACK 0
+org.eclipse.emf.ecore.resource.Resource$IOWrappedException: Value '4.0' is not legal. (file:///C:/Program%20Files/eclipse/com/sun/faces/metadata/taglib/faces.composite.taglib.xml, 25, 2)
+	at org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.handleErrors(XMLLoadImpl.java:77)
+	at org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.load(XMLLoadImpl.java:185)
+	at org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl.doLoad(XMLResourceImpl.java:260)
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl.load(ResourceImpl.java:1563)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.TagModelLoader.loadFromInputStream(TagModelLoader.java:115)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.JarFileFaceletTaglibLocator.processJar(JarFileFaceletTaglibLocator.java:272)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.JarFileFaceletTaglibLocator.start(JarFileFaceletTaglibLocator.java:158)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.JarFileFaceletTaglibLocator.start(JarFileFaceletTaglibLocator.java:1)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.ProjectTaglibDescriptor$1.run(ProjectTaglibDescriptor.java:84)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.ProjectTaglibDescriptor.initialize(ProjectTaglibDescriptor.java:73)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.ProjectTaglibDescriptor.getTagLibraries(ProjectTaglibDescriptor.java:119)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.FaceletTagRegistry.initialize(FaceletTagRegistry.java:195)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.FaceletTagRegistry.getAllTagLibraries(FaceletTagRegistry.java:141)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.FaceletTagRegistry.getTagLibrary(FaceletTagRegistry.java:242)
+	at org.eclipse.jst.jsf.facelet.core.internal.cm.FaceletDocumentFactory.getOrCreateCMDocument(FaceletDocumentFactory.java:172)
+	at org.eclipse.jst.jsf.facelet.core.internal.cm.FaceletDocumentFactory.createCMDocumentForContext(FaceletDocumentFactory.java:68)
+	at org.eclipse.jst.jsf.facelet.core.internal.cm.FaceletDocumentFactory.createCMElementDeclaration(FaceletDocumentFactory.java:90)
+	at org.eclipse.jst.jsf.facelet.ui.internal.hover.FaceletHover$MyHTMLTagInfoHoverProcessor.getCMElementDeclaration(FaceletHover.java:144)
+	at org.eclipse.wst.xml.ui.internal.taginfo.XMLTagInfoHoverProcessor.computeTagAttValueHelp(XMLTagInfoHoverProcessor.java:133)
+	at org.eclipse.wst.xml.ui.internal.taginfo.XMLTagInfoHoverProcessor.computeRegionHelp(XMLTagInfoHoverProcessor.java:113)
+	at org.eclipse.wst.xml.ui.internal.taginfo.XMLTagInfoHoverProcessor.computeHoverHelp(XMLTagInfoHoverProcessor.java:88)
+	at org.eclipse.wst.xml.ui.internal.taginfo.XMLTagInfoHoverProcessor.getHoverInfo(XMLTagInfoHoverProcessor.java:259)
+	at org.eclipse.jst.jsf.facelet.ui.internal.hover.FaceletHover.getHoverInfo(FaceletHover.java:70)
+	at org.jboss.tools.common.text.xml.info.ChainTextHover.getHoverInfo2(ChainTextHover.java:145)
+	at org.jboss.tools.common.text.xml.info.ChainTextHover.getHoverInfo2(ChainTextHover.java:132)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+Caused by: org.eclipse.emf.ecore.xmi.IllegalValueException: Value '4.0' is not legal. (file:///C:/Program%20Files/eclipse/com/sun/faces/metadata/taglib/faces.composite.taglib.xml, 25, 2)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.setFeatureValue(XMLHandler.java:2725)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.setAttribValue(XMLHandler.java:2779)
+	at org.eclipse.emf.ecore.xmi.impl.SAXXMLHandler.handleObjectAttribs(SAXXMLHandler.java:77)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createObjectFromFactory(XMLHandler.java:2257)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createObjectFromFeatureType(XMLHandler.java:2223)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createObject(XMLHandler.java:2099)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.handleFeature(XMLHandler.java:1878)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createDocumentRoot(XMLHandler.java:1521)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createObjectByType(XMLHandler.java:1383)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createTopObject(XMLHandler.java:1532)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.processElement(XMLHandler.java:1054)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.startElement(XMLHandler.java:1036)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.startElement(XMLHandler.java:725)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:518)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.dtd.XMLDTDValidator.startElement(XMLDTDValidator.java:731)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1407)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$ContentDriver.scanRootElementHook(XMLDocumentScannerImpl.java:1292)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:3079)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:836)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:605)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:542)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:889)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:825)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1224)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:637)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:326)
+	at org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.load(XMLLoadImpl.java:175)
+	... 25 more
+Caused by: java.lang.IllegalArgumentException: The value '4.0' is not a valid enumerator of 'FaceletTaglibVersion'
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.faceletTaglib.impl.FaceletTaglibFactoryImpl.createFaceletTaglibVersionFromString(FaceletTaglibFactoryImpl.java:469)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.faceletTaglib.impl.FaceletTaglibFactoryImpl.createFromString(FaceletTaglibFactoryImpl.java:151)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHelperImpl.createFromString(XMLHelperImpl.java:1615)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHelperImpl.setValue(XMLHelperImpl.java:1156)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.setFeatureValue(XMLHandler.java:2720)
+	... 52 more
+
+!ENTRY org.eclipse.jst.jsf.facelet.core 4 0 2024-12-30 11:45:47.115
+!MESSAGE Error initializing facelet registry entry
+!STACK 0
+org.eclipse.emf.ecore.resource.Resource$IOWrappedException: Value '4.0' is not legal. (file:///C:/Program%20Files/eclipse/com/sun/faces/metadata/taglib/faces.core.taglib.xml, 25, 2)
+	at org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.handleErrors(XMLLoadImpl.java:77)
+	at org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.load(XMLLoadImpl.java:185)
+	at org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl.doLoad(XMLResourceImpl.java:260)
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl.load(ResourceImpl.java:1563)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.TagModelLoader.loadFromInputStream(TagModelLoader.java:115)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.JarFileFaceletTaglibLocator.processJar(JarFileFaceletTaglibLocator.java:272)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.JarFileFaceletTaglibLocator.start(JarFileFaceletTaglibLocator.java:158)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.JarFileFaceletTaglibLocator.start(JarFileFaceletTaglibLocator.java:1)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.ProjectTaglibDescriptor$1.run(ProjectTaglibDescriptor.java:84)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.ProjectTaglibDescriptor.initialize(ProjectTaglibDescriptor.java:73)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.ProjectTaglibDescriptor.getTagLibraries(ProjectTaglibDescriptor.java:119)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.FaceletTagRegistry.initialize(FaceletTagRegistry.java:195)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.FaceletTagRegistry.getAllTagLibraries(FaceletTagRegistry.java:141)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.FaceletTagRegistry.getTagLibrary(FaceletTagRegistry.java:242)
+	at org.eclipse.jst.jsf.facelet.core.internal.cm.FaceletDocumentFactory.getOrCreateCMDocument(FaceletDocumentFactory.java:172)
+	at org.eclipse.jst.jsf.facelet.core.internal.cm.FaceletDocumentFactory.createCMDocumentForContext(FaceletDocumentFactory.java:68)
+	at org.eclipse.jst.jsf.facelet.core.internal.cm.FaceletDocumentFactory.createCMElementDeclaration(FaceletDocumentFactory.java:90)
+	at org.eclipse.jst.jsf.facelet.ui.internal.hover.FaceletHover$MyHTMLTagInfoHoverProcessor.getCMElementDeclaration(FaceletHover.java:144)
+	at org.eclipse.wst.xml.ui.internal.taginfo.XMLTagInfoHoverProcessor.computeTagAttValueHelp(XMLTagInfoHoverProcessor.java:133)
+	at org.eclipse.wst.xml.ui.internal.taginfo.XMLTagInfoHoverProcessor.computeRegionHelp(XMLTagInfoHoverProcessor.java:113)
+	at org.eclipse.wst.xml.ui.internal.taginfo.XMLTagInfoHoverProcessor.computeHoverHelp(XMLTagInfoHoverProcessor.java:88)
+	at org.eclipse.wst.xml.ui.internal.taginfo.XMLTagInfoHoverProcessor.getHoverInfo(XMLTagInfoHoverProcessor.java:259)
+	at org.eclipse.jst.jsf.facelet.ui.internal.hover.FaceletHover.getHoverInfo(FaceletHover.java:70)
+	at org.jboss.tools.common.text.xml.info.ChainTextHover.getHoverInfo2(ChainTextHover.java:145)
+	at org.jboss.tools.common.text.xml.info.ChainTextHover.getHoverInfo2(ChainTextHover.java:132)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+Caused by: org.eclipse.emf.ecore.xmi.IllegalValueException: Value '4.0' is not legal. (file:///C:/Program%20Files/eclipse/com/sun/faces/metadata/taglib/faces.core.taglib.xml, 25, 2)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.setFeatureValue(XMLHandler.java:2725)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.setAttribValue(XMLHandler.java:2779)
+	at org.eclipse.emf.ecore.xmi.impl.SAXXMLHandler.handleObjectAttribs(SAXXMLHandler.java:77)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createObjectFromFactory(XMLHandler.java:2257)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createObjectFromFeatureType(XMLHandler.java:2223)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createObject(XMLHandler.java:2099)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.handleFeature(XMLHandler.java:1878)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createDocumentRoot(XMLHandler.java:1521)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createObjectByType(XMLHandler.java:1383)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createTopObject(XMLHandler.java:1532)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.processElement(XMLHandler.java:1054)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.startElement(XMLHandler.java:1036)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.startElement(XMLHandler.java:725)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:518)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.dtd.XMLDTDValidator.startElement(XMLDTDValidator.java:731)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1407)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$ContentDriver.scanRootElementHook(XMLDocumentScannerImpl.java:1292)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:3079)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:836)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:605)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:542)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:889)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:825)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1224)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:637)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:326)
+	at org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.load(XMLLoadImpl.java:175)
+	... 25 more
+Caused by: java.lang.IllegalArgumentException: The value '4.0' is not a valid enumerator of 'FaceletTaglibVersion'
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.faceletTaglib.impl.FaceletTaglibFactoryImpl.createFaceletTaglibVersionFromString(FaceletTaglibFactoryImpl.java:469)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.faceletTaglib.impl.FaceletTaglibFactoryImpl.createFromString(FaceletTaglibFactoryImpl.java:151)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHelperImpl.createFromString(XMLHelperImpl.java:1615)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHelperImpl.setValue(XMLHelperImpl.java:1156)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.setFeatureValue(XMLHandler.java:2720)
+	... 52 more
+
+!ENTRY org.eclipse.jst.jsf.facelet.core 4 0 2024-12-30 11:45:47.118
+!MESSAGE Error initializing facelet registry entry
+!STACK 0
+org.eclipse.emf.ecore.resource.Resource$IOWrappedException: Value '4.0' is not legal. (file:///C:/Program%20Files/eclipse/com/sun/faces/metadata/taglib/faces.facelets.taglib.xml, 25, 2)
+	at org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.handleErrors(XMLLoadImpl.java:77)
+	at org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.load(XMLLoadImpl.java:185)
+	at org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl.doLoad(XMLResourceImpl.java:260)
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl.load(ResourceImpl.java:1563)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.TagModelLoader.loadFromInputStream(TagModelLoader.java:115)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.JarFileFaceletTaglibLocator.processJar(JarFileFaceletTaglibLocator.java:272)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.JarFileFaceletTaglibLocator.start(JarFileFaceletTaglibLocator.java:158)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.JarFileFaceletTaglibLocator.start(JarFileFaceletTaglibLocator.java:1)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.ProjectTaglibDescriptor$1.run(ProjectTaglibDescriptor.java:84)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.ProjectTaglibDescriptor.initialize(ProjectTaglibDescriptor.java:73)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.ProjectTaglibDescriptor.getTagLibraries(ProjectTaglibDescriptor.java:119)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.FaceletTagRegistry.initialize(FaceletTagRegistry.java:195)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.FaceletTagRegistry.getAllTagLibraries(FaceletTagRegistry.java:141)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.FaceletTagRegistry.getTagLibrary(FaceletTagRegistry.java:242)
+	at org.eclipse.jst.jsf.facelet.core.internal.cm.FaceletDocumentFactory.getOrCreateCMDocument(FaceletDocumentFactory.java:172)
+	at org.eclipse.jst.jsf.facelet.core.internal.cm.FaceletDocumentFactory.createCMDocumentForContext(FaceletDocumentFactory.java:68)
+	at org.eclipse.jst.jsf.facelet.core.internal.cm.FaceletDocumentFactory.createCMElementDeclaration(FaceletDocumentFactory.java:90)
+	at org.eclipse.jst.jsf.facelet.ui.internal.hover.FaceletHover$MyHTMLTagInfoHoverProcessor.getCMElementDeclaration(FaceletHover.java:144)
+	at org.eclipse.wst.xml.ui.internal.taginfo.XMLTagInfoHoverProcessor.computeTagAttValueHelp(XMLTagInfoHoverProcessor.java:133)
+	at org.eclipse.wst.xml.ui.internal.taginfo.XMLTagInfoHoverProcessor.computeRegionHelp(XMLTagInfoHoverProcessor.java:113)
+	at org.eclipse.wst.xml.ui.internal.taginfo.XMLTagInfoHoverProcessor.computeHoverHelp(XMLTagInfoHoverProcessor.java:88)
+	at org.eclipse.wst.xml.ui.internal.taginfo.XMLTagInfoHoverProcessor.getHoverInfo(XMLTagInfoHoverProcessor.java:259)
+	at org.eclipse.jst.jsf.facelet.ui.internal.hover.FaceletHover.getHoverInfo(FaceletHover.java:70)
+	at org.jboss.tools.common.text.xml.info.ChainTextHover.getHoverInfo2(ChainTextHover.java:145)
+	at org.jboss.tools.common.text.xml.info.ChainTextHover.getHoverInfo2(ChainTextHover.java:132)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+Caused by: org.eclipse.emf.ecore.xmi.IllegalValueException: Value '4.0' is not legal. (file:///C:/Program%20Files/eclipse/com/sun/faces/metadata/taglib/faces.facelets.taglib.xml, 25, 2)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.setFeatureValue(XMLHandler.java:2725)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.setAttribValue(XMLHandler.java:2779)
+	at org.eclipse.emf.ecore.xmi.impl.SAXXMLHandler.handleObjectAttribs(SAXXMLHandler.java:77)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createObjectFromFactory(XMLHandler.java:2257)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createObjectFromFeatureType(XMLHandler.java:2223)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createObject(XMLHandler.java:2099)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.handleFeature(XMLHandler.java:1878)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createDocumentRoot(XMLHandler.java:1521)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createObjectByType(XMLHandler.java:1383)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createTopObject(XMLHandler.java:1532)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.processElement(XMLHandler.java:1054)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.startElement(XMLHandler.java:1036)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.startElement(XMLHandler.java:725)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:518)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.dtd.XMLDTDValidator.startElement(XMLDTDValidator.java:731)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1407)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$ContentDriver.scanRootElementHook(XMLDocumentScannerImpl.java:1292)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:3079)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:836)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:605)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:542)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:889)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:825)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1224)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:637)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:326)
+	at org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.load(XMLLoadImpl.java:175)
+	... 25 more
+Caused by: java.lang.IllegalArgumentException: The value '4.0' is not a valid enumerator of 'FaceletTaglibVersion'
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.faceletTaglib.impl.FaceletTaglibFactoryImpl.createFaceletTaglibVersionFromString(FaceletTaglibFactoryImpl.java:469)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.faceletTaglib.impl.FaceletTaglibFactoryImpl.createFromString(FaceletTaglibFactoryImpl.java:151)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHelperImpl.createFromString(XMLHelperImpl.java:1615)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHelperImpl.setValue(XMLHelperImpl.java:1156)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.setFeatureValue(XMLHandler.java:2720)
+	... 52 more
+
+!ENTRY org.eclipse.jst.jsf.facelet.core 4 0 2024-12-30 11:45:47.128
+!MESSAGE Error initializing facelet registry entry
+!STACK 0
+org.eclipse.emf.ecore.resource.Resource$IOWrappedException: Value '4.0' is not legal. (file:///C:/Program%20Files/eclipse/com/sun/faces/metadata/taglib/faces.html.taglib.xml, 25, 2)
+	at org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.handleErrors(XMLLoadImpl.java:77)
+	at org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.load(XMLLoadImpl.java:185)
+	at org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl.doLoad(XMLResourceImpl.java:260)
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl.load(ResourceImpl.java:1563)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.TagModelLoader.loadFromInputStream(TagModelLoader.java:115)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.JarFileFaceletTaglibLocator.processJar(JarFileFaceletTaglibLocator.java:272)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.JarFileFaceletTaglibLocator.start(JarFileFaceletTaglibLocator.java:158)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.JarFileFaceletTaglibLocator.start(JarFileFaceletTaglibLocator.java:1)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.ProjectTaglibDescriptor$1.run(ProjectTaglibDescriptor.java:84)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.ProjectTaglibDescriptor.initialize(ProjectTaglibDescriptor.java:73)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.ProjectTaglibDescriptor.getTagLibraries(ProjectTaglibDescriptor.java:119)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.FaceletTagRegistry.initialize(FaceletTagRegistry.java:195)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.FaceletTagRegistry.getAllTagLibraries(FaceletTagRegistry.java:141)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.FaceletTagRegistry.getTagLibrary(FaceletTagRegistry.java:242)
+	at org.eclipse.jst.jsf.facelet.core.internal.cm.FaceletDocumentFactory.getOrCreateCMDocument(FaceletDocumentFactory.java:172)
+	at org.eclipse.jst.jsf.facelet.core.internal.cm.FaceletDocumentFactory.createCMDocumentForContext(FaceletDocumentFactory.java:68)
+	at org.eclipse.jst.jsf.facelet.core.internal.cm.FaceletDocumentFactory.createCMElementDeclaration(FaceletDocumentFactory.java:90)
+	at org.eclipse.jst.jsf.facelet.ui.internal.hover.FaceletHover$MyHTMLTagInfoHoverProcessor.getCMElementDeclaration(FaceletHover.java:144)
+	at org.eclipse.wst.xml.ui.internal.taginfo.XMLTagInfoHoverProcessor.computeTagAttValueHelp(XMLTagInfoHoverProcessor.java:133)
+	at org.eclipse.wst.xml.ui.internal.taginfo.XMLTagInfoHoverProcessor.computeRegionHelp(XMLTagInfoHoverProcessor.java:113)
+	at org.eclipse.wst.xml.ui.internal.taginfo.XMLTagInfoHoverProcessor.computeHoverHelp(XMLTagInfoHoverProcessor.java:88)
+	at org.eclipse.wst.xml.ui.internal.taginfo.XMLTagInfoHoverProcessor.getHoverInfo(XMLTagInfoHoverProcessor.java:259)
+	at org.eclipse.jst.jsf.facelet.ui.internal.hover.FaceletHover.getHoverInfo(FaceletHover.java:70)
+	at org.jboss.tools.common.text.xml.info.ChainTextHover.getHoverInfo2(ChainTextHover.java:145)
+	at org.jboss.tools.common.text.xml.info.ChainTextHover.getHoverInfo2(ChainTextHover.java:132)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+Caused by: org.eclipse.emf.ecore.xmi.IllegalValueException: Value '4.0' is not legal. (file:///C:/Program%20Files/eclipse/com/sun/faces/metadata/taglib/faces.html.taglib.xml, 25, 2)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.setFeatureValue(XMLHandler.java:2725)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.setAttribValue(XMLHandler.java:2779)
+	at org.eclipse.emf.ecore.xmi.impl.SAXXMLHandler.handleObjectAttribs(SAXXMLHandler.java:77)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createObjectFromFactory(XMLHandler.java:2257)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createObjectFromFeatureType(XMLHandler.java:2223)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createObject(XMLHandler.java:2099)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.handleFeature(XMLHandler.java:1878)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createDocumentRoot(XMLHandler.java:1521)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createObjectByType(XMLHandler.java:1383)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createTopObject(XMLHandler.java:1532)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.processElement(XMLHandler.java:1054)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.startElement(XMLHandler.java:1036)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.startElement(XMLHandler.java:725)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:518)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.dtd.XMLDTDValidator.startElement(XMLDTDValidator.java:731)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1407)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$ContentDriver.scanRootElementHook(XMLDocumentScannerImpl.java:1292)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:3079)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:836)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:605)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:542)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:889)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:825)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1224)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:637)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:326)
+	at org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.load(XMLLoadImpl.java:175)
+	... 25 more
+Caused by: java.lang.IllegalArgumentException: The value '4.0' is not a valid enumerator of 'FaceletTaglibVersion'
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.faceletTaglib.impl.FaceletTaglibFactoryImpl.createFaceletTaglibVersionFromString(FaceletTaglibFactoryImpl.java:469)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.faceletTaglib.impl.FaceletTaglibFactoryImpl.createFromString(FaceletTaglibFactoryImpl.java:151)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHelperImpl.createFromString(XMLHelperImpl.java:1615)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHelperImpl.setValue(XMLHelperImpl.java:1156)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.setFeatureValue(XMLHandler.java:2720)
+	... 52 more
+
+!ENTRY org.eclipse.jst.jsf.facelet.core 4 0 2024-12-30 11:45:47.130
+!MESSAGE Error initializing facelet registry entry
+!STACK 0
+org.eclipse.emf.ecore.resource.Resource$IOWrappedException: Value '4.0' is not legal. (file:///C:/Program%20Files/eclipse/com/sun/faces/metadata/taglib/faces.passthrough.taglib.xml, 25, 2)
+	at org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.handleErrors(XMLLoadImpl.java:77)
+	at org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.load(XMLLoadImpl.java:185)
+	at org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl.doLoad(XMLResourceImpl.java:260)
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl.load(ResourceImpl.java:1563)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.TagModelLoader.loadFromInputStream(TagModelLoader.java:115)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.JarFileFaceletTaglibLocator.processJar(JarFileFaceletTaglibLocator.java:272)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.JarFileFaceletTaglibLocator.start(JarFileFaceletTaglibLocator.java:158)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.JarFileFaceletTaglibLocator.start(JarFileFaceletTaglibLocator.java:1)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.ProjectTaglibDescriptor$1.run(ProjectTaglibDescriptor.java:84)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.ProjectTaglibDescriptor.initialize(ProjectTaglibDescriptor.java:73)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.ProjectTaglibDescriptor.getTagLibraries(ProjectTaglibDescriptor.java:119)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.FaceletTagRegistry.initialize(FaceletTagRegistry.java:195)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.FaceletTagRegistry.getAllTagLibraries(FaceletTagRegistry.java:141)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.FaceletTagRegistry.getTagLibrary(FaceletTagRegistry.java:242)
+	at org.eclipse.jst.jsf.facelet.core.internal.cm.FaceletDocumentFactory.getOrCreateCMDocument(FaceletDocumentFactory.java:172)
+	at org.eclipse.jst.jsf.facelet.core.internal.cm.FaceletDocumentFactory.createCMDocumentForContext(FaceletDocumentFactory.java:68)
+	at org.eclipse.jst.jsf.facelet.core.internal.cm.FaceletDocumentFactory.createCMElementDeclaration(FaceletDocumentFactory.java:90)
+	at org.eclipse.jst.jsf.facelet.ui.internal.hover.FaceletHover$MyHTMLTagInfoHoverProcessor.getCMElementDeclaration(FaceletHover.java:144)
+	at org.eclipse.wst.xml.ui.internal.taginfo.XMLTagInfoHoverProcessor.computeTagAttValueHelp(XMLTagInfoHoverProcessor.java:133)
+	at org.eclipse.wst.xml.ui.internal.taginfo.XMLTagInfoHoverProcessor.computeRegionHelp(XMLTagInfoHoverProcessor.java:113)
+	at org.eclipse.wst.xml.ui.internal.taginfo.XMLTagInfoHoverProcessor.computeHoverHelp(XMLTagInfoHoverProcessor.java:88)
+	at org.eclipse.wst.xml.ui.internal.taginfo.XMLTagInfoHoverProcessor.getHoverInfo(XMLTagInfoHoverProcessor.java:259)
+	at org.eclipse.jst.jsf.facelet.ui.internal.hover.FaceletHover.getHoverInfo(FaceletHover.java:70)
+	at org.jboss.tools.common.text.xml.info.ChainTextHover.getHoverInfo2(ChainTextHover.java:145)
+	at org.jboss.tools.common.text.xml.info.ChainTextHover.getHoverInfo2(ChainTextHover.java:132)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+Caused by: org.eclipse.emf.ecore.xmi.IllegalValueException: Value '4.0' is not legal. (file:///C:/Program%20Files/eclipse/com/sun/faces/metadata/taglib/faces.passthrough.taglib.xml, 25, 2)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.setFeatureValue(XMLHandler.java:2725)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.setAttribValue(XMLHandler.java:2779)
+	at org.eclipse.emf.ecore.xmi.impl.SAXXMLHandler.handleObjectAttribs(SAXXMLHandler.java:77)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createObjectFromFactory(XMLHandler.java:2257)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createObjectFromFeatureType(XMLHandler.java:2223)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createObject(XMLHandler.java:2099)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.handleFeature(XMLHandler.java:1878)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createDocumentRoot(XMLHandler.java:1521)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createObjectByType(XMLHandler.java:1383)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createTopObject(XMLHandler.java:1532)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.processElement(XMLHandler.java:1054)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.startElement(XMLHandler.java:1036)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.startElement(XMLHandler.java:725)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:518)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.dtd.XMLDTDValidator.startElement(XMLDTDValidator.java:731)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1407)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$ContentDriver.scanRootElementHook(XMLDocumentScannerImpl.java:1292)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:3079)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:836)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:605)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:542)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:889)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:825)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1224)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:637)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:326)
+	at org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.load(XMLLoadImpl.java:175)
+	... 25 more
+Caused by: java.lang.IllegalArgumentException: The value '4.0' is not a valid enumerator of 'FaceletTaglibVersion'
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.faceletTaglib.impl.FaceletTaglibFactoryImpl.createFaceletTaglibVersionFromString(FaceletTaglibFactoryImpl.java:469)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.faceletTaglib.impl.FaceletTaglibFactoryImpl.createFromString(FaceletTaglibFactoryImpl.java:151)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHelperImpl.createFromString(XMLHelperImpl.java:1615)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHelperImpl.setValue(XMLHelperImpl.java:1156)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.setFeatureValue(XMLHandler.java:2720)
+	... 52 more
+
+!ENTRY org.eclipse.jst.jsf.facelet.core 4 0 2024-12-30 11:45:47.132
+!MESSAGE Error initializing facelet registry entry
+!STACK 0
+org.eclipse.emf.ecore.resource.Resource$IOWrappedException: Value '4.0' is not legal. (file:///C:/Program%20Files/eclipse/com/sun/faces/metadata/taglib/faces.taglib.xml, 25, 2)
+	at org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.handleErrors(XMLLoadImpl.java:77)
+	at org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.load(XMLLoadImpl.java:185)
+	at org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl.doLoad(XMLResourceImpl.java:260)
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl.load(ResourceImpl.java:1563)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.TagModelLoader.loadFromInputStream(TagModelLoader.java:115)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.JarFileFaceletTaglibLocator.processJar(JarFileFaceletTaglibLocator.java:272)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.JarFileFaceletTaglibLocator.start(JarFileFaceletTaglibLocator.java:158)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.JarFileFaceletTaglibLocator.start(JarFileFaceletTaglibLocator.java:1)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.ProjectTaglibDescriptor$1.run(ProjectTaglibDescriptor.java:84)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.ProjectTaglibDescriptor.initialize(ProjectTaglibDescriptor.java:73)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.ProjectTaglibDescriptor.getTagLibraries(ProjectTaglibDescriptor.java:119)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.FaceletTagRegistry.initialize(FaceletTagRegistry.java:195)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.FaceletTagRegistry.getAllTagLibraries(FaceletTagRegistry.java:141)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.FaceletTagRegistry.getTagLibrary(FaceletTagRegistry.java:242)
+	at org.eclipse.jst.jsf.facelet.core.internal.cm.FaceletDocumentFactory.getOrCreateCMDocument(FaceletDocumentFactory.java:172)
+	at org.eclipse.jst.jsf.facelet.core.internal.cm.FaceletDocumentFactory.createCMDocumentForContext(FaceletDocumentFactory.java:68)
+	at org.eclipse.jst.jsf.facelet.core.internal.cm.FaceletDocumentFactory.createCMElementDeclaration(FaceletDocumentFactory.java:90)
+	at org.eclipse.jst.jsf.facelet.ui.internal.hover.FaceletHover$MyHTMLTagInfoHoverProcessor.getCMElementDeclaration(FaceletHover.java:144)
+	at org.eclipse.wst.xml.ui.internal.taginfo.XMLTagInfoHoverProcessor.computeTagAttValueHelp(XMLTagInfoHoverProcessor.java:133)
+	at org.eclipse.wst.xml.ui.internal.taginfo.XMLTagInfoHoverProcessor.computeRegionHelp(XMLTagInfoHoverProcessor.java:113)
+	at org.eclipse.wst.xml.ui.internal.taginfo.XMLTagInfoHoverProcessor.computeHoverHelp(XMLTagInfoHoverProcessor.java:88)
+	at org.eclipse.wst.xml.ui.internal.taginfo.XMLTagInfoHoverProcessor.getHoverInfo(XMLTagInfoHoverProcessor.java:259)
+	at org.eclipse.jst.jsf.facelet.ui.internal.hover.FaceletHover.getHoverInfo(FaceletHover.java:70)
+	at org.jboss.tools.common.text.xml.info.ChainTextHover.getHoverInfo2(ChainTextHover.java:145)
+	at org.jboss.tools.common.text.xml.info.ChainTextHover.getHoverInfo2(ChainTextHover.java:132)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+Caused by: org.eclipse.emf.ecore.xmi.IllegalValueException: Value '4.0' is not legal. (file:///C:/Program%20Files/eclipse/com/sun/faces/metadata/taglib/faces.taglib.xml, 25, 2)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.setFeatureValue(XMLHandler.java:2725)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.setAttribValue(XMLHandler.java:2779)
+	at org.eclipse.emf.ecore.xmi.impl.SAXXMLHandler.handleObjectAttribs(SAXXMLHandler.java:77)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createObjectFromFactory(XMLHandler.java:2257)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createObjectFromFeatureType(XMLHandler.java:2223)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createObject(XMLHandler.java:2099)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.handleFeature(XMLHandler.java:1878)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createDocumentRoot(XMLHandler.java:1521)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createObjectByType(XMLHandler.java:1383)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createTopObject(XMLHandler.java:1532)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.processElement(XMLHandler.java:1054)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.startElement(XMLHandler.java:1036)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.startElement(XMLHandler.java:725)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:518)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.dtd.XMLDTDValidator.startElement(XMLDTDValidator.java:731)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1407)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$ContentDriver.scanRootElementHook(XMLDocumentScannerImpl.java:1292)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:3079)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:836)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:605)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:542)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:889)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:825)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1224)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:637)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:326)
+	at org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.load(XMLLoadImpl.java:175)
+	... 25 more
+Caused by: java.lang.IllegalArgumentException: The value '4.0' is not a valid enumerator of 'FaceletTaglibVersion'
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.faceletTaglib.impl.FaceletTaglibFactoryImpl.createFaceletTaglibVersionFromString(FaceletTaglibFactoryImpl.java:469)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.faceletTaglib.impl.FaceletTaglibFactoryImpl.createFromString(FaceletTaglibFactoryImpl.java:151)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHelperImpl.createFromString(XMLHelperImpl.java:1615)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHelperImpl.setValue(XMLHelperImpl.java:1156)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.setFeatureValue(XMLHandler.java:2720)
+	... 52 more
+
+!ENTRY org.eclipse.jst.jsf.facelet.core 4 0 2024-12-30 11:45:47.135
+!MESSAGE Error initializing facelet registry entry
+!STACK 0
+org.eclipse.emf.ecore.resource.Resource$IOWrappedException: Value '4.0' is not legal. (file:///C:/Program%20Files/eclipse/com/sun/faces/metadata/taglib/tags.core.taglib.xml, 25, 2)
+	at org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.handleErrors(XMLLoadImpl.java:77)
+	at org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.load(XMLLoadImpl.java:185)
+	at org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl.doLoad(XMLResourceImpl.java:260)
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl.load(ResourceImpl.java:1563)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.TagModelLoader.loadFromInputStream(TagModelLoader.java:115)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.JarFileFaceletTaglibLocator.processJar(JarFileFaceletTaglibLocator.java:272)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.JarFileFaceletTaglibLocator.start(JarFileFaceletTaglibLocator.java:158)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.JarFileFaceletTaglibLocator.start(JarFileFaceletTaglibLocator.java:1)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.ProjectTaglibDescriptor$1.run(ProjectTaglibDescriptor.java:84)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.ProjectTaglibDescriptor.initialize(ProjectTaglibDescriptor.java:73)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.ProjectTaglibDescriptor.getTagLibraries(ProjectTaglibDescriptor.java:119)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.FaceletTagRegistry.initialize(FaceletTagRegistry.java:195)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.FaceletTagRegistry.getAllTagLibraries(FaceletTagRegistry.java:141)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.FaceletTagRegistry.getTagLibrary(FaceletTagRegistry.java:242)
+	at org.eclipse.jst.jsf.facelet.core.internal.cm.FaceletDocumentFactory.getOrCreateCMDocument(FaceletDocumentFactory.java:172)
+	at org.eclipse.jst.jsf.facelet.core.internal.cm.FaceletDocumentFactory.createCMDocumentForContext(FaceletDocumentFactory.java:68)
+	at org.eclipse.jst.jsf.facelet.core.internal.cm.FaceletDocumentFactory.createCMElementDeclaration(FaceletDocumentFactory.java:90)
+	at org.eclipse.jst.jsf.facelet.ui.internal.hover.FaceletHover$MyHTMLTagInfoHoverProcessor.getCMElementDeclaration(FaceletHover.java:144)
+	at org.eclipse.wst.xml.ui.internal.taginfo.XMLTagInfoHoverProcessor.computeTagAttValueHelp(XMLTagInfoHoverProcessor.java:133)
+	at org.eclipse.wst.xml.ui.internal.taginfo.XMLTagInfoHoverProcessor.computeRegionHelp(XMLTagInfoHoverProcessor.java:113)
+	at org.eclipse.wst.xml.ui.internal.taginfo.XMLTagInfoHoverProcessor.computeHoverHelp(XMLTagInfoHoverProcessor.java:88)
+	at org.eclipse.wst.xml.ui.internal.taginfo.XMLTagInfoHoverProcessor.getHoverInfo(XMLTagInfoHoverProcessor.java:259)
+	at org.eclipse.jst.jsf.facelet.ui.internal.hover.FaceletHover.getHoverInfo(FaceletHover.java:70)
+	at org.jboss.tools.common.text.xml.info.ChainTextHover.getHoverInfo2(ChainTextHover.java:145)
+	at org.jboss.tools.common.text.xml.info.ChainTextHover.getHoverInfo2(ChainTextHover.java:132)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+Caused by: org.eclipse.emf.ecore.xmi.IllegalValueException: Value '4.0' is not legal. (file:///C:/Program%20Files/eclipse/com/sun/faces/metadata/taglib/tags.core.taglib.xml, 25, 2)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.setFeatureValue(XMLHandler.java:2725)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.setAttribValue(XMLHandler.java:2779)
+	at org.eclipse.emf.ecore.xmi.impl.SAXXMLHandler.handleObjectAttribs(SAXXMLHandler.java:77)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createObjectFromFactory(XMLHandler.java:2257)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createObjectFromFeatureType(XMLHandler.java:2223)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createObject(XMLHandler.java:2099)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.handleFeature(XMLHandler.java:1878)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createDocumentRoot(XMLHandler.java:1521)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createObjectByType(XMLHandler.java:1383)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createTopObject(XMLHandler.java:1532)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.processElement(XMLHandler.java:1054)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.startElement(XMLHandler.java:1036)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.startElement(XMLHandler.java:725)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:518)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.dtd.XMLDTDValidator.startElement(XMLDTDValidator.java:731)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1407)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$ContentDriver.scanRootElementHook(XMLDocumentScannerImpl.java:1292)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:3079)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:836)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:605)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:542)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:889)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:825)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1224)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:637)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:326)
+	at org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.load(XMLLoadImpl.java:175)
+	... 25 more
+Caused by: java.lang.IllegalArgumentException: The value '4.0' is not a valid enumerator of 'FaceletTaglibVersion'
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.faceletTaglib.impl.FaceletTaglibFactoryImpl.createFaceletTaglibVersionFromString(FaceletTaglibFactoryImpl.java:469)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.faceletTaglib.impl.FaceletTaglibFactoryImpl.createFromString(FaceletTaglibFactoryImpl.java:151)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHelperImpl.createFromString(XMLHelperImpl.java:1615)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHelperImpl.setValue(XMLHelperImpl.java:1156)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.setFeatureValue(XMLHandler.java:2720)
+	... 52 more
+
+!ENTRY org.eclipse.jst.jsf.facelet.core 4 0 2024-12-30 11:45:47.137
+!MESSAGE Error initializing facelet registry entry
+!STACK 0
+org.eclipse.emf.ecore.resource.Resource$IOWrappedException: Value '4.0' is not legal. (file:///C:/Program%20Files/eclipse/com/sun/faces/metadata/taglib/tags.functions.taglib.xml, 25, 2)
+	at org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.handleErrors(XMLLoadImpl.java:77)
+	at org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.load(XMLLoadImpl.java:185)
+	at org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl.doLoad(XMLResourceImpl.java:260)
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl.load(ResourceImpl.java:1563)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.TagModelLoader.loadFromInputStream(TagModelLoader.java:115)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.JarFileFaceletTaglibLocator.processJar(JarFileFaceletTaglibLocator.java:272)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.JarFileFaceletTaglibLocator.start(JarFileFaceletTaglibLocator.java:158)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.JarFileFaceletTaglibLocator.start(JarFileFaceletTaglibLocator.java:1)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.ProjectTaglibDescriptor$1.run(ProjectTaglibDescriptor.java:84)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.ProjectTaglibDescriptor.initialize(ProjectTaglibDescriptor.java:73)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.ProjectTaglibDescriptor.getTagLibraries(ProjectTaglibDescriptor.java:119)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.FaceletTagRegistry.initialize(FaceletTagRegistry.java:195)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.FaceletTagRegistry.getAllTagLibraries(FaceletTagRegistry.java:141)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.FaceletTagRegistry.getTagLibrary(FaceletTagRegistry.java:242)
+	at org.eclipse.jst.jsf.facelet.core.internal.cm.FaceletDocumentFactory.getOrCreateCMDocument(FaceletDocumentFactory.java:172)
+	at org.eclipse.jst.jsf.facelet.core.internal.cm.FaceletDocumentFactory.createCMDocumentForContext(FaceletDocumentFactory.java:68)
+	at org.eclipse.jst.jsf.facelet.core.internal.cm.FaceletDocumentFactory.createCMElementDeclaration(FaceletDocumentFactory.java:90)
+	at org.eclipse.jst.jsf.facelet.ui.internal.hover.FaceletHover$MyHTMLTagInfoHoverProcessor.getCMElementDeclaration(FaceletHover.java:144)
+	at org.eclipse.wst.xml.ui.internal.taginfo.XMLTagInfoHoverProcessor.computeTagAttValueHelp(XMLTagInfoHoverProcessor.java:133)
+	at org.eclipse.wst.xml.ui.internal.taginfo.XMLTagInfoHoverProcessor.computeRegionHelp(XMLTagInfoHoverProcessor.java:113)
+	at org.eclipse.wst.xml.ui.internal.taginfo.XMLTagInfoHoverProcessor.computeHoverHelp(XMLTagInfoHoverProcessor.java:88)
+	at org.eclipse.wst.xml.ui.internal.taginfo.XMLTagInfoHoverProcessor.getHoverInfo(XMLTagInfoHoverProcessor.java:259)
+	at org.eclipse.jst.jsf.facelet.ui.internal.hover.FaceletHover.getHoverInfo(FaceletHover.java:70)
+	at org.jboss.tools.common.text.xml.info.ChainTextHover.getHoverInfo2(ChainTextHover.java:145)
+	at org.jboss.tools.common.text.xml.info.ChainTextHover.getHoverInfo2(ChainTextHover.java:132)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+Caused by: org.eclipse.emf.ecore.xmi.IllegalValueException: Value '4.0' is not legal. (file:///C:/Program%20Files/eclipse/com/sun/faces/metadata/taglib/tags.functions.taglib.xml, 25, 2)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.setFeatureValue(XMLHandler.java:2725)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.setAttribValue(XMLHandler.java:2779)
+	at org.eclipse.emf.ecore.xmi.impl.SAXXMLHandler.handleObjectAttribs(SAXXMLHandler.java:77)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createObjectFromFactory(XMLHandler.java:2257)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createObjectFromFeatureType(XMLHandler.java:2223)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createObject(XMLHandler.java:2099)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.handleFeature(XMLHandler.java:1878)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createDocumentRoot(XMLHandler.java:1521)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createObjectByType(XMLHandler.java:1383)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.createTopObject(XMLHandler.java:1532)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.processElement(XMLHandler.java:1054)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.startElement(XMLHandler.java:1036)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.startElement(XMLHandler.java:725)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:518)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.dtd.XMLDTDValidator.startElement(XMLDTDValidator.java:731)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1407)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$ContentDriver.scanRootElementHook(XMLDocumentScannerImpl.java:1292)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:3079)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:836)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:605)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:542)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:889)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:825)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1224)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:637)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:326)
+	at org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.load(XMLLoadImpl.java:175)
+	... 25 more
+Caused by: java.lang.IllegalArgumentException: The value '4.0' is not a valid enumerator of 'FaceletTaglibVersion'
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.faceletTaglib.impl.FaceletTaglibFactoryImpl.createFaceletTaglibVersionFromString(FaceletTaglibFactoryImpl.java:469)
+	at org.eclipse.jst.jsf.facelet.core.internal.registry.taglib.faceletTaglib.impl.FaceletTaglibFactoryImpl.createFromString(FaceletTaglibFactoryImpl.java:151)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHelperImpl.createFromString(XMLHelperImpl.java:1615)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHelperImpl.setValue(XMLHelperImpl.java:1156)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.setFeatureValue(XMLHandler.java:2720)
+	... 52 more
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2024-12-30 11:46:04.195
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/application-client_9.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2024-12-30 11:46:04.196
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/jobXML_2_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2024-12-30 11:46:04.197
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/beans_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2024-12-30 11:46:04.198
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jaxb/bindingschema_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2024-12-30 11:46:04.204
+!MESSAGE The given URI https://jakarta.ee/xml/ns/validation/validation-configuration-3.0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2024-12-30 11:46:04.206
+!MESSAGE The given URI http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_1.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842776 2024-12-30 11:47:05.273
+!MESSAGE Server shutting down
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842785 2024-12-30 11:47:05.477
+!MESSAGE Server Shutdown Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2024-12-30 11:47:05.518
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2024-12-30 11:47:30.281
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842776 2024-12-30 11:48:53.483
+!MESSAGE Server shutting down
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842785 2024-12-30 11:48:53.687
+!MESSAGE Server Shutdown Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2024-12-30 11:48:53.713
+!MESSAGE Server Starting
+
+!ENTRY org.eclipse.jface 2 0 2024-12-30 11:48:56.756
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-12-30 11:48:56.756
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolinworkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2024-12-30 11:49:02.580
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842776 2024-12-30 11:52:45.803
+!MESSAGE Server shutting down
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842785 2024-12-30 11:52:46.006
+!MESSAGE Server Shutdown Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2024-12-30 11:52:46.030
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2024-12-30 11:52:54.896
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842776 2024-12-30 11:53:07.722
+!MESSAGE Server shutting down
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842785 2024-12-30 11:53:07.925
+!MESSAGE Server Shutdown Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2024-12-30 11:53:07.948
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2024-12-30 11:53:17.214
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842776 2024-12-30 11:54:43.102
+!MESSAGE Server shutting down
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842785 2024-12-30 11:54:43.306
+!MESSAGE Server Shutdown Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2024-12-30 11:54:43.329
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2024-12-30 11:54:52.488
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.eclipse.core.expressions 4 201 2024-12-30 11:56:40.489
+!MESSAGE No property tester contributes a property org.eclipse.core.resources.projectNature to type class org.eclipse.jdt.internal.core.PackageFragment
+!STACK 1
+org.eclipse.core.runtime.CoreException: No property tester contributes a property org.eclipse.core.resources.projectNature to type class org.eclipse.jdt.internal.core.PackageFragment
+	at org.eclipse.core.internal.expressions.TypeExtensionManager.getProperty(TypeExtensionManager.java:132)
+	at org.eclipse.core.expressions.TestExpression.evaluate(TestExpression.java:104)
+	at org.eclipse.core.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:54)
+	at org.eclipse.core.expressions.AndExpression.evaluate(AndExpression.java:36)
+	at org.eclipse.ui.internal.dialogs.RegistryPageContributor.failsEnablement(RegistryPageContributor.java:283)
+	at org.eclipse.ui.internal.dialogs.RegistryPageContributor.isApplicableTo(RegistryPageContributor.java:226)
+	at org.eclipse.ui.internal.dialogs.PropertyPageContributorManager.getApplicableContributors(PropertyPageContributorManager.java:224)
+	at org.eclipse.ui.internal.dialogs.PropertyPageContributorManager.getApplicableContributors(PropertyPageContributorManager.java:241)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.hasPropertyPagesFor(PropertyDialogAction.java:105)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.isApplicableForSelection(PropertyDialogAction.java:146)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.isApplicableForSelection(PropertyDialogAction.java:127)
+	at org.eclipse.ui.internal.navigator.resources.actions.PropertiesActionProvider.fillContextMenu(PropertiesActionProvider.java:55)
+	at org.eclipse.ui.navigator.NavigatorActionService$2.run(NavigatorActionService.java:224)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.ui.navigator.NavigatorActionService.addCommonActionProviderMenu(NavigatorActionService.java:218)
+	at org.eclipse.ui.navigator.NavigatorActionService.fillContextMenu(NavigatorActionService.java:176)
+	at org.eclipse.ui.navigator.CommonNavigatorManager.fillContextMenu(CommonNavigatorManager.java:257)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:338)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:467)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:494)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:272)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4326)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1174)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1198)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1179)
+	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:5138)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4756)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:342)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1482)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2311)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5091)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:241)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4165)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3706)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:639)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:546)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:143)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:109)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:439)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:271)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
+!SUBENTRY 1 org.eclipse.core.expressions 4 201 2024-12-30 11:56:40.489
+!MESSAGE No property tester contributes a property org.eclipse.core.resources.projectNature to type class org.eclipse.jdt.internal.core.PackageFragment
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842776 2024-12-30 11:58:25.475
+!MESSAGE Server shutting down
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842785 2024-12-30 11:58:25.778
+!MESSAGE Server Shutdown Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2024-12-30 11:58:25.800
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2024-12-30 11:58:34.870
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842776 2024-12-30 12:00:38.594
+!MESSAGE Server shutting down
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842785 2024-12-30 12:00:38.798
+!MESSAGE Server Shutdown Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2024-12-30 12:00:38.823
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2024-12-30 12:00:47.786
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842776 2024-12-30 12:03:07.137
+!MESSAGE Server shutting down
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842785 2024-12-30 12:03:07.340
+!MESSAGE Server Shutdown Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2024-12-30 12:03:07.363
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2024-12-30 12:03:16.529
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.eclipse.core.expressions 4 201 2024-12-30 12:09:32.707
+!MESSAGE No property tester contributes a property org.eclipse.core.resources.projectNature to type class org.eclipse.jdt.internal.core.PackageFragment
+!STACK 1
+org.eclipse.core.runtime.CoreException: No property tester contributes a property org.eclipse.core.resources.projectNature to type class org.eclipse.jdt.internal.core.PackageFragment
+	at org.eclipse.core.internal.expressions.TypeExtensionManager.getProperty(TypeExtensionManager.java:132)
+	at org.eclipse.core.expressions.TestExpression.evaluate(TestExpression.java:104)
+	at org.eclipse.core.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:54)
+	at org.eclipse.core.expressions.AndExpression.evaluate(AndExpression.java:36)
+	at org.eclipse.ui.internal.dialogs.RegistryPageContributor.failsEnablement(RegistryPageContributor.java:283)
+	at org.eclipse.ui.internal.dialogs.RegistryPageContributor.isApplicableTo(RegistryPageContributor.java:226)
+	at org.eclipse.ui.internal.dialogs.PropertyPageContributorManager.getApplicableContributors(PropertyPageContributorManager.java:224)
+	at org.eclipse.ui.internal.dialogs.PropertyPageContributorManager.getApplicableContributors(PropertyPageContributorManager.java:241)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.hasPropertyPagesFor(PropertyDialogAction.java:105)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.isApplicableForSelection(PropertyDialogAction.java:146)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.isApplicableForSelection(PropertyDialogAction.java:127)
+	at org.eclipse.ui.internal.navigator.resources.actions.PropertiesActionProvider.fillContextMenu(PropertiesActionProvider.java:55)
+	at org.eclipse.ui.navigator.NavigatorActionService$2.run(NavigatorActionService.java:224)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.ui.navigator.NavigatorActionService.addCommonActionProviderMenu(NavigatorActionService.java:218)
+	at org.eclipse.ui.navigator.NavigatorActionService.fillContextMenu(NavigatorActionService.java:176)
+	at org.eclipse.ui.navigator.CommonNavigatorManager.fillContextMenu(CommonNavigatorManager.java:257)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:338)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:467)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:494)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:272)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4326)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1174)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1198)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1179)
+	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:5138)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4756)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:342)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1482)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2311)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5091)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:241)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4165)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3706)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:639)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:546)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:143)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:109)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:439)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:271)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
+!SUBENTRY 1 org.eclipse.core.expressions 4 201 2024-12-30 12:09:32.708
+!MESSAGE No property tester contributes a property org.eclipse.core.resources.projectNature to type class org.eclipse.jdt.internal.core.PackageFragment
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842776 2024-12-30 12:11:12.703
+!MESSAGE Server shutting down
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842785 2024-12-30 12:11:12.908
+!MESSAGE Server Shutdown Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2024-12-30 12:11:12.930
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2024-12-30 12:11:22.845
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842776 2024-12-30 12:14:52.438
+!MESSAGE Server shutting down
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842785 2024-12-30 12:14:52.641
+!MESSAGE Server Shutdown Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2024-12-30 12:14:52.663
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2024-12-30 12:15:02.454
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842776 2024-12-30 12:16:29.586
+!MESSAGE Server shutting down
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842785 2024-12-30 12:16:29.788
+!MESSAGE Server Shutdown Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2024-12-30 12:16:29.812
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2024-12-30 12:16:38.973
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842776 2024-12-30 12:21:47.861
+!MESSAGE Server shutting down
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842785 2024-12-30 12:21:48.063
+!MESSAGE Server Shutdown Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2024-12-30 12:21:48.086
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2024-12-30 12:21:57.453
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842776 2024-12-30 12:29:44.511
+!MESSAGE Server shutting down
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842785 2024-12-30 12:29:44.714
+!MESSAGE Server Shutdown Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2024-12-30 12:29:44.736
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2024-12-30 12:29:53.899
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842776 2024-12-30 12:31:03.501
+!MESSAGE Server shutting down
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842785 2024-12-30 12:31:03.704
+!MESSAGE Server Shutdown Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2024-12-30 12:31:03.727
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2024-12-30 12:31:12.894
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842776 2024-12-30 12:37:19.769
+!MESSAGE Server shutting down
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842785 2024-12-30 12:37:19.972
+!MESSAGE Server Shutdown Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2024-12-30 12:37:19.995
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2024-12-30 12:37:29.266
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842776 2024-12-30 12:40:47.889
+!MESSAGE Server shutting down
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842785 2024-12-30 12:40:48.092
+!MESSAGE Server Shutdown Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2024-12-30 12:40:48.115
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2024-12-30 12:40:57.379
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842776 2024-12-30 12:45:25.464
+!MESSAGE Server shutting down
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842785 2024-12-30 12:45:25.668
+!MESSAGE Server Shutdown Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2024-12-30 12:45:25.690
+!MESSAGE Unable to retrieve a list of remote deployment scanners
+!STACK 0
+org.jboss.ide.eclipse.as.management.core.JBoss7ManangerException: java.io.IOException: java.net.ConnectException: WFLYPRT0053: Could not connect to http-remoting://localhost:9990. The connection failed
+	at org.jboss.ide.eclipse.as.internal.management.wf11.WildFly11Manager.execute(WildFly11Manager.java:493)
+	at org.jboss.ide.eclipse.as.internal.management.wf11.WildFly11ManagerService.execute(WildFly11ManagerService.java:182)
+	at org.jboss.ide.eclipse.as.management.core.JBoss7ManagerServiceProxy.execute(JBoss7ManagerServiceProxy.java:87)
+	at org.jboss.ide.eclipse.as.core.server.internal.v7.AS7DeploymentScannerUtility$1.execute(AS7DeploymentScannerUtility.java:295)
+	at org.jboss.ide.eclipse.as.core.server.internal.v7.AS7DeploymentScannerUtility$1.execute(AS7DeploymentScannerUtility.java:1)
+	at org.jboss.ide.eclipse.as.management.core.JBoss7ManagerUtil.executeWithService(JBoss7ManagerUtil.java:136)
+	at org.jboss.ide.eclipse.as.core.server.internal.v7.AS7DeploymentScannerUtility.executeWithResult(AS7DeploymentScannerUtility.java:293)
+	at org.jboss.ide.eclipse.as.core.server.internal.v7.AS7DeploymentScannerUtility.getDeploymentScanners(AS7DeploymentScannerUtility.java:164)
+	at org.jboss.ide.eclipse.as.core.server.internal.v7.AS7DeploymentScannerUtility.getDeploymentScannersFromServer(AS7DeploymentScannerUtility.java:253)
+	at org.jboss.ide.eclipse.as.core.server.internal.v7.LocalJBoss7DeploymentScannerAdditions.loadScannersFromServer(LocalJBoss7DeploymentScannerAdditions.java:173)
+	at org.jboss.ide.eclipse.as.core.server.internal.v7.LocalJBoss7DeploymentScannerAdditions.loadScannersFromServerSafely(LocalJBoss7DeploymentScannerAdditions.java:135)
+	at org.jboss.ide.eclipse.as.core.server.internal.v7.LocalJBoss7DeploymentScannerAdditions.ensureScannersRemoved(LocalJBoss7DeploymentScannerAdditions.java:150)
+	at org.jboss.ide.eclipse.as.core.server.internal.AbstractDeploymentScannerAdditions.removeAddedDeploymentScanners(AbstractDeploymentScannerAdditions.java:82)
+	at org.jboss.tools.as.core.server.controllable.subsystems.internal.LocalLegacyShutdownController.removeScanners(LocalLegacyShutdownController.java:74)
+	at org.jboss.tools.as.core.server.controllable.subsystems.internal.LocalLegacyShutdownController.stop(LocalLegacyShutdownController.java:57)
+	at org.jboss.tools.as.core.server.controllable.subsystems.internal.LocalLegacyShutdownController.stop(LocalLegacyShutdownController.java:52)
+	at org.jboss.ide.eclipse.as.wtp.core.server.behavior.ControllableServerBehavior.stop(ControllableServerBehavior.java:255)
+	at org.jboss.ide.eclipse.as.wtp.core.server.launch.AbstractJavaServerLaunchDelegate.fireVMRunner(AbstractJavaServerLaunchDelegate.java:95)
+	at org.jboss.ide.eclipse.as.wtp.core.server.launch.AbstractStartJavaServerLaunchDelegate.actualLaunch(AbstractStartJavaServerLaunchDelegate.java:95)
+	at org.jboss.ide.eclipse.as.wtp.core.server.launch.AbstractStartJavaServerLaunchDelegate.launch(AbstractStartJavaServerLaunchDelegate.java:89)
+	at org.jboss.tools.as.core.server.controllable.subsystems.internal.LocalJBossLaunchController.launch(LocalJBossLaunchController.java:85)
+	at org.jboss.ide.eclipse.as.wtp.core.server.launch.ControllableServerLaunchConfiguration.launch(ControllableServerLaunchConfiguration.java:52)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:805)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:711)
+	at org.eclipse.wst.server.core.internal.Server.startImpl2(Server.java:3571)
+	at org.eclipse.wst.server.core.internal.Server.startImpl(Server.java:3507)
+	at org.eclipse.wst.server.core.internal.Server$StartJob.run(Server.java:379)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.io.IOException: java.net.ConnectException: WFLYPRT0053: Could not connect to http-remoting://localhost:9990. The connection failed
+	at org.jboss.as.controller.client.impl.AbstractModelControllerClient.executeForResult(AbstractModelControllerClient.java:149)
+	at org.jboss.as.controller.client.impl.AbstractModelControllerClient.execute(AbstractModelControllerClient.java:75)
+	at org.jboss.ide.eclipse.as.internal.management.wf11.WildFly11Manager.execute(WildFly11Manager.java:482)
+	... 28 more
+Caused by: java.net.ConnectException: WFLYPRT0053: Could not connect to http-remoting://localhost:9990. The connection failed
+	at org.jboss.as.protocol.ProtocolConnectionUtils.connectSync(ProtocolConnectionUtils.java:128)
+	at org.jboss.as.protocol.ProtocolConnectionManager$EstablishingConnection.connect(ProtocolConnectionManager.java:259)
+	at org.jboss.as.protocol.ProtocolConnectionManager.connect(ProtocolConnectionManager.java:70)
+	at org.jboss.as.protocol.mgmt.ManagementClientChannelStrategy$Establishing.getChannel(ManagementClientChannelStrategy.java:162)
+	at org.jboss.as.controller.client.impl.RemotingModelControllerClient.getOrCreateChannel(RemotingModelControllerClient.java:146)
+	at org.jboss.as.controller.client.impl.RemotingModelControllerClient$1.getChannel(RemotingModelControllerClient.java:60)
+	at org.jboss.as.protocol.mgmt.ManagementChannelHandler.executeRequest(ManagementChannelHandler.java:135)
+	at org.jboss.as.protocol.mgmt.ManagementChannelHandler.executeRequest(ManagementChannelHandler.java:110)
+	at org.jboss.as.controller.client.impl.AbstractModelControllerClient.executeRequest(AbstractModelControllerClient.java:263)
+	at org.jboss.as.controller.client.impl.AbstractModelControllerClient.execute(AbstractModelControllerClient.java:168)
+	at org.jboss.as.controller.client.impl.AbstractModelControllerClient.executeForResult(AbstractModelControllerClient.java:147)
+	... 30 more
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:973)
+	at org.xnio.nio.WorkerThread$ConnectHandle.handleReady(WorkerThread.java:327)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:591)
+	at ...asynchronous invocation...(Unknown Source)
+	at org.jboss.remoting3.EndpointImpl.connect(EndpointImpl.java:570)
+	at org.jboss.remoting3.EndpointImpl.connect(EndpointImpl.java:532)
+	at org.jboss.remoting3.EndpointImpl.connect(EndpointImpl.java:520)
+	at org.jboss.as.protocol.ProtocolConnectionUtils.connect(ProtocolConnectionUtils.java:204)
+	at org.jboss.as.protocol.ProtocolConnectionUtils.connectSync(ProtocolConnectionUtils.java:120)
+	... 40 more
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2024-12-30 12:45:25.694
+!MESSAGE Unable to retrieve a list of remote deployment scanners
+!STACK 0
+org.jboss.ide.eclipse.as.management.core.JBoss7ManangerException: java.io.IOException: java.net.ConnectException: WFLYPRT0053: Could not connect to http-remoting://localhost:9990. The connection failed
+	at org.jboss.ide.eclipse.as.internal.management.wf11.WildFly11Manager.execute(WildFly11Manager.java:493)
+	at org.jboss.ide.eclipse.as.internal.management.wf11.WildFly11ManagerService.execute(WildFly11ManagerService.java:182)
+	at org.jboss.ide.eclipse.as.management.core.JBoss7ManagerServiceProxy.execute(JBoss7ManagerServiceProxy.java:87)
+	at org.jboss.ide.eclipse.as.core.server.internal.v7.AS7DeploymentScannerUtility$1.execute(AS7DeploymentScannerUtility.java:295)
+	at org.jboss.ide.eclipse.as.core.server.internal.v7.AS7DeploymentScannerUtility$1.execute(AS7DeploymentScannerUtility.java:1)
+	at org.jboss.ide.eclipse.as.management.core.JBoss7ManagerUtil.executeWithService(JBoss7ManagerUtil.java:136)
+	at org.jboss.ide.eclipse.as.core.server.internal.v7.AS7DeploymentScannerUtility.executeWithResult(AS7DeploymentScannerUtility.java:293)
+	at org.jboss.ide.eclipse.as.core.server.internal.v7.AS7DeploymentScannerUtility.getDeploymentScanners(AS7DeploymentScannerUtility.java:164)
+	at org.jboss.ide.eclipse.as.core.server.internal.v7.AS7DeploymentScannerUtility.getDeploymentScannersFromServer(AS7DeploymentScannerUtility.java:253)
+	at org.jboss.ide.eclipse.as.core.server.internal.v7.LocalJBoss7DeploymentScannerAdditions.loadScannersFromServer(LocalJBoss7DeploymentScannerAdditions.java:173)
+	at org.jboss.ide.eclipse.as.core.server.internal.v7.LocalJBoss7DeploymentScannerAdditions.loadScannersFromServerSafely(LocalJBoss7DeploymentScannerAdditions.java:135)
+	at org.jboss.ide.eclipse.as.core.server.internal.v7.LocalJBoss7DeploymentScannerAdditions.ensureScannersRemoved(LocalJBoss7DeploymentScannerAdditions.java:150)
+	at org.jboss.ide.eclipse.as.core.server.internal.AbstractDeploymentScannerAdditions.removeAddedDeploymentScanners(AbstractDeploymentScannerAdditions.java:82)
+	at org.jboss.tools.as.core.server.controllable.subsystems.internal.LocalLegacyShutdownController.removeScanners(LocalLegacyShutdownController.java:74)
+	at org.jboss.tools.as.core.server.controllable.subsystems.internal.LocalLegacyShutdownController.stop(LocalLegacyShutdownController.java:57)
+	at org.jboss.tools.as.core.server.controllable.subsystems.internal.LocalLegacyShutdownController.stop(LocalLegacyShutdownController.java:52)
+	at org.jboss.tools.as.core.server.controllable.subsystems.internal.ManagementShutdownController.forceStop(ManagementShutdownController.java:63)
+	at org.jboss.tools.as.core.server.controllable.subsystems.internal.LocalLegacyShutdownController.stopImpl(LocalLegacyShutdownController.java:119)
+	at org.jboss.tools.as.core.server.controllable.subsystems.internal.LocalLegacyShutdownController.stop(LocalLegacyShutdownController.java:65)
+	at org.jboss.tools.as.core.server.controllable.subsystems.internal.LocalLegacyShutdownController.stop(LocalLegacyShutdownController.java:52)
+	at org.jboss.ide.eclipse.as.wtp.core.server.behavior.ControllableServerBehavior.stop(ControllableServerBehavior.java:255)
+	at org.jboss.ide.eclipse.as.wtp.core.server.launch.AbstractJavaServerLaunchDelegate.fireVMRunner(AbstractJavaServerLaunchDelegate.java:95)
+	at org.jboss.ide.eclipse.as.wtp.core.server.launch.AbstractStartJavaServerLaunchDelegate.actualLaunch(AbstractStartJavaServerLaunchDelegate.java:95)
+	at org.jboss.ide.eclipse.as.wtp.core.server.launch.AbstractStartJavaServerLaunchDelegate.launch(AbstractStartJavaServerLaunchDelegate.java:89)
+	at org.jboss.tools.as.core.server.controllable.subsystems.internal.LocalJBossLaunchController.launch(LocalJBossLaunchController.java:85)
+	at org.jboss.ide.eclipse.as.wtp.core.server.launch.ControllableServerLaunchConfiguration.launch(ControllableServerLaunchConfiguration.java:52)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:805)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:711)
+	at org.eclipse.wst.server.core.internal.Server.startImpl2(Server.java:3571)
+	at org.eclipse.wst.server.core.internal.Server.startImpl(Server.java:3507)
+	at org.eclipse.wst.server.core.internal.Server$StartJob.run(Server.java:379)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.io.IOException: java.net.ConnectException: WFLYPRT0053: Could not connect to http-remoting://localhost:9990. The connection failed
+	at org.jboss.as.controller.client.impl.AbstractModelControllerClient.executeForResult(AbstractModelControllerClient.java:149)
+	at org.jboss.as.controller.client.impl.AbstractModelControllerClient.execute(AbstractModelControllerClient.java:75)
+	at org.jboss.ide.eclipse.as.internal.management.wf11.WildFly11Manager.execute(WildFly11Manager.java:482)
+	... 32 more
+Caused by: java.net.ConnectException: WFLYPRT0053: Could not connect to http-remoting://localhost:9990. The connection failed
+	at org.jboss.as.protocol.ProtocolConnectionUtils.connectSync(ProtocolConnectionUtils.java:128)
+	at org.jboss.as.protocol.ProtocolConnectionManager$EstablishingConnection.connect(ProtocolConnectionManager.java:259)
+	at org.jboss.as.protocol.ProtocolConnectionManager.connect(ProtocolConnectionManager.java:70)
+	at org.jboss.as.protocol.mgmt.ManagementClientChannelStrategy$Establishing.getChannel(ManagementClientChannelStrategy.java:162)
+	at org.jboss.as.controller.client.impl.RemotingModelControllerClient.getOrCreateChannel(RemotingModelControllerClient.java:146)
+	at org.jboss.as.controller.client.impl.RemotingModelControllerClient$1.getChannel(RemotingModelControllerClient.java:60)
+	at org.jboss.as.protocol.mgmt.ManagementChannelHandler.executeRequest(ManagementChannelHandler.java:135)
+	at org.jboss.as.protocol.mgmt.ManagementChannelHandler.executeRequest(ManagementChannelHandler.java:110)
+	at org.jboss.as.controller.client.impl.AbstractModelControllerClient.executeRequest(AbstractModelControllerClient.java:263)
+	at org.jboss.as.controller.client.impl.AbstractModelControllerClient.execute(AbstractModelControllerClient.java:168)
+	at org.jboss.as.controller.client.impl.AbstractModelControllerClient.executeForResult(AbstractModelControllerClient.java:147)
+	... 34 more
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:973)
+	at org.xnio.nio.WorkerThread$ConnectHandle.handleReady(WorkerThread.java:327)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:591)
+	at ...asynchronous invocation...(Unknown Source)
+	at org.jboss.remoting3.EndpointImpl.connect(EndpointImpl.java:570)
+	at org.jboss.remoting3.EndpointImpl.connect(EndpointImpl.java:532)
+	at org.jboss.remoting3.EndpointImpl.connect(EndpointImpl.java:520)
+	at org.jboss.as.protocol.ProtocolConnectionUtils.connect(ProtocolConnectionUtils.java:204)
+	at org.jboss.as.protocol.ProtocolConnectionUtils.connectSync(ProtocolConnectionUtils.java:120)
+	... 44 more
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 16973826 2024-12-30 12:45:25.708
+!MESSAGE The server was shutdown forcefully. All processes were terminated.
+
+!ENTRY org.eclipse.jst.server.core 4 0 2024-12-30 12:45:25.711
+!MESSAGE Could not launch in profiling mode because no profilers are configured.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2024-12-30 12:45:30.392
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2024-12-30 12:45:40.162
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.eclipse.lsp4e 2 0 2024-12-30 12:47:45.496
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:65)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842776 2024-12-30 12:49:32.478
+!MESSAGE Server shutting down
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842785 2024-12-30 12:49:32.680
+!MESSAGE Server Shutdown Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2024-12-30 12:49:32.702
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2024-12-30 12:49:41.863
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.eclipse.lsp4e 2 0 2024-12-30 12:51:54.886
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:65)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842776 2024-12-30 12:52:49.010
+!MESSAGE Server shutting down
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842785 2024-12-30 12:52:49.215
+!MESSAGE Server Shutdown Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2024-12-30 12:52:49.238
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2024-12-30 12:52:58.605
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842776 2024-12-30 12:54:34.531
+!MESSAGE Server shutting down
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842785 2024-12-30 12:54:34.734
+!MESSAGE Server Shutdown Succeeded

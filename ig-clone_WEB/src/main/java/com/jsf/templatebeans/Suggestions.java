@@ -12,6 +12,7 @@ import jakarta.enterprise.context.RequestScoped;
 import jakarta.faces.context.FacesContext;
 import jakarta.faces.context.Flash;
 import jakarta.faces.simplesecurity.RemoteClient;
+import jakarta.faces.simplesecurity.ServerClient;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
 import jakarta.servlet.http.HttpServletRequest;
@@ -28,14 +29,7 @@ public class Suggestions {
 	Flash flash;
 	
 	public List<User> getList(){
-//		get User from session
-		FacesContext context = FacesContext.getCurrentInstance();
-	    HttpServletRequest request = (HttpServletRequest) context.getExternalContext().getRequest();
-	    RemoteClient client = RemoteClient.load(request.getSession());
-	    User loggedUser = null;
-	    if(client != null) {
-	    	loggedUser = (User)client.getDetails();
-	    }
+		User loggedUser = ServerClient.getLoggedUser();
 	    
 	    if(loggedUser != null) {
 			List<User> list = null;

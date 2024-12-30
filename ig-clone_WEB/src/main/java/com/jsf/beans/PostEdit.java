@@ -21,6 +21,7 @@ import jakarta.faces.application.FacesMessage;
 import jakarta.faces.context.FacesContext;
 import jakarta.faces.context.Flash;
 import jakarta.faces.simplesecurity.RemoteClient;
+import jakarta.faces.simplesecurity.ServerClient;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
@@ -81,14 +82,7 @@ public class PostEdit implements Serializable {
 	}
 	
 	public String savePost() {
-//		get User from session
-		FacesContext context = FacesContext.getCurrentInstance();
-	    HttpServletRequest request = (HttpServletRequest) context.getExternalContext().getRequest();
-	    RemoteClient client = RemoteClient.load(request.getSession());
-	    User loggedUser = null;
-	    if(client != null) {
-	    	loggedUser = (User)client.getDetails();
-	    }
+		User loggedUser = ServerClient.getLoggedUser();
 		
 		// no Person object passed
 		if (loaded == null) {

@@ -13,7 +13,7 @@ import jakarta.inject.Inject;
 import jakarta.inject.Named;
 
 @Named
-@RequestScoped
+@ViewScoped
 public class Main implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
@@ -22,10 +22,13 @@ public class Main implements Serializable {
 	private static final String PAGE_PROFILE = "/pages/auth/profile?faces-redirect=true";
 	private static final String PAGE_PROFILE_PUBLIC = "/pages/profile_public?faces-redirect=true";
 	private static final String PAGE_POST = "/pages/post?faces-redirect=true";
+	private static final String PAGE_SEARCH = "/pages/search?faces-redirect=true";
 	private static final String PAGE_STAY_AT_THE_SAME = null;
 	
 	@Inject
 	Flash flash;
+	
+	private String nickname;
 
 	public String login() {
 		return PAGE_LOGIN;
@@ -38,6 +41,11 @@ public class Main implements Serializable {
 		
 		return PAGE_PROFILE_PUBLIC;
 	}
+	public String search() {
+		flash.put("query", nickname);
+		
+		return PAGE_SEARCH;
+	}
 	
 	public String addPost() {
 		Post post = new Post();
@@ -47,5 +55,12 @@ public class Main implements Serializable {
 	}
 	public String index() {
 		return PAGE_INDEX;
+	}
+	
+	public String getNickname() {
+		return nickname;
+	}
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
 	}
 }

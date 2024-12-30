@@ -3,6 +3,8 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="false"/>
 	<list key="searchhistory">
+		<item value="post__desc"/>
+		<item value="post__name--underline"/>
 		<item value="feed"/>
 		<item value="#{feed"/>
 		<item value="PostList"/>

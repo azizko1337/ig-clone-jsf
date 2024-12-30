@@ -26,6 +26,7 @@ import jakarta.faces.context.ExternalContext;
 import jakarta.faces.context.FacesContext;
 import jakarta.faces.context.Flash;
 import jakarta.faces.simplesecurity.RemoteClient;
+import jakarta.faces.simplesecurity.ServerClient;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
@@ -33,14 +34,16 @@ import jakarta.servlet.ServletContext;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
+import com.jsf.dao.FollowDAO;
 import com.jsf.dao.PostDAO;
+import com.jsf.entities.Follow;
 import com.jsf.entities.Post;
 import com.jsf.entities.User;
 import com.jsf.dao.UserDAO;
 
 @Named
-@RequestScoped
-public class ProfilePublic{
+@ViewScoped
+public class ProfilePublic implements Serializable{
 	private static final String PAGE_ERROR_NOT_FOUND = "/pages/error/not_found?faces-redirect=true";
 	private static final String PAGE_STAY_AT_THE_SAME = null;
 	
@@ -56,6 +59,9 @@ public class ProfilePublic{
 	@EJB
 	PostDAO postDAO;
 	
+	@EJB
+	FollowDAO followDAO;
+	
 	public String onLoad() throws IOException {
 		User loaded = (User) flash.get("profile");
 
@@ -67,6 +73,21 @@ public class ProfilePublic{
 		}
 	}
 
+	public boolean isFollowing() {
+		User loggedUser = ServerClient.getLoggedUser();
+	    
+		return followDAO.isFollowing(loggedUser, user);
+	}
+	
+	public void toggleFollow() {
+	    User loggedUser = ServerClient.getLoggedUser();
+		
+		Follow follow = new Follow();
+		follow.setUser1(loggedUser);
+		follow.setUser2(user);
+		
+		followDAO.toggle(follow);
+	}
 	
 	public List<Post> getPosts(){
 		if(user == null) return null;

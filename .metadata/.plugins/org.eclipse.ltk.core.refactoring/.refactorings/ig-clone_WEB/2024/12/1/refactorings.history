@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Encapsulate field &apos;com.jsf.templatebeans.Main.nickname&apos; in &apos;com.jsf.templatebeans.Main&apos;&#x0D;&#x0A;- Original project: &apos;ig-clone_WEB&apos;&#x0D;&#x0A;- Original element: &apos;com.jsf.templatebeans.Main.nickname&apos;&#x0D;&#x0A;- Getter method name: &apos;getNickname&apos;&#x0D;&#x0A;- Setter method name: &apos;setNickname&apos;&#x0D;&#x0A;- Field visibility: &apos;public&apos;&#x0D;&#x0A;- Use getter and setter methods in declaring type" comments="false" declaring="true" description="Encapsulate field &apos;nickname, ...&apos;" flags="589830" getter="getNickname" id="org.eclipse.jdt.ui.self.encapsulate" input="/src\/main\/java&lt;com.jsf.templatebeans{Main.java[Main^nickname" insertion="4" setter="setNickname" stamp="1735556836452" version="1.0" visibility="1"/>
+</session>

@@ -27,10 +27,11 @@
 		        <p:outputPanel rendered="#{!empty remoteClient.details}" styleClass="header__content">
 		        	<div></div> <!-- style fix -->
 		        	
-		            <form class="header__search">
-		                <input type="text" name="nickname" placeholder="Wyszukaj użytkownika" value=""/>
+		            <h:form action="#{main.search()}" styleClass="header__search">
+		                <p:inputText type="text" placeholder="Wyszukaj użytkownika" value="#{main.nickname}"/>
 		                <h:graphicImage width="15" library="template" name="icons/search.svg"/>
-		            </form>
+		                <p:commandButton style="display:none;" action="#{main.search()}" value=""/>
+		            </h:form>
 		
 		            <h:form styleClass="header__buttons header__buttons--desktop">
 		                <h:commandLink action="#{main.addPost()}" class="profile-button">

@@ -1,0 +1,18 @@
+package com.jsf.dao;
+
+import java.util.List;
+import jakarta.persistence.PersistenceContext;
+import jakarta.ejb.Stateless;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
+
+@Stateless
+public class FollowDAO {
+    
+    private final static String UNIT_NAME = "ig-clone";
+
+    @PersistenceContext(unitName = UNIT_NAME)
+    protected EntityManager em;
+
+    
+}
