@@ -13,7 +13,7 @@
 
 <ui:composition template="/templates/main.xhtml">
 	<ui:define name="content">
-		<p:panel header="Wyszukani uzytkownicy:">
+		<p:panel id="users" header="Wyszukani uzytkownicy:">
 		
 		<ui:repeat value="#{search.list}" var="user">
 		    <h:form styleClass="side-menu__user-profile">
@@ -30,8 +30,8 @@
 	            </div>
 	            
 	            <p:outputPanel rendered="#{user.id != remoteClient.details.id}">
-	            	<p:commandLink action="#{search.toggleFollow(user)}" rendered="#{search.isFollowing(user)}" styleClass="side-menu__suggestion-button" update="@form, suggestions">Unfollow</p:commandLink>
-	            	<p:commandLink action="#{search.toggleFollow(user)}" rendered="#{!search.isFollowing(user)}" styleClass="side-menu__suggestion-button" update="@form, suggestions">Follow</p:commandLink>
+	            	<p:commandLink action="#{search.toggleFollow(user)}" rendered="#{search.isFollowing(user)}" styleClass="side-menu__suggestion-button" update="@form">Unfollow</p:commandLink>
+	            	<p:commandLink action="#{search.toggleFollow(user)}" rendered="#{!search.isFollowing(user)}" styleClass="side-menu__suggestion-button">Follow</p:commandLink>
             	</p:outputPanel>
         	</h:form>
 	    </ui:repeat>

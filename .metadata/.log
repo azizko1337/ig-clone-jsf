@@ -7626,3 +7626,9 @@ java.lang.InterruptedException
 
 !ENTRY org.jboss.ide.eclipse.as.core 1 16842785 2024-12-30 12:54:34.734
 !MESSAGE Server Shutdown Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2024-12-30 12:55:16.292
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2024-12-30 12:55:25.355
+!MESSAGE Server Startup Succeeded

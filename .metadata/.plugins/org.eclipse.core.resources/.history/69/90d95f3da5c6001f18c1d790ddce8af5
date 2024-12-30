@@ -30,13 +30,14 @@
 	            </div>
 	            
 	            <p:outputPanel rendered="#{user.id != remoteClient.details.id}">
-	            	<p:commandLink action="#{search.toggleFollow(user)}" rendered="#{search.isFollowing(user)}" styleClass="side-menu__suggestion-button" update="@form, suggestions">Unfollow</p:commandLink>
-	            	<p:commandLink action="#{search.toggleFollow(user)}" rendered="#{!search.isFollowing(user)}" styleClass="side-menu__suggestion-button" update="@form, suggestions">Follow</p:commandLink>
+	            	<h:commandLink action="#{search.toggleFollow(user)}" rendered="#{search.isFollowing(user)}" styleClass="side-menu__suggestion-button">Unfollow</h:commandLink>
+	            	<h:commandLink action="#{search.toggleFollow(user)}" rendered="#{!search.isFollowing(user)}" styleClass="side-menu__suggestion-button">Follow</h:commandLink>
             	</p:outputPanel>
         	</h:form>
 	    </ui:repeat>
 	    
 	    </p:panel>
+		
 	</ui:define>
 	
 	<ui:define name="aside">
