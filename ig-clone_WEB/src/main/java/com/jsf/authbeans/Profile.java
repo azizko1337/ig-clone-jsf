@@ -10,6 +10,7 @@ import com.jsf.entities.User;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.faces.application.FacesMessage;
 import jakarta.faces.context.FacesContext;
+import jakarta.faces.simplesecurity.Password;
 import jakarta.faces.simplesecurity.RemoteClient;
 import jakarta.faces.simplesecurity.ServerClient;
 import jakarta.faces.view.ViewScoped;
@@ -21,7 +22,7 @@ import jakarta.servlet.http.HttpSession;
 @Named
 @ViewScoped
 public class Profile implements Serializable{
-	private static final String PAGE_MAIN = "/pages/index?faces-redirect=true";
+	private static final String PAGE_INDEX = "/pages/index?faces-redirect=true";
 	private static final String PAGE_REGISTER = "/pages/auth/register?faces-redirect=true";
 	private static final String PAGE_STAY_AT_THE_SAME = null;
 	private static final String PAGE_LOGIN = "/pages/auth/login?faces-redirect=true";
@@ -40,7 +41,17 @@ public class Profile implements Serializable{
 	UserRoleDAO userRoleDAO;
 	
 	public void onLoad() {
-		setUser(ServerClient.getLoggedUser());
+		User loggedUser = ServerClient.getLoggedUser();
+		
+		User user = new User();
+		user.setId(loggedUser.getId());
+		user.setNickname(loggedUser.getNickname());
+		user.setFirstName(loggedUser.getFirstName());
+		user.setLastName(loggedUser.getLastName());
+		user.setEmail(loggedUser.getEmail());
+		user.setPassword(loggedUser.getPassword());
+		
+		setUser(user);
 	}
 	
 	
@@ -52,11 +63,73 @@ public class Profile implements Serializable{
 	}
 	
 	public void save() {
+		User loggedUser = ServerClient.getLoggedUser();
 		
+		FacesContext ctx = FacesContext.getCurrentInstance();
+		if(loggedUser.getPassword().equals(Password.hash(getCurrentPasswordEdit()))) {
+			setCurrentPasswordEdit("");
+			
+			if(getNewPassword().length()>0) {
+				if(getNewPassword().equals(getRepeatedNewPassword())) {
+					getUser().setPassword(Password.hash(getNewPassword()));
+				}else {
+					ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Nowe hasła nie są takie same.", null));
+					return;
+				}
+			}
+				
+//			check if nickname has been changed, if yes check unique
+			if(!loggedUser.getNickname().equals(getUser().getNickname())) {
+				if(!userDAO.checkUniqueNickname(getUser().getNickname())){
+					ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Nazwa jest juz zajeta.", null));
+					return;
+				}
+			}
+//			check if 
+			if(!loggedUser.getEmail().equals(getUser().getEmail())) {
+				if(!userDAO.checkUniqueEmail(getUser().getEmail())){
+					ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Email jest juz zajety.", null));
+					return;
+				}
+			}
+			
+			userDAO.merge(getUser());
+			
+//			update session (login)
+			User newLoggedUser = userDAO.find(user.getId());
+			RemoteClient<User> client = new RemoteClient<User>();
+			client.setDetails(newLoggedUser);
+			List<String> roles = userRoleDAO.findRoleNamesByUserId(newLoggedUser.getId());
+			if (roles.size() > 0) {
+				for (String role: roles) {
+					client.getRoles().add(role);
+				}
+			}
+			HttpServletRequest request = (HttpServletRequest) ctx.getExternalContext().getRequest();
+			client.store(request);
+			
+			setNewPassword("");
+			setRepeatedNewPassword("");
+			
+			ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Zapisano zmiany.", null));
+				
+			
+		}else {
+			ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Nie mozna edytowac danych, niepoprawne obecne haslo", null));
+		}
 	}
 	
 	public String delete() {
-		return null;
+		if(user.getPassword().equals(Password.hash(getCurrentPasswordDelete()))) {
+			userDAO.remove(user);
+			return logout();
+		}else {
+			setCurrentPasswordDelete("");
+			FacesContext ctx = FacesContext.getCurrentInstance();
+			ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,
+					"Nie mozna usunac konta, niepoprawne stare haslo", null));
+			return null;
+		}
 	}
 
 

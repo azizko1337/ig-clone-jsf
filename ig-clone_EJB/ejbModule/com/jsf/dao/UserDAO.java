@@ -46,6 +46,20 @@ public class UserDAO {
 			return null;
 		}
 	}
+	
+	public boolean checkUniqueNickname(String nickname) {
+		String queryString = "select u from User u where nickname = :nickname";
+		Query query = em.createQuery(queryString);
+		query.setParameter("nickname", nickname);
+		return query.getResultList().size() == 0;
+	}
+	
+	public boolean checkUniqueEmail(String email) {
+		String queryString = "select u from User u where email = :email";
+		Query query = em.createQuery(queryString);
+		query.setParameter("email", email);
+		return query.getResultList().size() == 0;
+	}
 
 	public void create(User user) {
 		em.persist(user);

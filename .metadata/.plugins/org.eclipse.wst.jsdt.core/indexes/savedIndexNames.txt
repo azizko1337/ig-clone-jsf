@@ -6,6 +6,5 @@ INDEX VERSION 1.4+C:\Users\anton\eclipse-workspace2\.metadata\.plugins\org.eclip
 3259267093.index
 1341054337.index
 452417039.index
-1853811860.index
 4190800889.index
 68823254.index

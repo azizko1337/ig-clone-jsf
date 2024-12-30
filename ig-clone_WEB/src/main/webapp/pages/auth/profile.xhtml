@@ -62,7 +62,7 @@
 			        <p:inputText id="password" styleClass="block" type="password" value="#{profile.currentPasswordEdit}"/>
 			    </div>
 			    
-			     <p:commandButton type="button" value="Zapisz zmiany" styleClass="rounded-button" action="#{profile.save()}" update="@form"/>
+			     <p:commandButton value="Zapisz zmiany" styleClass="rounded-button" action="#{profile.save()}" update="@form, messages, logged"/>
 			</h:form>
 		</p:panel>
 		
@@ -73,7 +73,7 @@
 			        <p:inputText id="password_for_delete" styleClass="block" type="password" value="#{profile.currentPasswordDelete}"/>
 			    </div>
 			
-			     <p:commandButton value="Usuń konto" styleClass="ui-button-danger rounded-button" action="#{profile.delete()}"/>
+			     <p:commandButton value="Usuń konto" styleClass="ui-button-danger rounded-button" action="#{profile.delete()}" update="messages"/>
 			</h:form>
 		</p:panel>
 		

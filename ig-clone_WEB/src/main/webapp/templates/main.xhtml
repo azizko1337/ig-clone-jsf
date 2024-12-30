@@ -71,7 +71,7 @@
 		
 		        <div class="side-menu">
 		        	
-		        	<p:outputPanel rendered="#{!empty remoteClient.details}">
+		        	<p:outputPanel id="logged" rendered="#{!empty remoteClient.details}">
 			        	<h:form styleClass="side-menu__user-profile">
 					    	<p:commandLink
 						            action="#{main.profile(remoteClient.details)}"
