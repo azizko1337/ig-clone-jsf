@@ -4,3 +4,6 @@
 1735561094714	Encapsulate field 'repeatedNewPassword, ...'
 1735561099152	Encapsulate field 'currentPasswordEdit, ...'
 1735561102600	Encapsulate field 'currentPasswordDelete, ...'
+1735645015755	Encapsulate field 'newComment, ...'
+1735646156169	Encapsulate field 'extendedPost, ...'
+1735650581276	Encapsulate field 'fileContents, ...'

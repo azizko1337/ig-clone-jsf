@@ -435,6 +435,7 @@ img {
 .post__content {
   display: flex;
   position: relative;
+  padding-bottom:15px;
 }
 .post__medias {
   display: flex;

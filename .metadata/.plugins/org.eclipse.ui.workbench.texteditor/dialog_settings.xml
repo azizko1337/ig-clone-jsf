@@ -3,6 +3,9 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="false"/>
 	<list key="searchhistory">
+		<item value="profile"/>
+		<item value="profilePublic"/>
+		<item value="followed_user"/>
 		<item value="post__desc"/>
 		<item value="post__name--underline"/>
 		<item value="feed"/>
@@ -15,7 +18,5 @@
 		<item value="side-menu__footer-link"/>
 		<item value="svg"/>
 		<item value="0"/>
-		<item value="postController"/>
-		<item value="post"/>
 	</list>
 </section>

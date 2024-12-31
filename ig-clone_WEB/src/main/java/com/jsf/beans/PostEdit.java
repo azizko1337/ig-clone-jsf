@@ -11,6 +11,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.Base64;
 
 import javax.imageio.ImageIO;
 
@@ -120,14 +121,15 @@ public class PostEdit implements Serializable {
     	postDAO.remove(getPost());
     	return PAGE_INDEX;
 	 }
+	 
+	 public void preview() {}
 	
     private void handleUploadedFile() throws IOException {
     	if (getUploadedFile() != null) {
             String fileName = getUploadedFile().getFileName();
 
             // Ścieżka do folderu
-            String baseUploadPath = servletContext.getRealPath("/uploads");
-            Path postFolderPath = Paths.get(baseUploadPath);
+            Path postFolderPath = Paths.get(servletContext.getRealPath("/uploads"));
 
             if (!Files.exists(postFolderPath)) {
                 Files.createDirectories(postFolderPath);
@@ -138,6 +140,9 @@ public class PostEdit implements Serializable {
             // Zapis pliku
             Files.copy(getUploadedFile().getInputStream(), filePath, StandardCopyOption.REPLACE_EXISTING);
         }
+    }
+    public String getImageContentsAsBase64() {
+        return Base64.getEncoder().encodeToString(uploadedFile.getContent());
     }
     
     public String index() {
