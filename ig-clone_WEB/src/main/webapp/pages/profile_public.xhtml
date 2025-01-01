@@ -35,9 +35,12 @@
 			<h:form>
 				<div style="display:flex; gap:10px; align-items:center;">
 					<h:outputLabel value="Treść:" />
-					<p:inputText value="#{profilePublic.body}" />
+					<p:inputText id="body" value="#{profilePublic.body}" validatorMessage="Wyszukiwanie moze miec maksymalnie 16 znakow.">
+						<f:validateLength maximum="16"></f:validateLength>
+					</p:inputText>
+					<p:message for="body"/>
 					<div style="flex-grow:1;"></div>
-					<p:commandButton value="Szukaj" update="feed" />
+					<p:commandButton value="Szukaj" update="feed, messages, @form" />
 				</div>
 			</h:form>
 		</p:panel>

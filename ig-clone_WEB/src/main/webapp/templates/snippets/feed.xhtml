@@ -95,8 +95,12 @@
 			                </h:form>
 					        
 					    </ui:repeat>
-					    <h:form style="width: 100%; display:flex; gap:10px;">
-					        <p:inputText style="margin:0; padding:1px 0; flex-grow:1; width:100%;" value="#{feed.newComment}"/>
+					    <h:form style="width: 100%; display:flex;">
+					        <p:inputText id="addComment" style="margin:0; padding:1px 0; flex-grow:1; width:100%;" value="#{feed.newComment}" validatorMessage="Komentarz musi mieć 3-64 znaki.">
+					        	<f:validateRequired></f:validateRequired>
+			        			<f:validateLength minimum="3" maximum="64"></f:validateLength>
+					        </p:inputText>
+							<p:message for="addComment"/>
 					        <p:commandButton value="Dodaj" action="#{feed.addComment(post)}" update="feed"/>
 					    </h:form>
 					</p:panel>

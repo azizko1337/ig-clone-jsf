@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	>
+
+<ui:composition template="/templates/main.xhtml">
+	<ui:define name="content">
+		
+		<p:panel header="Rejestracja">
+			<h:form styleClass="form" style="gap:5px;">
+			    <div class="field">
+			        <p:outputLabel for="nickname" styleClass="block">Nazwa uzytkownika</p:outputLabel>
+			        <p:inputText id="nickname" styleClass="block" value="#{register.user.nickname}"  validatorMessage="Nazwa uzytkownika musi mieć 3-32 znaki.">
+			        	<f:validateRequired></f:validateRequired>
+			        	<f:validateLength minimum="3" maximum="32"></f:validateLength>
+			        </p:inputText>
+			        <p:message for="nickname"/>
+			    </div>
+			    
+			    <div class="field">
+			        <p:outputLabel for="firstName" styleClass="block">Imię</p:outputLabel>
+			        <p:inputText id="firstName" styleClass="block" value="#{register.user.firstName}"  validatorMessage="Imię musi mieć 3-32 znaki.">
+			        	<f:validateRequired></f:validateRequired>
+			        	<f:validateLength minimum="3" maximum="32"></f:validateLength>
+			        </p:inputText>
+			        <p:message for="firstName"/>
+			    </div>
+			    
+			    <div class="field">
+			        <p:outputLabel for="lastName" styleClass="block">Nazwisko</p:outputLabel>
+			        <p:inputText id="lastName" styleClass="block" value="#{register.user.lastName}" validatorMessage="Nazwisko musi mieć 3-32 znaki.">
+			        	<f:validateRequired></f:validateRequired>
+			        	<f:validateLength minimum="3" maximum="32"></f:validateLength>
+			        </p:inputText>
+			        <p:message for="lastName"/>
+			    </div>
+			    
+			    <div class="field">
+			        <p:outputLabel for="email" styleClass="block">Email</p:outputLabel>
+			        <p:inputText id="email" type="email" styleClass="block" value="#{register.user.email}" validatorMessage="Email nie jest poprawny.">
+			        	<f:validateRequired></f:validateRequired>
+			        	<f:validateLength minimum="3" maximum="320"></f:validateLength>
+			        	<f:validateRegex pattern="([^.@]+)(\.[^.@]+)*@([^.@]+\.)+([^.@]+)"></f:validateRegex>
+			        </p:inputText>
+			        <p:message for="email"/>
+			    </div>
+
+			    <div class="field">
+			        <p:outputLabel for="password" styleClass="block">Hasło</p:outputLabel>
+			        <p:inputText id="password" styleClass="block" type="password" value="#{register.user.password}" validatorMessage="Hasło musi mieć 4-128 znaków.">
+			        	<f:validateRequired></f:validateRequired>
+			        	<f:validateLength minimum="4" maximum="128"></f:validateLength>
+			        </p:inputText>
+			        <p:message for="password"/>
+			    </div>
+			    
+			    <div class="field">
+			        <p:outputLabel for="repeatedPassword" styleClass="block">Powtórz hasło</p:outputLabel>
+			        <p:inputText id="repeatedPassword" styleClass="block" type="password" value="#{register.repeatedPassword}" validatorMessage="Powtórzone hasło nie jest poprawne.">
+			        	<f:validateRequired></f:validateRequired>
+			        	<f:validateLength minimum="4" maximum="128"></f:validateLength>
+			        </p:inputText>
+			        <p:message for="repeatedPassword"/>
+			    </div>
+			    
+			     <p:commandButton type="submit" value="Zarejestruj" styleClass="rounded-button" action="#{register.register()}" update="@form, messages"/>
+			</h:form>
+		</p:panel>
+		
+	</ui:define>
+</ui:composition>
+
+</html>

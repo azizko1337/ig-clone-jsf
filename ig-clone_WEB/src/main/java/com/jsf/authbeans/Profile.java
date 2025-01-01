@@ -71,7 +71,12 @@ public class Profile implements Serializable{
 			
 			if(getNewPassword().length()>0) {
 				if(getNewPassword().equals(getRepeatedNewPassword())) {
-					getUser().setPassword(Password.hash(getNewPassword()));
+					if(getNewPassword().length() >= 4 && getNewPassword().length()<=128) {
+						getUser().setPassword(Password.hash(getNewPassword()));
+					}else {
+						ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Nowe hasło musi mieć 4-128 znaków.", null));
+						return;
+					}
 				}else {
 					ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Nowe hasła nie są takie same.", null));
 					return;

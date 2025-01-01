@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	>
+
+<ui:composition template="/templates/main.xhtml">
+	<ui:define name="content">
+		
+		<p:panel header="Logowanie">
+			<h:form styleClass="form">
+			    <div class="field">
+			        <p:outputLabel for="nickname" styleClass="block">Nazwa uzytkownika</p:outputLabel>
+			        <p:inputText id="nickname" styleClass="block" value="#{login.nickname}">
+			        	<f:validateRequired></f:validateRequired>
+			        	<f:validateLength minimum="3" maximum="32"></f:validateLength>
+			        </p:inputText>
+			    </div>
+
+			    <div class="field">
+			        <p:outputLabel for="password" styleClass="block">Hasło</p:outputLabel>
+			        <p:inputText id="password" styleClass="block" type="password" value="#{login.password}"/>
+			    </div>
+			    
+			     <p:commandButton type="submit" value="Zaloguj" styleClass="rounded-button" action="#{login.login()}" update="@form, messages"/>
+			</h:form>
+			
+			
+		</p:panel>
+		
+		<h:form>Nie masz konta? <p:commandLink action="#{login.register()}">Zarejestruj się.</p:commandLink></h:form>
+		
+	</ui:define>
+</ui:composition>
+
+</html>

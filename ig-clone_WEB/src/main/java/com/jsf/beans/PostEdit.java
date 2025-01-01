@@ -41,6 +41,7 @@ public class PostEdit implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private static final String PAGE_INDEX = "/pages/index?faces-redirect=true";
+	private static final String PAGE_STAY_AT_THE_SAME = null;
 	
 	private Post post = new Post();
 	private Post loaded = null;
@@ -87,7 +88,12 @@ public class PostEdit implements Serializable {
 		
 		// no Person object passed
 		if (loaded == null) {
-			return null;
+			return PAGE_STAY_AT_THE_SAME;
+		}
+		
+		if(getUploadedFile() == null && getPost().getId()==0) {
+			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Musisz dodać zdjęcie.", null));
+			return PAGE_STAY_AT_THE_SAME;
 		}
 
 		try {

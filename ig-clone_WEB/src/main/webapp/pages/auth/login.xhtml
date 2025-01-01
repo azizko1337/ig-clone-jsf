@@ -14,12 +14,20 @@
 			<h:form styleClass="form">
 			    <div class="field">
 			        <p:outputLabel for="nickname" styleClass="block">Nazwa uzytkownika</p:outputLabel>
-			        <p:inputText id="nickname" styleClass="block" value="#{login.nickname}"/>
+			        <p:inputText id="nickname" styleClass="block" value="#{login.nickname}" validatorMessage="Nazwa uzytkownika musi mieć 3-32 znaki.">
+			        	<f:validateRequired></f:validateRequired>
+			        	<f:validateLength minimum="3" maximum="32"></f:validateLength>
+			        </p:inputText>
+			        <p:message for="nickname"/>
 			    </div>
 
 			    <div class="field">
 			        <p:outputLabel for="password" styleClass="block">Hasło</p:outputLabel>
-			        <p:inputText id="password" styleClass="block" type="password" value="#{login.password}"/>
+			        <p:inputText id="password" styleClass="block" type="password" value="#{login.password}" validatorMessage="Hasło musi mieć 4-128 znaków.">
+			        	<f:validateRequired></f:validateRequired>
+			        	<f:validateLength minimum="4" maximum="128"></f:validateLength>
+			        </p:inputText>
+			        <p:message for="password"/>
 			    </div>
 			    
 			     <p:commandButton type="submit" value="Zaloguj" styleClass="rounded-button" action="#{login.login()}" update="@form, messages"/>
