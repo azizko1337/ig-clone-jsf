@@ -52,7 +52,7 @@ public class PostDAO {
     }
 
     // Retrieve posts with search parameters
-    public List<Post> getList(Map<String, Object> searchParams) {
+    public List<Post> getList(Map<String, Object> searchParams, int firstRow, int rows) {
         List<Post> list = null;
 
         String select = "SELECT p ";
@@ -97,11 +97,71 @@ public class PostDAO {
 
         // Execute query
         try {
-            list = query.getResultList();
+            list = query.setFirstResult(firstRow).setMaxResults(rows).getResultList();
         } catch (Exception e) {
             e.printStackTrace();
         }
 
         return list;
+    }
+
+    public List<Integer> getIdsList(Map<String, Object> searchParams, int firstRow, int rows) {
+        List<Integer> list = null;
+
+        String select = "SELECT p.id ";
+        String from = "FROM Post p ";
+        String where = "";
+        String orderby = "ORDER BY p.createdAt DESC";
+
+        // Filter by user ID
+        Integer userId = (Integer) searchParams.get("userId");
+        if (userId != null) {
+            where += (where.isEmpty() ? "WHERE " : "AND ");
+            where += "p.user.id = :userId ";
+        }
+
+        // Filter by content (body)
+        String body = (String) searchParams.get("body");
+        if (body != null) {
+            where += (where.isEmpty() ? "WHERE " : "AND ");
+            where += "p.body like :body ";
+        }
+        
+        // Filter by feed (user follows...)
+        Integer feed = (Integer) searchParams.get("feed");
+        if (feed != null) {
+            where += (where.isEmpty() ? "WHERE " : "AND ");
+            where += "p.user.id IN (SELECT f.user2.id FROM Follow f WHERE f.user1.id = :feed)";
+        }
+
+        // Build query
+        Query query = em.createQuery(select + from + where + orderby);
+
+        // Set parameters
+        if (userId != null) {
+            query.setParameter("userId", userId);
+        }
+        if (body != null) {
+            query.setParameter("body", body + "%");
+        }
+        if(feed != null) {
+        	query.setParameter("feed", feed);
+        }
+
+        // Execute query
+        try {
+            list = query.setFirstResult(firstRow).setMaxResults(rows).getResultList();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return list;
+    }
+
+    public List<Post> getFromIds(List<Integer> ids){
+    	Query query = em.createQuery("SELECT p FROM Post p WHERE p.id IN :ids ORDER BY p.createdAt DESC");
+    	query.setParameter("ids", ids);
+    	
+    	return query.getResultList();
     }
 }

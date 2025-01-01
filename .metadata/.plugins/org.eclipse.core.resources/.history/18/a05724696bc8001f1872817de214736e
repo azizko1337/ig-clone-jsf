@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	>
+
+
+<ui:composition template="/templates/main.xhtml">
+	<ui:define name="content">
+		<h:body onscroll="handleScroll()">
+			<p:panel header="Opcje wyszukiwania" rendered="#{!empty remoteClient.details}" toggleable="true" collapsed="true" style="margin-bottom: 1em;">
+				<h:form>
+					<div style="display:flex; gap:10px; align-items:center;">
+						<h:outputLabel value="Treść:" />
+						<p:inputText id="searchBody" value="#{index.body}" validatorMessage="Wyszukiwanie moze miec maksymalnie 16 znakow.">
+							<f:validateLength maximum="16"></f:validateLength>
+						</p:inputText>
+						<p:message for="searchBody"/>
+						<div style="flex-grow:1;"></div>
+						<p:commandButton value="Szukaj" update="feed, messages, @form" />
+					</div>
+				</h:form>
+			</p:panel>
+		    <ui:include src="/templates/snippets/feed.xhtml" >
+		    	<ui:param name="posts" value="#{index.posts}" />
+		    </ui:include>
+		    <h:form>
+		    <p:remoteCommand name="loadMore" 
+                            action="#{index.loadMorePosts()}"
+                            update=":feed" /></h:form>
+		</h:body>
+	</ui:define>
+	
+	<ui:define name="aside">
+		<p:outputPanel rendered="#{empty remoteClient.details}">
+			<h:form style="padding-bottom:20px;">
+				<p><p:commandLink action="#{index.login()}">Zaloguj się</p:commandLink>, aby zacząć korzystać z serwisu.</p>
+			</h:form>
+		</p:outputPanel>
+		<ui:include src="/templates/snippets/suggestions.xhtml" />
+	</ui:define>
+</ui:composition>
+
+</html>

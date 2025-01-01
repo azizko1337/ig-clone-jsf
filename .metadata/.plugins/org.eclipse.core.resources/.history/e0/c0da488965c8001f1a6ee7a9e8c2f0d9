@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	>
+
+	<p:panel id="feed" header="Posty">
+    <div class="posts">
+        <p:dataScroller value="#{posts}" var="post" lazy="true" chunkSize="5">
+        	<div class="post">
+                <h:form class="post__header">
+                    <div class="post__profile">
+                        <p:commandLink
+                                action="#{feed.profile(post.user)}"
+                                styleClass="post__avatar"
+                        >
+                            <h:graphicImage library="template" name="icons/default-user.png" alt="User picture"/>
+                        </p:commandLink>
+                        <p:commandLink
+                                action="#{feed.profile(post.user)}"
+                                styleClass="post__user"
+                        >#{post.user.firstName} #{post.user.lastName}</p:commandLink>
+                    </div>
+
+                <!-- edit post, render if i am creator or moderator -->
+                <p:outputPanel rendered="#{post.user.id == remoteClient.details.id || remoteClient.isInRole('moderator')}">
+                    <p:commandLink action="#{feed.editPost(post)}" styleClass="post__more-options">
+                        <h:graphicImage width="24" library="template" name="icons/more.svg" alt="Więcej"/>
+                    </p:commandLink>
+                </p:outputPanel>
+
+                    
+                </h:form>
+                
+                <div class="post__content">
+                    <div class="post__medias">
+                        <p:graphicImage styleClass="post__media" value="/uploads/#{post.id}.jpg" alt="Zdjęcie" style="width: 100%;" />
+                    </div>
+                </div>
+
+                <div class="post__footer">
+                    
+
+                    <div class="post__infos">
+                        
+
+                        <h:form styleClass="post__description">
+                            <span>
+                                  <p:commandLink
+                                          styleClass="post__name--underline"
+                                          action="#{feed.profile(post.user)}"
+                                  >#{post.user.nickname}</p:commandLink> #{post.body}
+                              </span>
+                        </h:form>
+
+                        <span class="post__date-time">Dodano #{post.createdAt}</span>
+                        
+                        <div class="post__likes">
+                   			<p:outputPanel id="likes-#{post.id}">
+                    			<b class="post__name--underline">#{post.likes.size()}</b> polubień, <b class="post__name--underline">#{post.comments.size()}</b> komentarzy
+                        	</p:outputPanel>
+                        </div>
+                        
+                        <h:form styleClass="post__buttons">
+                            <p:commandLink action="#{feed.like(post)}" update="feed" styleClass="post__button">
+                            	<h:graphicImage rendered="#{!feed.isLiked(post)}" width="15" library="template" name="icons/heart.png" alt="Polub"/>
+                            	<h:graphicImage rendered="#{feed.isLiked(post)}" width="15" library="template" name="icons/heart-filled.png" alt="Odlub"/>
+                            </p:commandLink>
+                            <p:commandLink styleClass="post__button" action="#{feed.extendPost(post)}" update="feed">
+                                <h:graphicImage width="15" library="template" name="icons/comment.svg" alt="Skomentuj"/>
+                            </p:commandLink>
+                    	</h:form>
+                    </div>
+                </div>
+                
+                <p:panel rendered="#{post.id eq feed.extendedPost}" id="comments-#{post.id}">
+                	<h3 style="margin: 0 0 10px 0; padding:0;">Komentarze:</h3>
+                    <ui:repeat value="#{post.comments}" var="comment">
+                        <h:form styleClass="post padding" style="width:100%; border:none; display:flex; flex-direction:row; justify-content:space-between; padding-bottom: 5px">
+                            <div class="post__description">
+                                <span>
+                                  <p:commandLink
+                                          styleClass="post__name--underline"
+                                          action="#{feed.profile(post.user)}">#{comment.user.nickname}</p:commandLink
+                                  > #{comment.body}</span>
+                            </div>
+                            <p:outputPanel rendered="#{comment.user.id eq remoteClient.details.id || remoteClient.isInRole('moderator')}">
+                        		<p:commandLink action="#{feed.removeComment(comment)}" update="feed">
+                        			<p:graphicImage width="15" library="template" name="icons/delete.png" alt="Usuń komentarz"/>
+                        		</p:commandLink>
+                        	</p:outputPanel>
+                        </h:form>
+                        
+                    </ui:repeat>
+                    <h:form style="width: 100%; display:flex;">
+                        <p:inputText id="addComment" style="margin:0; padding:1px 0; flex-grow:1; width:100%;" value="#{feed.newComment}" validatorMessage="Komentarz musi mieć 3-64 znaki.">
+                        	<f:validateRequired></f:validateRequired>
+                			<f:validateLength minimum="3" maximum="64"></f:validateLength>
+                        </p:inputText>
+                        <p:message for="addComment"/>
+                        <p:commandButton value="Dodaj" action="#{feed.addComment(post)}" update="feed"/>
+                    </h:form>
+                </p:panel>
+            </div>
+    	</p:dataScroller>
+    	
+    	<!-- if no posts -->
+    	<h:panelGroup rendered="#{empty posts}">
+    		<p>Brak postów do wyświetlenia.</p>
+    	</h:panelGroup>
+    </div>
+</p:panel>
+
+</html>
+

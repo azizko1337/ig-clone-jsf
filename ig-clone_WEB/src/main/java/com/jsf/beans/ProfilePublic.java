@@ -104,7 +104,7 @@ public class ProfilePublic implements Serializable{
 		searchParams.put("userId", user.getId());
 		
 		//2. Get list
-		list = postDAO.getList(searchParams);
+		list = postDAO.getList(searchParams, 0, 10);
 		
 		return list;
 	}

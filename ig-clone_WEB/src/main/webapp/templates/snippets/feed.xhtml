@@ -85,7 +85,7 @@
 				                      <p:commandLink
 				                              styleClass="post__name--underline"
 				                              action="#{feed.profile(post.user)}">#{comment.user.nickname}</p:commandLink
-				                      > #{comment.body}</span>
+				                      >: #{comment.body}</span>
 			                    </div>
 			                    <p:outputPanel rendered="#{comment.user.id eq remoteClient.details.id || remoteClient.isInRole('moderator')}">
 					        		<p:commandLink action="#{feed.removeComment(comment)}" update="feed">

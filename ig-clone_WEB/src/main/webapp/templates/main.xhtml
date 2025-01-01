@@ -13,6 +13,25 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     	<link href="#{resource['template:icons/favicon.svg']}" rel="shortcut icon" type="image/x-icon" />
+    	
+	    <script type="text/javascript">
+			let locked = false;
+	    
+	        function handleScroll() {
+	            var scrollHeight = document.documentElement.scrollHeight;
+	            var scrollTop = document.documentElement.scrollTop;
+	            var clientHeight = document.documentElement.clientHeight;
+	            
+	            if (scrollTop + clientHeight >= scrollHeight - 50) {
+		            if(!locked){
+		            	loadMore();
+		                locked = true;
+		                setTimeout(() => (locked = false), 3000);
+			        }
+	            }
+	        }
+	    </script>
+
 	</h:head>
 	<h:body>
 		<div class="header">

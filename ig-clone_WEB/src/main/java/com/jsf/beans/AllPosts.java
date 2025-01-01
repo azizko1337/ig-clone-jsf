@@ -62,7 +62,7 @@ public class AllPosts{
 		}
 		
 		//2. Get list
-		list = postDAO.getList(searchParams);
+		list = postDAO.getList(searchParams, 0, 10);
 		
 		return list;
 	}

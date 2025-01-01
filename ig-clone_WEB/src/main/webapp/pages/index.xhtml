@@ -7,24 +7,33 @@
 	xmlns:p="http://primefaces.org/ui"
 	>
 
+
 <ui:composition template="/templates/main.xhtml">
 	<ui:define name="content">
-		<p:panel header="Opcje wyszukiwania" rendered="#{!empty remoteClient.details}" toggleable="true" collapsed="true" style="margin-bottom: 1em;">
-			<h:form>
-				<div style="display:flex; gap:10px; align-items:center;">
-					<h:outputLabel value="Treść:" />
-					<p:inputText id="searchBody" value="#{index.body}" validatorMessage="Wyszukiwanie moze miec maksymalnie 16 znakow.">
-						<f:validateLength maximum="16"></f:validateLength>
-					</p:inputText>
-					<p:message for="searchBody"/>
-					<div style="flex-grow:1;"></div>
-					<p:commandButton value="Szukaj" update="feed, messages, @form" />
-				</div>
-			</h:form>
-		</p:panel>
-	    <ui:include src="/templates/snippets/feed.xhtml" >
-	    	<ui:param name="posts" value="#{index.posts}" />
-	    </ui:include>
+		<h:body onscroll="handleScroll()">
+			<p:panel header="Opcje wyszukiwania" rendered="#{!empty remoteClient.details}" toggleable="true" collapsed="true" style="margin-bottom: 1em;">
+				<h:form>
+					<div style="display:flex; gap:10px; align-items:center;">
+						<h:outputLabel value="Treść:" />
+						<p:inputText id="searchBody" value="#{index.body}" validatorMessage="Wyszukiwanie moze miec maksymalnie 16 znakow.">
+							<f:validateLength maximum="16"></f:validateLength>
+						</p:inputText>
+						<p:message for="searchBody"/>
+						<div style="flex-grow:1;"></div>
+						<p:commandButton value="Szukaj" update="feed, messages, @form" action="#{index.search()}"/>
+					</div>
+				</h:form>
+			</p:panel>
+		    <ui:include src="/templates/snippets/feed.xhtml" >
+		    	<ui:param name="posts" value="#{index.posts}" />
+		    </ui:include>
+		    <h:form>
+            <p:remoteCommand name="loadMore" 
+               action="#{index.loadMorePosts}"
+               process="@this"
+               update="feed" />
+            </h:form>
+		</h:body>
 	</ui:define>
 	
 	<ui:define name="aside">
