@@ -36,6 +36,12 @@
 		            </h:form>
 		
 		            <h:form styleClass="header__buttons header__buttons--desktop">
+		            	<h:commandLink rendered="#{remoteClient.isInRole('moderator')}" action="#{main.moderatorPanel()}" class="profile-button">
+		                    <div class="profile-button__border"></div>
+		                    <div class="profile-button__picture">
+		                        <h:graphicImage library="template" name="icons/more.svg" alt="Moderator panel" />
+		                    </div>
+		                </h:commandLink>
 		                <h:commandLink action="#{main.addPost()}" class="profile-button">
 		                    <div class="profile-button__border"></div>
 		                    <div class="profile-button__picture">

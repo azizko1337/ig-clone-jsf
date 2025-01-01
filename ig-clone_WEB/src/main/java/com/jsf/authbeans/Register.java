@@ -19,7 +19,6 @@ import jakarta.inject.Named;
 @Named
 @RequestScoped
 public class Register {
-	
 	private static final String PAGE_INDEX = "/pages/index?faces-redirect=true";
 	private static final String PAGE_LOGIN = "/pages/auth/login?faces-redirect=true";
 	private static final String PAGE_STAY_AT_THE_SAME = null;
@@ -33,13 +32,21 @@ public class Register {
 	@EJB
 	UserRoleDAO userRoleDAO;
 	
-	@Inject
-	FacesContext context;
-	
 	public String register() {
+		FacesContext ctx = FacesContext.getCurrentInstance();
+		
 		try {
 			if(!user.getPassword().equals(repeatedPassword)) {
-				context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Hasła nie są takie same.", null));
+				ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Hasła nie są takie same.", null));
+				return PAGE_STAY_AT_THE_SAME;
+			}
+			
+			if(!userDAO.checkUniqueEmail(getUser().getEmail())) {
+				ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Email jest juz zajety.", null));
+				return PAGE_STAY_AT_THE_SAME;
+			}
+			if(!userDAO.checkUniqueNickname(getUser().getNickname())) {
+				ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Nazwa uzytkownika jest juz zajeta.", null));
 				return PAGE_STAY_AT_THE_SAME;
 			}
 			
@@ -52,11 +59,11 @@ public class Register {
 			
 			userRoleDAO.create(userRole);
 			
-			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Pomyślnie zarejestrowano.", null));
+			ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Pomyślnie zarejestrowano.", null));
 			return PAGE_LOGIN;
 		} catch (Exception e) {
 			e.printStackTrace();
-			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Wystąpił błąd podczas zapisu.", null));
+			ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Wystąpił błąd podczas zapisu.", null));
 			return PAGE_STAY_AT_THE_SAME;
 		}
 	}

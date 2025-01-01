@@ -23,6 +23,7 @@ public class Main implements Serializable {
 	private static final String PAGE_PROFILE_PUBLIC = "/pages/profile_public?faces-redirect=true";
 	private static final String PAGE_POST = "/pages/post?faces-redirect=true";
 	private static final String PAGE_SEARCH = "/pages/search?faces-redirect=true";
+	private static final String PAGE_MODERATOR_PANEL = "/pages/moderator/all_posts?faces-redirect=true";
 	private static final String PAGE_STAY_AT_THE_SAME = null;
 	
 	@Inject
@@ -45,6 +46,10 @@ public class Main implements Serializable {
 		flash.put("query", nickname);
 		
 		return PAGE_SEARCH;
+	}
+	
+	public String moderatorPanel() {
+		return PAGE_MODERATOR_PANEL;
 	}
 	
 	public String addPost() {

@@ -47,7 +47,6 @@ INDEX VERSION 1.134+C:\Users\anton\eclipse-workspace2\.metadata\.plugins\org.ecl
 3846767629.index
 2340180356.index
 3720266511.index
-4190800889.index
 2827742533.index
 2153448613.index
 1428647607.index
