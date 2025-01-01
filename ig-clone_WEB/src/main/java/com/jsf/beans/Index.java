@@ -26,6 +26,7 @@ import jakarta.faces.context.ExternalContext;
 import jakarta.faces.context.FacesContext;
 import jakarta.faces.context.Flash;
 import jakarta.faces.simplesecurity.RemoteClient;
+import jakarta.faces.simplesecurity.ServerClient;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
@@ -49,6 +50,8 @@ public class Index{
 	PostDAO postDAO;
 	
 	public List<Post> getPosts(){
+		User loggedUser = ServerClient.getLoggedUser();
+		
 		List<Post> list = null;
 		
 		//1. Prepare search params
@@ -56,6 +59,10 @@ public class Index{
 		
 		if (body != null && body.length() > 0){
 			searchParams.put("body", body);
+		}
+		
+		if(loggedUser != null) {
+			searchParams.put("feed", loggedUser.getId());
 		}
 		
 		//2. Get list

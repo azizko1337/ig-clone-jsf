@@ -43,9 +43,17 @@
 	        <param-name>permissions</param-name>
 	        <param-value>
 	/jakarta.faces.resource : PUBLIC;
-    /pages : PUBLIC;
     /uploads : PUBLIC;
-<!-- /pages/index : user, manager, admin; -->	
+    /pages : admin;
+    /pages/index.xhtml : PUBLIC;
+    /pages/post.xhtml : user;
+    /pages/profile_public.xhtml : user;
+    /pages/search.xhtml : user;
+    /pages/error/expired.xhtml : PUBLIC;
+    /pages/error/not_found.xhtml : PUBLIC;
+    /pages/auth/login.xhtml : PUBLIC;
+    /pages/auth/profile.xhtml : user;
+    /pages/auth/register.xhtml : PUBLIC;
 		    </param-value>
 	    </init-param>
 	    <init-param>

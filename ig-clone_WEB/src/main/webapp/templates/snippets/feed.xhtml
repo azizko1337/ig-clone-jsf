@@ -77,14 +77,26 @@
 	                </div>
 	                
 	                <p:panel rendered="#{post.id eq feed.extendedPost}" id="comments-#{post.id}">
+	                	<h3 style="margin: 0 0 10px 0; padding:0;">Komentarze:</h3>
 					    <ui:repeat value="#{post.comments}" var="comment">
-					        <div>#{comment.user.nickname}: #{comment.body}</div>
-					        <h:form rendered="#{comment.user.id eq remoteClient.details.id || remoteClient.isInRole('moderator')}">
-					        	<p:commandLink action="#{feed.removeComment(comment)}" update="feed">Usun</p:commandLink>
-					        </h:form>
+					        <h:form styleClass="post padding" style="width:100%; border:none; display:flex; flex-direction:row; justify-content:space-between; padding-bottom: 5px">
+			                    <div class="post__description">
+				                    <span>
+				                      <p:commandLink
+				                              styleClass="post__name--underline"
+				                              action="#{feed.profile(post.user)}">#{comment.user.nickname}</p:commandLink
+				                      > #{comment.body}</span>
+			                    </div>
+			                    <p:outputPanel rendered="#{comment.user.id eq remoteClient.details.id || remoteClient.isInRole('moderator')}">
+					        		<p:commandLink action="#{feed.removeComment(comment)}" update="feed">
+					        			<p:graphicImage width="15" library="template" name="icons/delete.png" alt="Usuń komentarz"/>
+					        		</p:commandLink>
+					        	</p:outputPanel>
+			                </h:form>
+					        
 					    </ui:repeat>
-					    <h:form>
-					        <p:inputText value="#{feed.newComment}"/>
+					    <h:form style="width: 100%; display:flex; gap:10px;">
+					        <p:inputText style="margin:0; padding:1px 0; flex-grow:1; width:100%;" value="#{feed.newComment}"/>
 					        <p:commandButton value="Dodaj" action="#{feed.addComment(post)}" update="feed"/>
 					    </h:form>
 					</p:panel>

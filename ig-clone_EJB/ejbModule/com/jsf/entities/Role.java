@@ -30,6 +30,9 @@ public class Role implements Serializable {
 
 	public Role() {
 	}
+	public Role(String name) {
+		setName(name);
+	}
 
 	public String getName() {
 		return this.name;

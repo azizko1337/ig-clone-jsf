@@ -49,6 +49,7 @@ public class Login {
 		
 		List<String> roles = userRoleDAO.findRoleNamesByUserId(user.getId());
 		
+		
 		if (roles.size() > 0) {
 			for (String role: roles) {
 				client.getRoles().add(role);

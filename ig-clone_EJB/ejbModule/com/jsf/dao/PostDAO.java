@@ -73,6 +73,13 @@ public class PostDAO {
             where += (where.isEmpty() ? "WHERE " : "AND ");
             where += "p.body like :body ";
         }
+        
+        // Filter by feed (user follows...)
+        Integer feed = (Integer) searchParams.get("feed");
+        if (feed != null) {
+            where += (where.isEmpty() ? "WHERE " : "AND ");
+            where += "p.user.id IN (SELECT f.user2.id FROM Follow f WHERE f.user1.id = :feed)";
+        }
 
         // Build query
         Query query = em.createQuery(select + from + where + orderby);
@@ -83,6 +90,9 @@ public class PostDAO {
         }
         if (body != null) {
             query.setParameter("body", body + "%");
+        }
+        if(feed != null) {
+        	query.setParameter("feed", feed);
         }
 
         // Execute query

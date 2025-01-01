@@ -1,7 +1,10 @@
 package com.jsf.authbeans;
 
 import com.jsf.dao.UserDAO;
+import com.jsf.dao.UserRoleDAO;
+import com.jsf.entities.Role;
 import com.jsf.entities.User;
+import com.jsf.entities.UserRole;
 
 import jakarta.ejb.EJB;
 import jakarta.enterprise.context.RequestScoped;
@@ -27,6 +30,9 @@ public class Register {
 	@EJB
 	UserDAO userDAO;
 	
+	@EJB
+	UserRoleDAO userRoleDAO;
+	
 	@Inject
 	FacesContext context;
 	
@@ -39,6 +45,13 @@ public class Register {
 			
 			user.setPassword(Password.hash(user.getPassword()));
 			userDAO.create(user);
+			
+			UserRole userRole = new UserRole();
+			userRole.setRole(new Role("user"));
+			userRole.setUser(userDAO.find(user.getId()));
+			
+			userRoleDAO.create(userRole);
+			
 			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Pomyślnie zarejestrowano.", null));
 			return PAGE_LOGIN;
 		} catch (Exception e) {

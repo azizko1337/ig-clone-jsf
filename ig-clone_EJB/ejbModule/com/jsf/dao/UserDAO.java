@@ -20,8 +20,7 @@ public class UserDAO {
 	protected EntityManager em;
 	
 	public List<User> getSuggestions(User suggestionsFor){
-//		String queryString = "SELECT DISTINCT u FROM User u WHERE u.id IN (SELECT f.user2.id FROM Follow f WHERE f.user1.id != :following_user_id)";
-		String queryString = "SELECT DISTINCT u FROM User u WHERE u.id NOT IN (SELECT f.user2.id FROM Follow f WHERE f.user1.id = :following_user_id)";
+		String queryString = "SELECT DISTINCT u FROM User u WHERE u.id NOT IN (SELECT f.user2.id FROM Follow f WHERE f.user1.id = :following_user_id) AND u.id != :following_user_id";
 		
 		Query query = em.createQuery(queryString);
 		

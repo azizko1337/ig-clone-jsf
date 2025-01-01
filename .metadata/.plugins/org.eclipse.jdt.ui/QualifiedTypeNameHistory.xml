@@ -3,6 +3,7 @@
     <fullyQualifiedTypeName name="jakarta.servlet.ServletContext"/>
     <fullyQualifiedTypeName name="org.primefaces.model.file.UploadedFile"/>
     <fullyQualifiedTypeName name="com.jsf.dao.UserDAO"/>
-    <fullyQualifiedTypeName name="jakarta.faces.simplesecurity.ServerClient"/>
     <fullyQualifiedTypeName name="jakarta.faces.simplesecurity.Password"/>
+    <fullyQualifiedTypeName name="com.jsf.entities.Comment"/>
+    <fullyQualifiedTypeName name="jakarta.faces.simplesecurity.ServerClient"/>
 </qualifiedTypeNameHistroy>

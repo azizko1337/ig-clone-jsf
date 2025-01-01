@@ -33,11 +33,12 @@
 	
 		<p:panel header="Opcje wyszukiwania" toggleable="true" collapsed="true" style="margin-bottom: 1em;">
 			<h:form>
-				<h:panelGrid columns="2" cellpadding="5">
+				<div style="display:flex; gap:10px; align-items:center;">
 					<h:outputLabel value="Treść:" />
 					<p:inputText value="#{profilePublic.body}" />
+					<div style="flex-grow:1;"></div>
 					<p:commandButton value="Szukaj" update="feed" />
-				</h:panelGrid>
+				</div>
 			</h:form>
 		</p:panel>
 	    <ui:include src="/templates/snippets/feed.xhtml" >

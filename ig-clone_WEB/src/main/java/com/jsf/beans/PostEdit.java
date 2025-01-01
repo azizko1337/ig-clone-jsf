@@ -117,17 +117,22 @@ public class PostEdit implements Serializable {
 		
 	}
 	
-	 public String removePost() {
-    	postDAO.remove(getPost());
-    	return PAGE_INDEX;
+	 public String removePost(){
+//		remove post image
+		Path postFolderPath = Paths.get(servletContext.getRealPath("/uploads"));
+		Path filePath = postFolderPath.resolve(getPost().getId() + ".jpg");
+		try { Files.deleteIfExists(filePath); } catch(IOException e) {}
+		
+		 
+		postDAO.remove(getPost());
+		
+		return PAGE_INDEX;
 	 }
 	 
 	 public void preview() {}
 	
     private void handleUploadedFile() throws IOException {
     	if (getUploadedFile() != null) {
-            String fileName = getUploadedFile().getFileName();
-
             // Ścieżka do folderu
             Path postFolderPath = Paths.get(servletContext.getRealPath("/uploads"));
 

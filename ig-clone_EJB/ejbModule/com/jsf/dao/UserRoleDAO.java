@@ -1,6 +1,10 @@
 package com.jsf.dao;
 
 import java.util.List;
+
+import com.jsf.entities.Follow;
+import com.jsf.entities.UserRole;
+
 import jakarta.persistence.PersistenceContext;
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
@@ -22,4 +26,8 @@ public class UserRoleDAO {
         query.setParameter("userId", userId);
         return query.getResultList();
     }
+    
+    public void create(UserRole userRole) {
+		em.persist(userRole);
+	}
 }
