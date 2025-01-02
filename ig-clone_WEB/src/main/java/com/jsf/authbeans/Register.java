@@ -1,5 +1,7 @@
 package com.jsf.authbeans;
 
+import java.util.ResourceBundle;
+
 import com.jsf.dao.UserDAO;
 import com.jsf.dao.UserRoleDAO;
 import com.jsf.entities.Role;
@@ -8,6 +10,7 @@ import com.jsf.entities.UserRole;
 
 import jakarta.ejb.EJB;
 import jakarta.enterprise.context.RequestScoped;
+import jakarta.faces.annotation.ManagedProperty;
 import jakarta.faces.application.FacesMessage;
 import jakarta.faces.context.FacesContext;
 import jakarta.faces.simplesecurity.Password;
@@ -26,6 +29,10 @@ public class Register {
 	private User user = new User();
 	private String repeatedPassword;
 	
+	@Inject
+	@ManagedProperty("#{txt}")
+	private ResourceBundle txt;
+	
 	@EJB
 	UserDAO userDAO;
 	
@@ -37,16 +44,16 @@ public class Register {
 		
 		try {
 			if(!user.getPassword().equals(repeatedPassword)) {
-				ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Hasła nie są takie same.", null));
+				ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, txt.getString("validateRepeatedPassword"), null));
 				return PAGE_STAY_AT_THE_SAME;
 			}
 			
 			if(!userDAO.checkUniqueEmail(getUser().getEmail())) {
-				ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Email jest juz zajety.", null));
+				ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, txt.getString("emailOccupied"), null));
 				return PAGE_STAY_AT_THE_SAME;
 			}
 			if(!userDAO.checkUniqueNickname(getUser().getNickname())) {
-				ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Nazwa uzytkownika jest juz zajeta.", null));
+				ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, txt.getString("emailOccupied"), null));
 				return PAGE_STAY_AT_THE_SAME;
 			}
 			
@@ -59,11 +66,11 @@ public class Register {
 			
 			userRoleDAO.create(userRole);
 			
-			ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Pomyślnie zarejestrowano.", null));
+			ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, txt.getString("successfulRegistered"), null));
 			return PAGE_LOGIN;
 		} catch (Exception e) {
 			e.printStackTrace();
-			ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Wystąpił błąd podczas zapisu.", null));
+			ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, txt.getString("unexpectedError"), null));
 			return PAGE_STAY_AT_THE_SAME;
 		}
 	}

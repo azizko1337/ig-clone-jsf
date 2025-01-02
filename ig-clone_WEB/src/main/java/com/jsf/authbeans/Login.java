@@ -1,12 +1,14 @@
 package com.jsf.authbeans;
 
 import java.util.List;
+import java.util.ResourceBundle;
 
 import com.jsf.dao.UserDAO;
 import com.jsf.dao.UserRoleDAO;
 import com.jsf.entities.User;
 
 import jakarta.enterprise.context.RequestScoped;
+import jakarta.faces.annotation.ManagedProperty;
 import jakarta.faces.application.FacesMessage;
 import jakarta.faces.context.FacesContext;
 import jakarta.faces.simplesecurity.Password;
@@ -26,6 +28,10 @@ public class Login {
 	private String password;
 	
 	@Inject
+	@ManagedProperty("#{txt}")
+	private ResourceBundle txt;
+	
+	@Inject
 	UserDAO userDAO;
 	
 	@Inject
@@ -39,7 +45,7 @@ public class Login {
 		
 		if (user == null) {
 			ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,
-					"Niepoprawny login lub hasło.", null));
+					txt.getString("invalidLogin"), null));
 			setPassword("");
 			return PAGE_STAY_AT_THE_SAME;
 		}

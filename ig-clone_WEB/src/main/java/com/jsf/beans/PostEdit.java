@@ -12,12 +12,14 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.Base64;
+import java.util.ResourceBundle;
 
 import javax.imageio.ImageIO;
 
 import org.primefaces.model.file.UploadedFile;
 
 import jakarta.ejb.EJB;
+import jakarta.faces.annotation.ManagedProperty;
 import jakarta.faces.application.FacesMessage;
 import jakarta.faces.context.FacesContext;
 import jakarta.faces.context.Flash;
@@ -47,6 +49,10 @@ public class PostEdit implements Serializable {
 	private Post loaded = null;
 	private UploadedFile uploadedFile;
 	
+	@Inject
+	@ManagedProperty("#{txt}")
+	private ResourceBundle txt;
+	
 	@EJB
 	PostDAO postDAO;
 	
@@ -75,7 +81,7 @@ public class PostEdit implements Serializable {
 			setPost(loaded);
 			// session.removeAttribute("person");
 		} else {
-			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Błędne użycie systemu", null));
+			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, txt.getString("unexpectedError"), null));
 			// if (!context.isPostback()) { //possible redirect
 			// context.getExternalContext().redirect("personList.xhtml");
 			// context.responseComplete();
@@ -92,7 +98,7 @@ public class PostEdit implements Serializable {
 		}
 		
 		if(getUploadedFile() == null && getPost().getId()==0) {
-			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Musisz dodać zdjęcie.", null));
+			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, txt.getString("noImage"), null));
 			return PAGE_STAY_AT_THE_SAME;
 		}
 
@@ -111,12 +117,12 @@ public class PostEdit implements Serializable {
 			
 			handleUploadedFile();
 			
-			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Wystąpił błąd podczas zapisu.", null));
+			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, txt.getString("unexpectedError"), null));
 			
 			return PAGE_INDEX;
 		} catch (Exception e) {
 			e.printStackTrace();
-			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Wystąpił błąd podczas zapisu.", null));
+			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, txt.getString("unexpectedError"), null));
 			return null;
 		}
 

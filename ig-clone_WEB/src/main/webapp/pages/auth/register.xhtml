@@ -10,11 +10,11 @@
 <ui:composition template="/templates/main.xhtml">
 	<ui:define name="content">
 		
-		<p:panel header="Rejestracja">
+		<p:panel header="#{txt.registerTitle}">
 			<h:form styleClass="form" style="gap:0;">
 			    <div class="field">
-			        <p:outputLabel for="nickname" styleClass="block">Nazwa uzytkownika</p:outputLabel>
-			        <p:inputText id="nickname" styleClass="block" value="#{register.user.nickname}" validatorMessage="Nazwa uzytkownika musi mieć 3-32 znaki.">
+			        <p:outputLabel for="nickname" styleClass="block">#{txt.nickname}</p:outputLabel>
+			        <p:inputText id="nickname" styleClass="block" value="#{register.user.nickname}" validatorMessage="#{txt.validateNickname}">
 			        	<f:validateRequired></f:validateRequired>
 			        	<f:validateLength minimum="3" maximum="32"></f:validateLength>
 			        </p:inputText>
@@ -22,8 +22,8 @@
 			    </div>
 			    
 			    <div class="field">
-			        <p:outputLabel for="firstName" styleClass="block">Imię</p:outputLabel>
-			        <p:inputText id="firstName" styleClass="block" value="#{register.user.firstName}" validatorMessage="Imię musi mieć 3-32 znaki.">
+			        <p:outputLabel for="firstName" styleClass="block">#{txt.firstName}</p:outputLabel>
+			        <p:inputText id="firstName" styleClass="block" value="#{register.user.firstName}" validatorMessage="#{txt.validateFirstName}">
 			        	<f:validateRequired></f:validateRequired>
 			        	<f:validateLength minimum="3" maximum="32"></f:validateLength>
 			        </p:inputText>
@@ -31,8 +31,8 @@
 			    </div>
 			    
 			    <div class="field">
-			        <p:outputLabel for="lastName" styleClass="block">Nazwisko</p:outputLabel>
-			        <p:inputText id="lastName" styleClass="block" value="#{register.user.lastName}" validatorMessage="Nazwisko musi mieć 3-32 znaki.">
+			        <p:outputLabel for="lastName" styleClass="block">#{txt.lastName}</p:outputLabel>
+			        <p:inputText id="lastName" styleClass="block" value="#{register.user.lastName}" validatorMessage="#{txt.validateLastName}">
 			        	<f:validateRequired></f:validateRequired>
 			        	<f:validateLength minimum="3" maximum="32"></f:validateLength>
 			        </p:inputText>
@@ -40,8 +40,8 @@
 			    </div>
 			    
 			    <div class="field">
-			        <p:outputLabel for="email" styleClass="block">Email</p:outputLabel>
-			        <p:inputText id="email" type="email" styleClass="block" value="#{register.user.email}" validatorMessage="Email nie jest poprawny.">
+			        <p:outputLabel for="email" styleClass="block">#{txt.email}</p:outputLabel>
+			        <p:inputText id="email" type="email" styleClass="block" value="#{register.user.email}" validatorMessage="#{txt.validateEmail}">
 			        	<f:validateRequired></f:validateRequired>
 			        	<f:validateLength minimum="3" maximum="320"></f:validateLength>
 			        	<f:validateRegex pattern="([^.@]+)(\.[^.@]+)*@([^.@]+\.)+([^.@]+)"></f:validateRegex>
@@ -50,8 +50,8 @@
 			    </div>
 
 			    <div class="field">
-			        <p:outputLabel for="password" styleClass="block">Hasło</p:outputLabel>
-			        <p:inputText id="password" styleClass="block" type="password" value="#{register.user.password}" validatorMessage="Hasło musi mieć 4-128 znaków.">
+			        <p:outputLabel for="password" styleClass="block">#{txt.password}</p:outputLabel>
+			        <p:inputText id="password" styleClass="block" type="password" value="#{register.user.password}" validatorMessage="#{txt.validatePassword}">
 			        	<f:validateRequired></f:validateRequired>
 			        	<f:validateLength minimum="4" maximum="128"></f:validateLength>
 			        </p:inputText>
@@ -59,15 +59,15 @@
 			    </div>
 			    
 			    <div class="field">
-			        <p:outputLabel for="repeatedPassword" styleClass="block">Powtórz hasło</p:outputLabel>
-			        <p:inputText id="repeatedPassword" styleClass="block" type="password" value="#{register.repeatedPassword}" validatorMessage="Powtórzone hasło nie jest poprawne.">
+			        <p:outputLabel for="repeatedPassword" styleClass="block">#{txt.repeatedPassword}</p:outputLabel>
+			        <p:inputText id="repeatedPassword" styleClass="block" type="password" value="#{register.repeatedPassword}" validatorMessage="#{txt.validatePassword}">
 			        	<f:validateRequired></f:validateRequired>
 			        	<f:validateLength minimum="4" maximum="128"></f:validateLength>
 			        </p:inputText>
 			        <p:message for="repeatedPassword"/>
 			    </div>
 			    
-			     <p:commandButton type="submit" value="Zarejestruj" styleClass="rounded-button" action="#{register.register()}" update="@form, messages"/>
+			     <p:commandButton type="submit" value="#{txt.registerContinued}" styleClass="rounded-button" action="#{register.register()}" update="@form, messages"/>
 			</h:form>
 		</p:panel>
 		

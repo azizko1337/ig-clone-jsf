@@ -15,17 +15,17 @@
 <ui:composition template="/templates/main.xhtml">
 	<ui:define name="content">
 	
-		<p:panel header="Wylogowanie">
+		<p:panel header="#{txt.logoutTitle}">
 			<h:form styleClass="form">
-			     <p:commandButton action="#{profile.logout()}" value="Wyloguj" styleClass="rounded-button" />
+			     <p:commandButton action="#{profile.logout()}" value="#{txt.logout}" styleClass="rounded-button" />
 			</h:form>
 		</p:panel>
 		
-		<p:panel header="Edycja konta">
+		<p:panel header="#{txt.editTitle}">
 			<h:form styleClass="form">
 			    <div class="field">
-			        <p:outputLabel for="nickname" styleClass="block">Nazwa uzytkownika</p:outputLabel>
-			        <p:inputText id="nickname" styleClass="block" value="#{profile.user.nickname}" validatorMessage="Nazwa uzytkownika musi mieć 3-32 znaki.">
+			        <p:outputLabel for="nickname" styleClass="block">#{txt.nickname}</p:outputLabel>
+			        <p:inputText id="nickname" styleClass="block" value="#{profile.user.nickname}" validatorMessage="#{txt.validateNickname}">
 			        	<f:validateRequired></f:validateRequired>
 			        	<f:validateLength minimum="3" maximum="32"></f:validateLength>
 			        </p:inputText>
@@ -33,8 +33,8 @@
 			    </div>
 			    
 			    <div class="field">
-			        <p:outputLabel for="firstName" styleClass="block">Imię</p:outputLabel>
-			        <p:inputText id="firstName" styleClass="block" value="#{profile.user.firstName}" validatorMessage="Imię musi mieć 3-32 znaki.">
+			        <p:outputLabel for="firstName" styleClass="block">#{txt.firstName}</p:outputLabel>
+			        <p:inputText id="firstName" styleClass="block" value="#{profile.user.firstName}" validatorMessage="#{txt.validateFirstName}">
 			        	<f:validateRequired></f:validateRequired>
 			        	<f:validateLength minimum="3" maximum="32"></f:validateLength>
 			        </p:inputText>
@@ -42,8 +42,8 @@
 			    </div>
 			    
 			    <div class="field">
-			        <p:outputLabel for="lastName" styleClass="block">Nazwisko</p:outputLabel>
-			        <p:inputText id="lastName" styleClass="block" value="#{profile.user.lastName}" validatorMessage="Nazwisko musi mieć 3-32 znaki.">
+			        <p:outputLabel for="lastName" styleClass="block">#{txt.lastName}</p:outputLabel>
+			        <p:inputText id="lastName" styleClass="block" value="#{profile.user.lastName}" validatorMessage="#{txt.validateLastName}">
 			        	<f:validateRequired></f:validateRequired>
 			        	<f:validateLength minimum="3" maximum="32"></f:validateLength>
 			        </p:inputText>
@@ -51,8 +51,8 @@
 			    </div>
 			    
 			    <div class="field">
-			        <p:outputLabel for="email" styleClass="block">Email</p:outputLabel>
-			        <p:inputText id="email" type="email" styleClass="block" value="#{profile.user.email}" validatorMessage="Email nie jest poprawny.">
+			        <p:outputLabel for="email" styleClass="block">#{txt.email}</p:outputLabel>
+			        <p:inputText id="email" type="email" styleClass="block" value="#{profile.user.email}" validatorMessage="#{txt.validateEmail}">
 			        	<f:validateRequired></f:validateRequired>
 			        	<f:validateLength minimum="3" maximum="320"></f:validateLength>
 			        	<f:validateRegex pattern="([^.@]+)(\.[^.@]+)*@([^.@]+\.)+([^.@]+)"></f:validateRegex>
@@ -63,42 +63,42 @@
 			    <hr />
 			    
 			    <div class="field">
-			        <p:outputLabel for="newPassword" styleClass="block">Nowe hasło</p:outputLabel>
+			        <p:outputLabel for="newPassword" styleClass="block">#{txt.newPassword}</p:outputLabel>
 			        <p:inputText id="newPassword" styleClass="block" type="password" value="#{profile.newPassword}"/>
 			    </div>
 			    
 			    <div class="field">
-			        <p:outputLabel for="repeatedNewPassword" styleClass="block">Powtórz nowe hasło</p:outputLabel>
+			        <p:outputLabel for="repeatedNewPassword" styleClass="block">#{txt.repeatedNewPassword}</p:outputLabel>
 			        <p:inputText id="repeatedNewPassword" styleClass="block" type="password" value="#{profile.repeatedNewPassword}"/>
 			    </div>
 			    
 			    <hr />
 			    
 			    <div class="field">
-			        <p:outputLabel for="password" styleClass="block">Obecne hasło</p:outputLabel>
-			        <p:inputText id="password" styleClass="block" type="password" value="#{profile.currentPasswordEdit}" validatorMessage="Hasło musi mieć 4-128 znaków.">
+			        <p:outputLabel for="password" styleClass="block">#{txt.currentPassword}</p:outputLabel>
+			        <p:inputText id="password" styleClass="block" type="password" value="#{profile.currentPasswordEdit}" validatorMessage="#{txt.validateCurrentPassword}">
 			        	<f:validateRequired></f:validateRequired>
 			        	<f:validateLength minimum="4" maximum="128"></f:validateLength>
 			        </p:inputText>
 			        <p:message for="password"/>
 			    </div>
 			    
-			     <p:commandButton value="Zapisz zmiany" styleClass="rounded-button" action="#{profile.save()}" update="@form, messages, logged"/>
+			     <p:commandButton value="#{txt.save}" styleClass="rounded-button" action="#{profile.save()}" update="@form, messages, logged"/>
 			</h:form>
 		</p:panel>
 		
 		<p:panel header="Usunięcie konta">
 			<h:form styleClass="form">
 				<div class="field">
-			        <p:outputLabel for="password_for_delete" styleClass="block">Obecne hasło</p:outputLabel>
-			        <p:inputText id="password_for_delete" styleClass="block" type="password" value="#{profile.currentPasswordDelete}" validatorMessage="Hasło musi mieć 4-128 znaków.">
+			        <p:outputLabel for="password_for_delete" styleClass="block">#{txt.currentPassword}</p:outputLabel>
+			        <p:inputText id="password_for_delete" styleClass="block" type="password" value="#{profile.currentPasswordDelete}" validatorMessage="#{txt.validateCurrentPassword}">
 			        	<f:validateRequired></f:validateRequired>
 			        	<f:validateLength minimum="4" maximum="128"></f:validateLength>
 			        </p:inputText>
 			        <p:message for="password_for_delete"/>
 			    </div>
 			
-			     <p:commandButton value="Usuń konto" styleClass="ui-button-danger rounded-button" action="#{profile.delete()}" update="@form, messages"/>
+			     <p:commandButton value="#{txt.deleteAccount}" styleClass="ui-button-danger rounded-button" action="#{profile.delete()}" update="@form, messages"/>
 			</h:form>
 		</p:panel>
 		

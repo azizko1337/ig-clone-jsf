@@ -10,11 +10,11 @@
 <ui:composition template="/templates/main.xhtml">
 	<ui:define name="content">
 		
-		<p:panel header="Logowanie">
+		<p:panel header="#{txt.loginTitle}">
 			<h:form styleClass="form">
 			    <div class="field">
-			        <p:outputLabel for="nickname" styleClass="block">Nazwa uzytkownika</p:outputLabel>
-			        <p:inputText id="nickname" styleClass="block" value="#{login.nickname}" validatorMessage="Nazwa uzytkownika musi mieć 3-32 znaki.">
+			        <p:outputLabel for="nickname" styleClass="block">#{txt.nickname}</p:outputLabel>
+			        <p:inputText id="nickname" styleClass="block" value="#{login.nickname}" validatorMessage="#{txt.validateNickname}">
 			        	<f:validateRequired></f:validateRequired>
 			        	<f:validateLength minimum="3" maximum="32"></f:validateLength>
 			        </p:inputText>
@@ -22,21 +22,21 @@
 			    </div>
 
 			    <div class="field">
-			        <p:outputLabel for="password" styleClass="block">Hasło</p:outputLabel>
-			        <p:inputText id="password" styleClass="block" type="password" value="#{login.password}" validatorMessage="Hasło musi mieć 4-128 znaków.">
+			        <p:outputLabel for="password" styleClass="block">#{txt.password}</p:outputLabel>
+			        <p:inputText id="password" styleClass="block" type="password" value="#{login.password}" validatorMessage="#{txt.validatePassword}">
 			        	<f:validateRequired></f:validateRequired>
 			        	<f:validateLength minimum="4" maximum="128"></f:validateLength>
 			        </p:inputText>
 			        <p:message for="password"/>
 			    </div>
 			    
-			     <p:commandButton type="submit" value="Zaloguj" styleClass="rounded-button" action="#{login.login()}" update="@form, messages"/>
+			     <p:commandButton type="submit" value="#{txt.login}" styleClass="rounded-button" action="#{login.login()}" update="@form, messages"/>
 			</h:form>
 			
 			
 		</p:panel>
 		
-		<h:form>Nie masz konta? <p:commandLink action="#{login.register()}">Zarejestruj się.</p:commandLink></h:form>
+		<h:form>#{txt.register} <p:commandLink action="#{login.register()}">#{txt.registerContinued}</p:commandLink></h:form>
 		
 	</ui:define>
 </ui:composition>

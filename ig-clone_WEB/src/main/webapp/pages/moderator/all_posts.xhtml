@@ -9,17 +9,17 @@
 
 <ui:composition template="/templates/main.xhtml">
 	<ui:define name="content">
-		<h1>Wszystkie posty:</h1>
-		<p:panel header="Opcje wyszukiwania" rendered="#{!empty remoteClient.details}" toggleable="true" collapsed="true" style="margin-bottom: 1em;">
+		<h1>#{txt.allPosts}:</h1>
+		<p:panel header="#{txt.searchSettings}" rendered="#{!empty remoteClient.details}" toggleable="true" collapsed="true" style="margin-bottom: 1em;">
 			<h:form>
 				<div style="display:flex; gap:10px; align-items:center;">
-					<h:outputLabel value="Treść:" />
-					<p:inputText id="searchBody" value="#{allPosts.body}" validatorMessage="Wyszukiwanie moze miec maksymalnie 16 znakow.">
+					<h:outputLabel value="#{txt.searchContent}" />
+					<p:inputText id="searchBody" value="#{allPosts.body}" validatorMessage="#{txt.validateSearch}">
 						<f:validateLength maximum="16"></f:validateLength>
 					</p:inputText>
 					<p:message for="searchBody"/>
 					<div style="flex-grow:1;"></div>
-					<p:commandButton value="Szukaj" update="feed, messages, @form" />
+					<p:commandButton value="#{txt.searchButton}" update="feed, messages, @form" />
 				</div>
 			</h:form>
 		</p:panel>
@@ -29,7 +29,7 @@
 	</ui:define>
 	
 	<ui:define name="aside">
-		<h2>Moderator panel</h2>
+		<h2>#{txt.moderatorPanelTitle}</h2>
 		<h3 style="margin-bottom:20px;">to do...</h3>
 	</ui:define>
 </ui:composition>

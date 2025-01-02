@@ -8,7 +8,7 @@
 	>
 <f:view locale="#{facesContext.externalContext.requestLocale}">
 	<h:head>
-		<title>Instagram clone</title>
+		<title>#{txt.mainTitle}</title>
 		<h:outputStylesheet library="template" name="css/main.css"/>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -123,7 +123,7 @@
 	                    <div class="side-menu__footer-links">
 	                        <ul class="side-menu__footer-list">
 	                            <li class="side-menu__footer-item">
-	                                <a class="side-menu__footer-link" target="_blank" href="https://github.com/azizko1337">Autor</a>
+	                                <a class="side-menu__footer-link" target="_blank" href="https://github.com/azizko1337">#{txt.author}</a>
 	                            </li>
 	                            <li class="side-menu__footer-item">
 	                                <a class="side-menu__footer-link" target="_blank" href="https://jakarta.ee/">Jakarta</a>
@@ -132,7 +132,7 @@
 	                    </div>
 	
 	                    <span class="side-menu__footer-copyright"
-	                    >Szablon Instagrama stworzony przez <a class="side-menu__footer-link" target="_blank" href="https://github.com/leocosta1/instagram-clone/tree/main">leocosta1</a></span>
+	                    >#{txt.createdBy} <a class="side-menu__footer-link" target="_blank" href="https://github.com/leocosta1/instagram-clone/tree/main">#{txt.createdByContinued}</a></span>
 	                </div>
 		        </div>
 		    </div>

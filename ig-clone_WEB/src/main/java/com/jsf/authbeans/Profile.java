@@ -2,12 +2,14 @@ package com.jsf.authbeans;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.ResourceBundle;
 
 import com.jsf.dao.UserDAO;
 import com.jsf.dao.UserRoleDAO;
 import com.jsf.entities.User;
 
 import jakarta.enterprise.context.RequestScoped;
+import jakarta.faces.annotation.ManagedProperty;
 import jakarta.faces.application.FacesMessage;
 import jakarta.faces.context.FacesContext;
 import jakarta.faces.simplesecurity.Password;
@@ -33,6 +35,9 @@ public class Profile implements Serializable{
 	private String currentPasswordEdit;
 	private String currentPasswordDelete;
 	
+	@Inject
+	@ManagedProperty("#{txt}")
+	private ResourceBundle txt;
 	
 	@Inject
 	UserDAO userDAO;
@@ -74,11 +79,11 @@ public class Profile implements Serializable{
 					if(getNewPassword().length() >= 4 && getNewPassword().length()<=128) {
 						getUser().setPassword(Password.hash(getNewPassword()));
 					}else {
-						ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Nowe hasło musi mieć 4-128 znaków.", null));
+						ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, txt.getString("validateNewPassword"), null));
 						return;
 					}
 				}else {
-					ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Nowe hasła nie są takie same.", null));
+					ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, txt.getString("validateRepeatedNewPassword"), null));
 					return;
 				}
 			}
@@ -86,14 +91,14 @@ public class Profile implements Serializable{
 //			check if nickname has been changed, if yes check unique
 			if(!loggedUser.getNickname().equals(getUser().getNickname())) {
 				if(!userDAO.checkUniqueNickname(getUser().getNickname())){
-					ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Nazwa jest juz zajeta.", null));
+					ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, txt.getString("nicknameOccupied"), null));
 					return;
 				}
 			}
 //			check if 
 			if(!loggedUser.getEmail().equals(getUser().getEmail())) {
 				if(!userDAO.checkUniqueEmail(getUser().getEmail())){
-					ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Email jest juz zajety.", null));
+					ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, txt.getString("emailOccupied"), null));
 					return;
 				}
 			}
@@ -116,11 +121,11 @@ public class Profile implements Serializable{
 			setNewPassword("");
 			setRepeatedNewPassword("");
 			
-			ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Zapisano zmiany.", null));
+			ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, txt.getString("savedChanges"), null));
 				
 			
 		}else {
-			ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Nie mozna edytowac danych, niepoprawne obecne haslo", null));
+			ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, txt.getString("validateCurrentPassword"), null));
 		}
 	}
 	
@@ -132,7 +137,7 @@ public class Profile implements Serializable{
 			setCurrentPasswordDelete("");
 			FacesContext ctx = FacesContext.getCurrentInstance();
 			ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,
-					"Nie mozna usunac konta, niepoprawne stare haslo", null));
+					txt.getString("validateCurrentPassword"), null));
 			return null;
 		}
 	}

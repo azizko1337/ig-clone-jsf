@@ -1,0 +1,7 @@
+indexTitle = Kalkulator kredytowy
+#index page
+searchSettings = Opcje wyszukiwania
+#
+#
+#validators
+validateSearch = Wyszukiwanie moze miec maksymalnie 16 znakow.

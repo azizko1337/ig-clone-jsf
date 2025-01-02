@@ -1,0 +1,14 @@
+#index page
+searchSettings = Opcje wyszukiwania
+searchContent = Tre\u015B\u0107 posta:
+searchButton = Szukaj
+login = Zaloguj si\u0119,
+loginContinued = aby kontynowa\u0107.
+#post page
+altPostImage = Zdj\u0119cie
+postImage = Zdj\u0119cie
+postContent = Tre\u015B\u0107
+#
+#validators
+validateSearch = Wyszukiwanie moze miec maksymalnie 16 znakow.
+validatePostBody = Post musi mie\u0107 3-128 znaków.

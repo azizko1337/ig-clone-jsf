@@ -1,0 +1,86 @@
+mainTitle = Instagram clone
+#feed
+posts = Posts
+added = Added
+likes = likes
+comments = comments
+like = Like
+unlike = Unlike
+comment = Comment
+commentList = Comments
+deleteComment = Delete comment
+altPostImage = Image
+more = More
+noPosts = No posts to display.
+#suggestions
+youMayKnow = People you may know
+profile = Profile
+#index page
+searchSettings = Search settings
+searchContent = Post content:
+searchButton = Search
+login = Log in,
+loginContinued = to start using the service.
+#post page
+altPostImage = Image
+postImage = Image
+postContent = Content
+save = Save
+cancel = Cancel
+delete = Delete
+#public user profile
+altUserPicture = User's picture
+follow = Follow
+unfollow = Unfollow
+#search user
+searchedUsers = Searched users
+userNotFound = No users found matching the search criteria.
+#moderator panel
+moderatorPanelTitle = Moderator panel
+allPosts = All posts
+#error pages
+pageNotFound = 404 - page not found.
+pageExpired = Session expired, refresh the page.
+#auth pages
+loginTitle = Login
+registerTitle = Registration
+logoutTitle = Logging out
+editTitle = Account editing
+nickname = Username
+firstName = First name
+lastName = Last name
+email = Email
+password = Password
+newPassword = New password
+repeatedNewPassword = Repeat new password
+repeatedPassword = Repeat password
+currentPassword = Current password
+register = Don't have an account?
+registerContinued = Sign up
+logout = Log out
+deleteAccount = Delete account
+#footer
+createdBy = Instagram template created by
+createdByContinued = leocosta1
+author = Author
+#validators
+validateSearch = The search may be max 16 characters.
+validatePostBody = The post must be 3-128 characters.
+validateNickname = The username must be 3-32 characters.
+validateFirstName = The first name must be 3-32 characters.
+validateLastName = The last name must be 3-32 characters.
+validateEmail = The email is not valid.
+validatePassword = The password must be 4-128 characters.
+validateNewPassword = The new password must be 4-128 characters.
+validateRepeatedPassword = The passwords are not the same.
+validateCurrentPassword = The current password is incorrect.
+validateComment = The comment must be 3-64 characters.
+validateRepeatedNewPassword = The new passwords are not the same.
+#bean messages
+invalidLogin = Incorrect username or password.
+nicknameOccupied = The username is already taken.
+emailOccupied = The email address is already taken.
+savedChanges = Changes saved.
+unexpectedError = An unknown error occurred.
+successfulRegistered = Successfully registered.
+noImage = You must add a photo.

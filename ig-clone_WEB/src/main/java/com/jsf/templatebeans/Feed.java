@@ -4,11 +4,13 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.ResourceBundle;
 
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.ejb.EJB;
+import jakarta.faces.annotation.ManagedProperty;
 import jakarta.faces.application.FacesMessage;
 import jakarta.faces.context.ExternalContext;
 import jakarta.faces.context.FacesContext;
@@ -36,6 +38,10 @@ public class Feed implements Serializable{
 	
 	private int extendedPost;
 	private String newComment;
+	
+	@Inject
+	@ManagedProperty("#{txt}")
+	private ResourceBundle txt;
 	
 	@Inject
 	ExternalContext extcontext;
@@ -70,7 +76,7 @@ public class Feed implements Serializable{
 			setNewComment("");
 			
 		}catch(Exception e) {
-			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Błąd podczas dodawania komentarza.", null));
+			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, txt.getString("unexpectedError"), null));
 		}
 		
 		return PAGE_STAY_AT_THE_SAME;

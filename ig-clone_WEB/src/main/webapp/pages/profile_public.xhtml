@@ -17,7 +17,7 @@
             <span
                     class="side-menu__user-avatar"
             >
-                <h:graphicImage library="template" name="icons/default-user.png" alt="User picture"/>
+                <h:graphicImage library="template" name="icons/default-user.png" alt="#{txt.altUserPicture}"/>
             </span>
             <div class="side-menu__user-info">
                 <span style="font-weight:800; color:#333;"
@@ -26,21 +26,21 @@
             </div>
             
             <p:outputPanel rendered="#{profilePublic.user.id != remoteClient.details.id}">
-            	<p:commandLink action="#{profilePublic.toggleFollow()}" rendered="#{profilePublic.isFollowing()}" styleClass="side-menu__suggestion-button" update="@form, suggestions">Unfollow</p:commandLink>
-            	<p:commandLink action="#{profilePublic.toggleFollow()}" rendered="#{!profilePublic.isFollowing()}" styleClass="side-menu__suggestion-button" update="@form, suggestions">Follow</p:commandLink>
+            	<p:commandLink action="#{profilePublic.toggleFollow()}" rendered="#{profilePublic.isFollowing()}" styleClass="side-menu__suggestion-button" update="@form, suggestions">#{txt.follow}</p:commandLink>
+            	<p:commandLink action="#{profilePublic.toggleFollow()}" rendered="#{!profilePublic.isFollowing()}" styleClass="side-menu__suggestion-button" update="@form, suggestions">#{txt.unfollow}</p:commandLink>
             </p:outputPanel>
         </h:form>
 	
-		<p:panel header="Opcje wyszukiwania" toggleable="true" collapsed="true" style="margin-bottom: 1em;">
+		<p:panel header="#{txt.searchSettings}" toggleable="true" collapsed="true" style="margin-bottom: 1em;">
 			<h:form>
 				<div style="display:flex; gap:10px; align-items:center;">
-					<h:outputLabel value="Treść:" />
-					<p:inputText id="body" value="#{profilePublic.body}" validatorMessage="Wyszukiwanie moze miec maksymalnie 16 znakow.">
+					<h:outputLabel value="#{txt.searchContent}:" />
+					<p:inputText id="body" value="#{profilePublic.body}" validatorMessage="#{txt.validateSearch}">
 						<f:validateLength maximum="16"></f:validateLength>
 					</p:inputText>
 					<p:message for="body"/>
 					<div style="flex-grow:1;"></div>
-					<p:commandButton value="Szukaj" update="feed, messages, @form" />
+					<p:commandButton value="#{txt.searchButton}" update="feed, messages, @form" />
 				</div>
 			</h:form>
 		</p:panel>
