@@ -13,5 +13,6 @@
 - upload zdjęć
 - internacjonalizacja (języki: polski, angielski, francuski)
 - walidacja wszystkich danych wejściowych
+- "infinite scroll" z paginacją (na głównej stronie)
 
 ## Zrzuty ekranu:

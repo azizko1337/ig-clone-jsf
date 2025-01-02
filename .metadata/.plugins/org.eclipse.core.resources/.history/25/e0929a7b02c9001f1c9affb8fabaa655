@@ -27,7 +27,7 @@
             
             <p:outputPanel rendered="#{profilePublic.user.id != remoteClient.details.id}">
             	<p:commandLink action="#{profilePublic.toggleFollow()}" rendered="#{profilePublic.isFollowing()}" styleClass="side-menu__suggestion-button" update="@form, suggestions">#{txt.unfollow}</p:commandLink>
-            	<p:commandLink action="#{profilePublic.toggleFollow()}" rendered="#{!profilePublic.isFollowing()}" styleClass="side-menu__suggestion-button" update="@form, suggestions">#{txt.follow}</p:commandLink>
+            	<p:commandLink action="#{profilePublic.toggleFollow()}" rendered="#{!profilePublic.isFollowing()}" styleClass="side-menu__suggestion-button" update="@form, suggestions">#{txt.unfollow}</p:commandLink>
             </p:outputPanel>
         </h:form>
 	
