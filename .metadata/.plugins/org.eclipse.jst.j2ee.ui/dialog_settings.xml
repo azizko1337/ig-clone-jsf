@@ -8,4 +8,7 @@
 	<list key="J2EE_EXPORT_JST_EAR">
 		<item value="C:\Users\anton\Downloads\ig-clone_EAR.ear"/>
 	</list>
+	<list key="J2EE_EXPORT_JST_WEB">
+		<item value="C:\Users\anton\Downloads\ig-clone_WEB.war"/>
+	</list>
 </section>

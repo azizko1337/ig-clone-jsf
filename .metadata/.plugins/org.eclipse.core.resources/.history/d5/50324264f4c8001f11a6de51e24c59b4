@@ -1,9 +1,0 @@
-indexTitle = Kalkulator kredytowy
-#index page
-searchSettings = Opcje wyszukiwania
-searchContent = Tre\u015B\u0107 posta:
-searchButton = Szukaj
-#
-#
-#validators
-validateSearch = Wyszukiwanie moze miec maksymalnie 16 znakow.
