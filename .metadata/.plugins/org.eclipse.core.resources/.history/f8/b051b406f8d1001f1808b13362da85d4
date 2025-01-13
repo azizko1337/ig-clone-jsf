@@ -52,7 +52,7 @@ public class Register {
 				return PAGE_STAY_AT_THE_SAME;
 			}
 			if(!userDAO.checkUniqueNickname(getUser().getNickname())) {
-				ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, txt.getString("nicknameOccupied"), null));
+				ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, txt.getString("emailOccupied"), null));
 				return PAGE_STAY_AT_THE_SAME;
 			}
 			

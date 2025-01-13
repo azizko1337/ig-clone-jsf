@@ -85,8 +85,6 @@ public class PostEdit implements Serializable {
                 getPost().setUser(loggedUser);
             }
 			
-			getPost().setUpdatedAt(null);
-			
 			if (getPost().getId() == 0) {
 				// new record
 				postDAO.create(getPost());

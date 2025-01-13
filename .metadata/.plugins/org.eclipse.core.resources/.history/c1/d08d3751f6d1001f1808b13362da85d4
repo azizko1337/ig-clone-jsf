@@ -36,9 +36,8 @@
 	                </h:form>
 	                
 	                <div class="post__content">
-	                
 	                    <div class="post__medias">
-	                        <img class="post__media" src="/ig-clone-uploads/posts/#{post.id}/image.jpg?#{post.updatedAt}" alt="#{txt.altPostImage}" onerror="this.src='#{resource['template:images/image-not-found.jpg']}'"/>
+	                        <img class="post__media" src="/ig-clone-uploads/posts/#{post.id}/image.jpg?#{java.util.Date()}" alt="#{txt.altPostImage}" onerror="this.src='#{resource['template:images/image-not-found.jpg']}'"/>
 	                    </div>
 	                </div>
 	

@@ -101,7 +101,6 @@ public class Profile implements Serializable{
 				}
 			}
 			
-//			update updatedAt, updatedBy
 			getUser().setUpdatedAt(null);
 			getUser().setUser2(loggedUser);
 			
