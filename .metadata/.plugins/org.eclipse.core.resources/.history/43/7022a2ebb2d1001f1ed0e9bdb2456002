@@ -1,0 +1,89 @@
+mainTitle = Clone d'Instagram
+#feed
+posts = Publications
+added = Ajouté
+likes = mentions J\u2019aime
+comments = commentaires
+like = J\u2019aime
+unlike = Je n\u2019aime plus
+comment = Commenter
+commentList = Commentaires
+deleteComment = Supprimer le commentaire
+altPostImage = Image
+more = Plus
+noPosts = Aucune publication à afficher.
+#suggestions
+youMayKnow = Personnes que vous pourriez connaître
+profile = Profil
+#index page
+searchSettings = Paramètres de recherche
+searchContent = Contenu du post :
+searchButton = Rechercher
+login = Connectez-vous
+loginContinued = pour commencer à utiliser le service.
+#post page
+altPostImage = Image
+postImage = Image
+postContent = Contenu
+save = Enregistrer
+cancel = Annuler
+delete = Supprimer
+#public user profile
+altUserPicture = Photo de l\u2019utilisateur
+follow = Suivre
+unfollow = Ne plus suivre
+#search user
+searchedUsers = Utilisateurs recherchés
+userNotFound = Aucun utilisateur trouvé correspondant aux critères de recherche.
+#moderator panel
+moderatorPanelTitle = Panneau du modérateur
+allPosts = Toutes les publications
+#error pages
+pageNotFound = 404 - page introuvable.
+pageExpired = Session expirée, actualisez la page.
+#auth pages
+loginTitle = Connexion
+registerTitle = Inscription
+logoutTitle = Déconnexion
+editTitle = Modification du compte
+nickname = Nom d\u2019utilisateur
+firstName = Prénom
+lastName = Nom
+email = Email
+password = Mot de passe
+newPassword = Nouveau mot de passe
+repeatedNewPassword = Répétez le nouveau mot de passe
+repeatedPassword = Répétez le mot de passe
+currentPassword = Mot de passe actuel
+register = Vous n\u2019avez pas de compte?
+registerContinued = Inscrivez-vous
+logout = Déconnexion
+deleteAccount = Supprimer le compte
+#footer
+createdBy = Modèle Instagram créé par
+createdByContinued = leocosta1
+author = Auteur
+#validators
+validateSearch = La recherche peut comporter au maximum 16 caractères.
+validatePostBody = La publication doit comporter entre 3 et 128 caractères.
+validateNickname = Le nom d\u2019utilisateur doit comporter entre 3 et 32 caractères.
+validateFirstName = Le prénom doit comporter entre 3 et 32 caractères.
+validateLastName = Le nom doit comporter entre 3 et 32 caractères.
+validateEmail = L\u2019email n\u2019est pas valide.
+validatePassword = Le mot de passe doit comporter entre 4 et 128 caractères.
+validateNewPassword = Le nouveau mot de passe doit comporter entre 4 et 128 caractères.
+validateRepeatedPassword = Les mots de passe ne correspondent pas.
+validateCurrentPassword = Le mot de passe actuel est incorrect.
+validateComment = Le commentaire doit comporter entre 3 et 64 caractères.
+validateRepeatedNewPassword = Les nouveaux mots de passe ne correspondent pas.
+#bean messages
+invalidLogin = Nom d\u2019utilisateur ou mot de passe incorrect.
+nicknameOccupied = Le nom d\u2019utilisateur est déjà pris.
+emailOccupied = L\u2019adresse email est déjà prise.
+savedChanges = Modifications enregistrées.
+unexpectedError = Une erreur inconnue s\u2019est produite.
+successfulRegistered = Inscription réussie.
+noImage = Vous devez ajouter une photo.
+selectImage = Ajouter une photo
+oneFile = Vous devez sélectionner une photo.
+invalidImage = Format de photo non valide.

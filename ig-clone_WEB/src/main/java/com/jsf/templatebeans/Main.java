@@ -5,8 +5,6 @@ import java.io.Serializable;
 import com.jsf.entities.Post;
 import com.jsf.entities.User;
 
-import jakarta.enterprise.context.RequestScoped;
-import jakarta.enterprise.context.SessionScoped;
 import jakarta.faces.context.Flash;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
@@ -24,7 +22,6 @@ public class Main implements Serializable {
 	private static final String PAGE_POST = "/pages/post?faces-redirect=true";
 	private static final String PAGE_SEARCH = "/pages/search?faces-redirect=true";
 	private static final String PAGE_MODERATOR_PANEL = "/pages/moderator/all_posts?faces-redirect=true";
-	private static final String PAGE_STAY_AT_THE_SAME = null;
 	
 	@Inject
 	Flash flash;

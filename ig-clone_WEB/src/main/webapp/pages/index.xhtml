@@ -34,12 +34,29 @@
                update="feed" />
             </h:form>
 		</h:body>
+		<script type="text/javascript">
+			let locked = false;
+	    
+	        function handleScroll() {
+	            var scrollHeight = document.documentElement.scrollHeight;
+	            var scrollTop = document.documentElement.scrollTop;
+	            var clientHeight = document.documentElement.clientHeight;
+	            
+	            if (scrollTop + clientHeight >= scrollHeight - 50) {
+		            if(!locked){
+		            	loadMore();
+		                locked = true;
+		                setTimeout(() => (locked = false), 3000);
+			        }
+	            }
+	        }
+	    </script>
 	</ui:define>
 	
 	<ui:define name="aside">
 		<p:outputPanel rendered="#{empty remoteClient.details}">
 			<h:form style="padding-bottom:20px;">
-				<p><p:commandLink action="#{index.login()}">#{txt.login}</p:commandLink> #{txt.loginContinued}</p>
+				<p><p:commandLink action="#{index.login()}">#{txt.login},</p:commandLink> #{txt.loginContinued}</p>
 			</h:form>
 		</p:outputPanel>
 		<ui:include src="/templates/snippets/suggestions.xhtml" />

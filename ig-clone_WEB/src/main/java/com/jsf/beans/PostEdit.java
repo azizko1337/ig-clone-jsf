@@ -1,11 +1,6 @@
 package com.jsf.beans;
 
-import java.awt.Color;
-import java.awt.image.BufferedImage;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.Serializable;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -14,8 +9,6 @@ import java.nio.file.StandardCopyOption;
 import java.util.Base64;
 import java.util.ResourceBundle;
 
-import javax.imageio.ImageIO;
-
 import org.primefaces.model.file.UploadedFile;
 
 import jakarta.ejb.EJB;
@@ -23,15 +16,11 @@ import jakarta.faces.annotation.ManagedProperty;
 import jakarta.faces.application.FacesMessage;
 import jakarta.faces.context.FacesContext;
 import jakarta.faces.context.Flash;
-import jakarta.faces.simplesecurity.RemoteClient;
 import jakarta.faces.simplesecurity.ServerClient;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
 import jakarta.servlet.ServletContext;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpSession;
-
 import com.jsf.dao.PostDAO;
 import com.jsf.entities.Post;
 import com.jsf.entities.User;
@@ -69,23 +58,12 @@ public class PostEdit implements Serializable {
     ServletContext servletContext;
 	
 	public void onLoad() throws IOException {
-		// 1. load person passed through session
-		// HttpSession session = (HttpSession) context.getExternalContext().getSession(true);
-		// loaded = (Person) session.getAttribute("person");
-
-		// 2. load person passed through flash
 		loaded = (Post) flash.get("post");
 
-		// cleaning: attribute received => delete it from session
 		if (loaded != null) {
 			setPost(loaded);
-			// session.removeAttribute("person");
 		} else {
 			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, txt.getString("unexpectedError"), null));
-			// if (!context.isPostback()) { //possible redirect
-			// context.getExternalContext().redirect("personList.xhtml");
-			// context.responseComplete();
-			// }
 		}
 	}
 	
@@ -145,7 +123,7 @@ public class PostEdit implements Serializable {
 	
     private void handleUploadedFile() throws IOException {
     	if (getUploadedFile() != null) {
-            // Ścieżka do folderu
+            // folder path
             Path postFolderPath = Paths.get(servletContext.getRealPath("/uploads"));
 
             if (!Files.exists(postFolderPath)) {
@@ -154,7 +132,7 @@ public class PostEdit implements Serializable {
             
             Path filePath = postFolderPath.resolve(getPost().getId() + ".jpg");
 
-            // Zapis pliku
+            // save file
             Files.copy(getUploadedFile().getInputStream(), filePath, StandardCopyOption.REPLACE_EXISTING);
         }
     }

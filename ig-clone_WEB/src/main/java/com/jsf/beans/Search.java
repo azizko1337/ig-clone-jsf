@@ -8,12 +8,9 @@ import java.util.Map;
 import com.jsf.dao.FollowDAO;
 import com.jsf.dao.UserDAO;
 import com.jsf.entities.Follow;
-import com.jsf.entities.Post;
 import com.jsf.entities.User;
 
 import jakarta.ejb.EJB;
-import jakarta.enterprise.context.RequestScoped;
-import jakarta.enterprise.context.SessionScoped;
 import jakarta.faces.context.Flash;
 import jakarta.faces.simplesecurity.ServerClient;
 import jakarta.faces.view.ViewScoped;
@@ -23,14 +20,9 @@ import jakarta.inject.Named;
 @Named
 @ViewScoped
 public class Search implements Serializable{
-	private static final String PAGE_INDEX = "/pages/index?faces-redirect=true";
-	private static final String PAGE_LOGIN = "/pages/auth/login?faces-redirect=true";
-	private static final String PAGE_PROFILE = "/pages/auth/profile?faces-redirect=true";
-	private static final String PAGE_PROFILE_PUBLIC = "/pages/profile_public?faces-redirect=true";
-	private static final String PAGE_POST = "/pages/post?faces-redirect=true";
-	private static final String PAGE_SEARCH = "/pages/search?faces-redirect=true";
-	private static final String PAGE_STAY_AT_THE_SAME = null;
+	private static final long serialVersionUID = 1L;
 	
+	private static final String PAGE_PROFILE_PUBLIC = "/pages/profile_public?faces-redirect=true";
 	private String query;
 	
 	@Inject

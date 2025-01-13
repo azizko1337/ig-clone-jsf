@@ -8,7 +8,6 @@ import com.jsf.dao.UserDAO;
 import com.jsf.dao.UserRoleDAO;
 import com.jsf.entities.User;
 
-import jakarta.enterprise.context.RequestScoped;
 import jakarta.faces.annotation.ManagedProperty;
 import jakarta.faces.application.FacesMessage;
 import jakarta.faces.context.FacesContext;
@@ -24,9 +23,8 @@ import jakarta.servlet.http.HttpSession;
 @Named
 @ViewScoped
 public class Profile implements Serializable{
-	private static final String PAGE_INDEX = "/pages/index?faces-redirect=true";
-	private static final String PAGE_REGISTER = "/pages/auth/register?faces-redirect=true";
-	private static final String PAGE_STAY_AT_THE_SAME = null;
+	private static final long serialVersionUID = 1L;
+	
 	private static final String PAGE_LOGIN = "/pages/auth/login?faces-redirect=true";
 	
 	private User user;
@@ -95,7 +93,7 @@ public class Profile implements Serializable{
 					return;
 				}
 			}
-//			check if 
+//			check if email... as above
 			if(!loggedUser.getEmail().equals(getUser().getEmail())) {
 				if(!userDAO.checkUniqueEmail(getUser().getEmail())){
 					ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, txt.getString("emailOccupied"), null));

@@ -1,14 +1,10 @@
 package com.jsf.templatebeans;
 
 import java.io.Serializable;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.ResourceBundle;
 
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
-import jakarta.enterprise.context.RequestScoped;
 import jakarta.ejb.EJB;
 import jakarta.faces.annotation.ManagedProperty;
 import jakarta.faces.application.FacesMessage;
@@ -17,11 +13,8 @@ import jakarta.faces.context.FacesContext;
 import jakarta.faces.context.Flash;
 import jakarta.faces.simplesecurity.ServerClient;
 import jakarta.faces.view.ViewScoped;
-import jakarta.servlet.http.HttpSession;
-
 import com.jsf.dao.CommentDAO;
 import com.jsf.dao.LikeDAO;
-import com.jsf.dao.PostDAO;
 import com.jsf.entities.Comment;
 import com.jsf.entities.Post;
 import com.jsf.entities.User;

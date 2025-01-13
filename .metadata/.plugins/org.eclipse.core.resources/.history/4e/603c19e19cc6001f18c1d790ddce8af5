@@ -1,5 +1,0 @@
-package jakarta.faces.simplesecurity;
-
-public class ServerClient {
-
-}

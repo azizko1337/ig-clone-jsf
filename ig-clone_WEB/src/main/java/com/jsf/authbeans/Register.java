@@ -22,7 +22,6 @@ import jakarta.inject.Named;
 @Named
 @RequestScoped
 public class Register {
-	private static final String PAGE_INDEX = "/pages/index?faces-redirect=true";
 	private static final String PAGE_LOGIN = "/pages/auth/login?faces-redirect=true";
 	private static final String PAGE_STAY_AT_THE_SAME = null;
 	
