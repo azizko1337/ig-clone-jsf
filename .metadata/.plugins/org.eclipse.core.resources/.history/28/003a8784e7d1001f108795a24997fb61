@@ -10,7 +10,7 @@
 	</context-param>
 	<context-param>
 		<param-name>UPLOAD_PATH</param-name>
-		<param-value>A:\servers\wildfly-33.0.2.Final\ig-clone-uploads</param-value>
+		<param-value>/opt/wildfly/ig-clone-uploads</param-value>
 	</context-param>
 	<context-param>
 		<param-name>jakarta.faces.DATETIMECONVERTER_DEFAULT_TIMEZONE_IS_SYSTEM_TIMEZONE</param-name>

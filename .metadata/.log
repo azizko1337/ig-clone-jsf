@@ -3743,3 +3743,33 @@ java.io.IOException: Bundle resources.txt not found in classpath for project: ig
 
 !ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2025-01-13 20:32:37.885
 !MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842776 2025-01-13 20:47:30.058
+!MESSAGE Server shutting down
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842785 2025-01-13 20:47:30.260
+!MESSAGE Server Shutdown Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2025-01-13 20:47:30.278
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2025-01-13 20:47:37.836
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842776 2025-01-13 20:48:16.732
+!MESSAGE Server shutting down
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842785 2025-01-13 20:48:16.935
+!MESSAGE Server Shutdown Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2025-01-13 20:48:46.733
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2025-01-13 20:48:53.989
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842776 2025-01-13 20:49:37.532
+!MESSAGE Server shutting down
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842785 2025-01-13 20:49:37.736
+!MESSAGE Server Shutdown Succeeded

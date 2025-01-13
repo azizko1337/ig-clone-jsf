@@ -28,7 +28,7 @@ public class AllPosts{
 		if (body != null && body.length() > 0){
 			searchParams.put("body", body);
 		}
-		list = postDAO.getList(searchParams, 0, 100);
+		list = postDAO.getList(searchParams, 0, 10);
 		
 		return list;
 	}
