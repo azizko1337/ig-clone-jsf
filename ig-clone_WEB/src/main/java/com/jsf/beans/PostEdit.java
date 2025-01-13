@@ -29,15 +29,6 @@ import com.jsf.dao.UserDAO;
 @Named
 @ViewScoped
 public class PostEdit implements Serializable {
-	private static final long serialVersionUID = 1L;
-
-	private static final String PAGE_INDEX = "/pages/index?faces-redirect=true";
-	private static final String PAGE_STAY_AT_THE_SAME = null;
-	
-	private Post post = new Post();
-	private Post loaded = null;
-	private UploadedFile uploadedFile;
-	
 	@Inject
 	@ManagedProperty("#{txt}")
 	private ResourceBundle txt;
@@ -56,6 +47,15 @@ public class PostEdit implements Serializable {
 	
 	@Inject
     ServletContext servletContext;
+	
+	private static final long serialVersionUID = 1L;
+
+	private static final String PAGE_INDEX = "/pages/index?faces-redirect=true";
+	private static final String PAGE_STAY_AT_THE_SAME = null;
+	
+	private Post post = new Post();
+	private Post loaded = null;
+	private UploadedFile uploadedFile;
 	
 	public void onLoad() throws IOException {
 		loaded = (Post) flash.get("post");
@@ -109,8 +109,10 @@ public class PostEdit implements Serializable {
 	
 	 public String removePost(){
 //		remove post image
-		Path postFolderPath = Paths.get(servletContext.getRealPath("/uploads"));
-		Path filePath = postFolderPath.resolve(getPost().getId() + ".jpg");
+		Path UPLOAD_PATH = Paths.get(context.getExternalContext().getInitParameter("UPLOAD_PATH")).resolve("/posts/");
+		UPLOAD_PATH = UPLOAD_PATH.resolve(String.valueOf(getPost().getId()));
+		 
+		Path filePath = UPLOAD_PATH.resolve("image.jpg");
 		try { Files.deleteIfExists(filePath); } catch(IOException e) {}
 		
 		 
@@ -123,14 +125,14 @@ public class PostEdit implements Serializable {
 	
     private void handleUploadedFile() throws IOException {
     	if (getUploadedFile() != null) {
-            // folder path
-            Path postFolderPath = Paths.get(servletContext.getRealPath("/uploads"));
-
-            if (!Files.exists(postFolderPath)) {
-                Files.createDirectories(postFolderPath);
+    		Path UPLOAD_PATH = Paths.get(context.getExternalContext().getInitParameter("UPLOAD_PATH")).resolve("posts/");
+    		UPLOAD_PATH = UPLOAD_PATH.resolve(String.valueOf(getPost().getId()));
+    		
+            if (!Files.exists(UPLOAD_PATH)) {
+                Files.createDirectories(UPLOAD_PATH);
             }
             
-            Path filePath = postFolderPath.resolve(getPost().getId() + ".jpg");
+            Path filePath = UPLOAD_PATH.resolve("image.jpg");
 
             // save file
             Files.copy(getUploadedFile().getInputStream(), filePath, StandardCopyOption.REPLACE_EXISTING);

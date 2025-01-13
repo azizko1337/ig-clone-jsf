@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;ig-clone_WEB/src/main/webapp/resources/template/images/imagenotfound.jpg&apos; to &apos;image-not-found.jpg&apos;" description="Rename resource &apos;imagenotfound.jpg&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/resources/template/images/imagenotfound.jpg" name="image-not-found.jpg" stamp="1736795038589" updateReferences="true"/>
+</session>

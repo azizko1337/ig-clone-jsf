@@ -37,7 +37,7 @@
 	                
 	                <div class="post__content">
 	                    <div class="post__medias">
-	                        <p:graphicImage styleClass="post__media" value="/uploads/#{post.id}.jpg" alt="#{txt.altPostImage}" style="width: 100%;" />
+	                        <img class="post__media" src="/ig-clone-uploads/posts/#{post.id}/image.jpg" alt="#{txt.altPostImage}" onerror="this.src='#{resource['template:images/image-not-found.jpg']}'"/>
 	                    </div>
 	                </div>
 	

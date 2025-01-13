@@ -17,7 +17,7 @@
 		    <h:form enctype="multipart/form-data" styleClass="post">
 		        <div class="post__content">
 		            <div class="post__medias">
-		                <p:graphicImage styleClass="post__media" value="/uploads/#{postEdit.post.id}.jpg" rendered="#{postEdit.post.id != 0}" alt="#{txt.altPostImage}" style="width: 100%;" />
+		                <img class="post__media" src="/ig-clone-uploads/posts/#{postEdit.post.id}/image.jpg" alt="#{txt.altPostImage}" onerror="this.src='#{resource['template:images/image-not-found.jpg']}'"/>
 		            </div>
 		        </div>
 		        
