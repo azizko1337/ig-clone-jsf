@@ -2,7 +2,7 @@
 
 ### Projekt na zajęcia **JPDSI2**, **AWA** - *Uniwersytet Śląski*
 ### Instagram clone; made for educational purposes
-- UI based on 
+- UI based on [Instagram Clone (HTML, CSS, JS)](https://github.com/leocosta1/instagram-clone/tree/main) *(MIT license)*
 
 ### Funkcjonalności:
 - **logowanie, rejestracja, edycja profilu**
