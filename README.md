@@ -1,6 +1,8 @@
 # ig-clone-jsf
 
 ### Projekt na zajęcia **JPDSI2**, **AWA** - *Uniwersytet Śląski*
+### Instagram clone; made for educational purposes
+- UI based on 
 
 ### Funkcjonalności:
 - **logowanie, rejestracja, edycja profilu**
